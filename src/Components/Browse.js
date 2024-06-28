@@ -24,13 +24,13 @@ const Portfolio = () => {
       // Animate the letters from the last to the first
       gsap.fromTo(
         letters,
-        { opacity: 0, scale: 0.5, rotation: -45, y: 50 },
+        { opacity: 0, scale: 0.5, rotation: -45, x: -20 },
         {
           opacity: 1,
           scale: 1,
           rotation: 0,
-          y: 0,
-          stagger: { each: 0.05, from: "end" },
+          x: 0,
+          stagger: { each: 0.08, from: "start" },
           duration: 1,
           onComplete: () => {
             // Ensure the text remains "Rohit Manohar" after animation
@@ -58,13 +58,13 @@ const Portfolio = () => {
     <div className="min-h-screen bg-black relative overflow-y-auto">
       <Header />
       <div className="container mx-auto px-4 py-8">
-        <h1 className="text-6xl text-white font-bold mb-4" ref={textRef}>
-          {splitText("Rohit Manohar")} 
-        </h1>
-        <div className="mb-8"></div> {/* Add margin bottom for the gap */}
-        <div className="flex justify-between items-center">
-          <div className="flex-1">Dj</div>
-          <div className="w-1/2 flex items-center justify-center">
+        <div className="absolute top-1/2  transform -translate-y-1/2 text-center ml-24">
+          <h1 className="text-7xl text-emerald-500 font-bold font-zilla-slab" ref={textRef}>
+            {splitText("Rohit Manohar!!")}
+          </h1>
+        </div>
+        <div className="flex justify-end items-center mr-8">
+          <div className="w-1/2 mt-12 flex items-center justify-center">
             <Lottie options={defaultOptions} height={400} width={400} />
           </div>
         </div>
@@ -74,4 +74,3 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
-
