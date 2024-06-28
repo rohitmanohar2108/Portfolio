@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Lottie from "react-lottie";
 import Header from "./Header";
 import { gsap } from "gsap";
+import { motion } from "framer-motion";
 // Import your new Lottie animation JSON file (replace with your own animation)
 import animationData from "../Animation/animation.json";
 
@@ -57,16 +58,20 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-black relative overflow-y-auto">
       <Header />
-      <div className="container mx-auto px-4 py-8">
-        <div className="absolute top-1/2  transform -translate-y-1/2 text-center ml-24">
-          <h1 className="text-7xl text-emerald-500 font-bold font-zilla-slab" ref={textRef}>
-            {splitText("Rohit Manohar!!")}
-          </h1>
-        </div>
-        <div className="flex justify-end items-center mr-8">
-          <div className="w-1/2 mt-12 flex items-center justify-center">
+      <div className="container mx-auto px-4 py-8 flex flex-col items-center">
+        <div className="flex flex-col items-center">
+          <div className="flex items-center justify-center mb-8">
             <Lottie options={defaultOptions} height={400} width={400} />
           </div>
+          <h1 className="text-7xl text-emerald-500 font-bold mb-4 " ref={textRef}>
+            {splitText("Rohit Manohar")}
+          </h1>
+          <motion.h2
+            className="text-4xl text-white font-sans mt-4"
+            whileHover={{ scale: 1.1 }}
+          >
+            Hi, I am Rohit, a Computer Science Student at NITK
+          </motion.h2>
         </div>
       </div>
     </div>
