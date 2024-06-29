@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Lottie from "react-lottie";
 import Header from "./Header";
 import { motion } from "framer-motion";
 import animationData from "../Animation/animation.json";
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
+
 
 // Import Devicon CSS (already added link)
 import "devicon/devicon.min.css";
@@ -18,7 +19,8 @@ const Portfolio = () => {
     },
   };
 
-  const textRef = React.useRef(null);
+  const textRef = useRef(null);
+  
   const quotes = [
     {
       text:
@@ -64,6 +66,8 @@ const Portfolio = () => {
     return () => clearInterval(interval);
   }, []);
 
+  
+
   const projects = [
     {
       title: "FilmNinja",
@@ -89,14 +93,14 @@ const Portfolio = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black relative overflow-y-auto">
+    <div className="min-h-screen bg-blue-900 relative overflow-y-auto">
       <Header />
       <div className="container mx-auto px-4 py-8 flex flex-col items-center">
         <div className="flex flex-col items-center mb-9">
           <motion.div className="mt-8" whileHover={{ scale: 1.1 }}>
             <Lottie options={defaultOptions} height={400} width={400} />
           </motion.div>
-          <h1 className="text-7xl text-pink-600 font-bold mt-4" ref={textRef}>
+          <h1 className="text-8xl text-teal-500  mt-6 font-tangerine" ref={textRef}>
             Rohit Manohar
           </h1>
           <motion.h2
@@ -108,7 +112,7 @@ const Portfolio = () => {
         </div>
 
         <div>
-        <motion.div className="border mt-16 p-8 bg-gray-800 rounded-lg shadow-lg">
+        <motion.div className="border mt-16 p-8 bg-orange-600 rounded-lg shadow-lg">
           <div className="flex items-center space-x-4 overflow-hidden">
             <img
               src={quotes[currentQuoteIndex].image}
@@ -117,14 +121,14 @@ const Portfolio = () => {
             />
             <div className="flex-1">
               <p className="text-3xl text-white font-dancing-script">{quotes[currentQuoteIndex].text}</p>
-              <p className="text-xl mt-3 text-gray-400">- {quotes[currentQuoteIndex].author}</p>
+              <p className="text-xl mt-3 text-white">- {quotes[currentQuoteIndex].author}</p>
             </div>
           </div>
         </motion.div>
         </div>
 
         <motion.div
-          className="border mt-16 p-8 bg-gray-800 rounded-lg shadow-lg flex items-center"
+          className="border mt-16 p-8 bg-blue-600 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
           <img
@@ -155,7 +159,7 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 className="text-white"
               >
-                <FaGithub className="text-4xl hover:text-gray-400 transition-colors" />
+                <FaGithub className="text-4xl hover:text-blue-900 transition-colors" />
               </a>
               <a
                 href="https://www.linkedin.com/in/rohit-manohar-80b949207/"
@@ -163,7 +167,7 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 className="text-white"
               >
-                <FaLinkedin className="text-4xl hover:text-gray-400 transition-colors" />
+                <FaLinkedin className="text-4xl hover:text-blue-900 transition-colors" />
               </a>
               <a
                 href="https://www.instagram.com/rohitmanohar2108/"
@@ -171,7 +175,7 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 className="text-white"
               >
-                <FaInstagram className="text-4xl hover:text-gray-400 transition-colors" />
+                <FaInstagram className="text-4xl hover:text-blue-900 transition-colors" />
               </a>
               <a
                 href="https://twitter.com/imrohit372"
@@ -179,18 +183,18 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 className="text-white"
               >
-                <FaTwitter className="text-4xl hover:text-gray-400 transition-colors" />
+                <FaTwitter className="text-4xl hover:text-blue-900 transition-colors" />
               </a>
             </div>
           </div>
         </motion.div>
 
         <motion.div
-          className="mt-16 p-8 bg-gray-800 rounded-lg shadow-lg flex items-center"
+          className="border mt-14 p-8 bg-gray-800 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
-          <p className="text-3xl text-white mt-4 mr-4">Skills:</p>
-          <div className="flex mt-4 space-x-4">
+          <p className="text-3xl text-white  mr-4">Skills:</p>
+          <div className="flex mb-5 mt-4 space-x-4">
             <i className="devicon-react-original colored text-4xl" title="React"></i>
             <i className="devicon-redux-plain colored text-4xl" title="Redux"></i>
             <i className="devicon-javascript-plain colored text-4xl" title="JavaScript"></i>
@@ -205,11 +209,10 @@ const Portfolio = () => {
           </div>
         </motion.div>
 
-        
-     
-        <div className="mt-12"></div> 
-        <div className="z-10 flex flex-col items-center justify-center p-16 bg-black bg-opacity-75 rounded-lg transition-all duration-300 hover:bg-gray-800 hover:text-white transform hover:scale-105">
-          <h2 className="text-4xl text-white hover:text-yellow-400 font-lato transition-transform transform hover:scale-105 cursor-pointer">
+        <div className="mt-12"></div>
+
+        <div className="border z-10 flex flex-col items-center justify-center p-16 bg-black bg-opacity-75 rounded-lg transition-all duration-300 hover:bg-blue-600 hover:text-white transform hover:scale-105">
+          <h2 className="mb-7 text-4xl text-white hover:text-blue-900 font-lato transition-transform transform hover:scale-105 cursor-pointer">
             Projects
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
@@ -247,6 +250,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

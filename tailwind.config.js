@@ -12,7 +12,8 @@ module.exports = {
         'roboto-slab': ['Roboto Slab', 'serif'],
         'poppins': ['Poppins', 'sans-serif'], // Added Poppins font
         'lato': ['Lato', 'sans-serif'],
-        'dancing-script': ['Dancing Script', 'cursive']
+        'dancing-script': ['Dancing Script', 'cursive'],
+        'tangerine': ['Tangerine', 'cursive'],
       },
     },
   },

@@ -24,7 +24,7 @@ const Header = () => {
     <div>
       <nav
         ref={navRef}
-        className="flex items-center justify-between p-4 mt-4 bg-pink-600 relative"
+        className="flex items-center justify-between p-4 mt-4 bg-blue-600 relative"
         style={{ minHeight: "70px" }} // Adjusted minHeight for visibility
       >
         <h1 className="text-3xl text-white font-bold font-zilla-slab">Rohit Manohar</h1>
