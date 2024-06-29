@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Lottie from "react-lottie";
 import Header from "./Header";
-import { gsap } from "gsap";
 import { motion } from "framer-motion";
 import animationData from "../Animation/animation.json";
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
@@ -65,6 +64,30 @@ const Portfolio = () => {
     return () => clearInterval(interval);
   }, []);
 
+  const projects = [
+    {
+      title: "FilmNinja",
+      image: "https://do6gp1uxl3luu.cloudfront.net/projects/netflixProject.png",
+      description:
+        "I created a Netflix clone using ReactJs and Tailwindcss. This is a clone of Netflix website. And played a lot with Api.",
+      githubLink: "https://github.com/rohitmanohar2108/FilmNinja",
+    },
+    {
+      title: "Feast",
+      image: "https://do6gp1uxl3luu.cloudfront.net/projects/FoodAppProject.png",
+      description:
+        "A simple and beautiful Restaurent Website made with Pure React JS. With some beautiful Animation and data fetching using API.",
+      githubLink: "https://github.com/rohitmanohar2108/feast",
+    },
+    {
+      title: "YouTube",
+      image: "https://do6gp1uxl3luu.cloudfront.net/projects/YoutubeProject.png",
+      description:
+        "A simple and beautiful Restaurent Website made with Pure React JS. With some beautiful Animation and data fetching using API.",
+      githubLink: "https://github.com/rohitmanohar2108/feast",
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-black relative overflow-y-auto">
       <Header />
@@ -83,8 +106,25 @@ const Portfolio = () => {
             Hi, I am Rohit, a Computer Science Student at NITK
           </motion.h2>
         </div>
+
+        <div>
+        <motion.div className="border mt-16 p-8 bg-gray-800 rounded-lg shadow-lg">
+          <div className="flex items-center space-x-4 overflow-hidden">
+            <img
+              src={quotes[currentQuoteIndex].image}
+              alt={quotes[currentQuoteIndex].author}
+              className="h-56 w-56 object-cover rounded-full"
+            />
+            <div className="flex-1">
+              <p className="text-3xl text-white font-dancing-script">{quotes[currentQuoteIndex].text}</p>
+              <p className="text-xl mt-3 text-gray-400">- {quotes[currentQuoteIndex].author}</p>
+            </div>
+          </div>
+        </motion.div>
+        </div>
+
         <motion.div
-          className="mt-16 p-8 bg-gray-800 rounded-lg shadow-lg flex items-center"
+          className="border mt-16 p-8 bg-gray-800 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
           <img
@@ -144,6 +184,7 @@ const Portfolio = () => {
             </div>
           </div>
         </motion.div>
+
         <motion.div
           className="mt-16 p-8 bg-gray-800 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
@@ -163,19 +204,48 @@ const Portfolio = () => {
             <i className="devicon-canva-plain colored text-4xl" title="Canva"></i>
           </div>
         </motion.div>
-        <motion.div className="border mt-16 p-8 bg-gray-800 rounded-lg shadow-lg">
-          <div className="flex items-center space-x-4 overflow-hidden">
-            <img
-              src={quotes[currentQuoteIndex].image}
-              alt={quotes[currentQuoteIndex].author}
-              className="h-56 w-56 object-cover rounded-full"
-            />
-            <div className="flex-1">
-              <p className="text-3xl text-white font-dancing-script">{quotes[currentQuoteIndex].text}</p>
-              <p className="text-xl mt-3 text-gray-400">{`by ${quotes[currentQuoteIndex].author}`}</p>
-            </div>
+
+        
+     
+        <div className="mt-12"></div> 
+        <div className="z-10 flex flex-col items-center justify-center p-16 bg-black bg-opacity-75 rounded-lg transition-all duration-300 hover:bg-gray-800 hover:text-white transform hover:scale-105">
+          <h2 className="text-4xl text-white hover:text-yellow-400 font-lato transition-transform transform hover:scale-105 cursor-pointer">
+            Projects
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+            {projects.map((project, index) => (
+              <motion.div
+                key={index}
+                className="border bg-gray-800 rounded-lg overflow-hidden shadow-lg"
+                whileHover={{ scale: 1.05 }}
+              >
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-64 object-cover  font-lato"
+                />
+                <div className="p-4">
+                  <h3 className="text-xl font-semibold text-white">
+                    {project.title}
+                  </h3>
+                  <p className="text-gray-300 mt-2 font-lato">
+                    {project.description}
+                  </p>
+                  <div className="mt-4 py-4">
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-lg transition duration-300 font-lato transition-transform transform hover:scale-105"
+                    >
+                      <FaGithub className="text-xl mr-2" /> GitHub
+                    </a>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-        </motion.div>
+        </div>
       </div>
     </div>
   );
