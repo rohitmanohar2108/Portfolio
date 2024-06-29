@@ -3,7 +3,7 @@ import Lottie from "react-lottie";
 import Header from "./Header";
 import { motion } from "framer-motion";
 import animationData from "../Animation/animation.json";
-import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaArrowUp } from "react-icons/fa";
 
 import { useSpring, animated } from "@react-spring/web";
 
@@ -12,6 +12,9 @@ import "devicon/devicon.min.css";
 import Footer from "./Footer";
 
 const Portfolio = () => {
+
+  const [showScrollButton, setShowScrollButton] = useState(false);
+
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -95,6 +98,29 @@ const Portfolio = () => {
     setFormVisible(!formVisible);
   };
 
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollHeight = document.documentElement.scrollHeight;
+      const scrollTop = document.documentElement.scrollTop;
+      const clientHeight = document.documentElement.clientHeight;
+      if (scrollTop + clientHeight >= scrollHeight - 100) {
+        setShowScrollButton(true);
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+
   return (
     <div className="min-h-screen bg-blue-900 relative overflow-y-auto">
       <Header />
@@ -103,7 +129,7 @@ const Portfolio = () => {
           <motion.div className="mt-8" whileHover={{ scale: 1.1 }}>
             <Lottie options={defaultOptions} height={400} width={400} />
           </motion.div>
-          <h1 className="text-8xl text-teal-500 mt-6 font-tangerine" ref={textRef}>
+          <h1 className="text-8xl text-blue-300 mt-6 font-tangerine" ref={textRef}>
             Rohit Manohar
           </h1>
           <motion.h2
@@ -312,6 +338,16 @@ const Portfolio = () => {
           </animated.form>
         )}
       </div>
+      <div>
+      </div>
+      {showScrollButton && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-4 right-4 p-3 bg-blue-400 text-black rounded-full hover:bg-blue-900 transition-colors"
+        >
+          <FaArrowUp />
+        </button>
+      )}
       <div>
         <Footer />
       </div>
