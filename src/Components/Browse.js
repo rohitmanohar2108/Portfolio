@@ -3,7 +3,7 @@ import Lottie from "react-lottie";
 import Header from "./Header";
 import { motion } from "framer-motion";
 import animationData from "../Animation/animation.json";
-import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 import { useSpring, animated } from "@react-spring/web";
 
@@ -243,7 +243,7 @@ const Portfolio = () => {
                     rel="noopener noreferrer"
                     className="text-white hover:underline text-base"
                   >
-                    View on GitHub
+                    <FaGithub className="text-3xl hover:text-blue-900 transition-colors" />
                   </a>
                 </div>
               </motion.div>
@@ -259,7 +259,7 @@ const Portfolio = () => {
                 
         <div className="mt-16">
           <button
-            className="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors"
+            className="text-2xl bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors"
             onClick={toggleForm}
           >
             Contact Me
