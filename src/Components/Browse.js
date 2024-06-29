@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import Lottie from "react-lottie";
 import Header from "./Header";
 import { gsap } from "gsap";
@@ -19,42 +19,51 @@ const Portfolio = () => {
     },
   };
 
-  const textRef = useRef(null);
+  const textRef = React.useRef(null);
+  const quotes = [
+    {
+      text:
+        " 'Because the people who are crazy enough to think they can change the world are the ones who do.'",
+      author: "Steve Jobs",
+      image:
+        "https://akshaysaini.in/img/quotes/steve-jobs.jpg",
+    },
+    {
+      text:
+        " 'Success is a lousy teacher. It seduces smart people into thinking they can't lose.'",
+      author: "Bill Gates",
+      image:
+        "https://akshaysaini.in/img/quotes/bill-gates.jpg",
+    },
+    {
+      text:
+        "'See, you not only have to be a good coder to create a system like Linux, you have to be a sneaky bastard too.'",
+      author: "Linus Torvalds",
+      image:
+        "https://akshaysaini.in/img/quotes/linus-torvalds.jpg",
+    },
+    {
+      text:
+        "'If you're changing the world, you're working on important things. You're excited to get up in the morning.'",
+      author: "Larry Page",
+      image:
+        "https://akshaysaini.in/img/quotes/larry-page.jpg",
+    },
+  ];
 
+  // State to manage the current quote index for scrolling
+  const [currentQuoteIndex, setCurrentQuoteIndex] = useState(0);
+
+  // Effect to automatically scroll to the next quote
   useEffect(() => {
-    if (textRef.current) {
-      const letters = textRef.current.querySelectorAll(".letter");
-
-      gsap.fromTo(
-        letters,
-        { opacity: 0, scale: 0.5, rotation: -45, x: -20 },
-        {
-          opacity: 1,
-          scale: 1,
-          rotation: 0,
-          x: 0,
-          stagger: { each: 0.08, from: "start" },
-          duration: 1,
-          onComplete: () => {
-            const reorderedLetters = Array.from(letters).sort(
-              (a, b) => a.dataset.index - b.dataset.index
-            );
-            reorderedLetters.forEach((letter) => {
-              textRef.current.appendChild(letter);
-            });
-          },
-        }
+    const interval = setInterval(() => {
+      setCurrentQuoteIndex((prevIndex) =>
+        prevIndex === quotes.length - 1 ? 0 : prevIndex + 1
       );
-    }
-  }, [textRef]);
+    }, 5000); // Change the interval time (in milliseconds) as needed
 
-  const splitText = (text) => {
-    return text.split("").map((char, index) => (
-      <span key={index} data-index={index} className="letter inline-block">
-        {char}
-      </span>
-    ));
-  };
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="min-h-screen bg-black relative overflow-y-auto">
@@ -65,7 +74,7 @@ const Portfolio = () => {
             <Lottie options={defaultOptions} height={400} width={400} />
           </motion.div>
           <h1 className="text-7xl text-pink-600 font-bold mt-4" ref={textRef}>
-            {splitText("Rohit Manohar")}
+            Rohit Manohar
           </h1>
           <motion.h2
             className="text-4xl text-white font-sans mt-4"
@@ -89,17 +98,16 @@ const Portfolio = () => {
               I am a Computer Science Student at NITK. I have a deep passion for
               coding and constantly strive to enhance my skills by learning new
               technologies. I love tackling challenging problems and finding
-              innovative solutions. My areas of interest include web
-              development, Programming and many more. I am always eager to
-              collaborate on exciting projects and learn from others in the
-              field. When I am not coding, I enjoy exploring the latest tech
-              trends and participating in hackathons and coding competitions.
-              Let's connect and create something amazing together! Whether it's
-              building a new app, diving into a complex algorithm, or simply
-              exchanging knowledge, I am excited to engage with like-minded
-              individuals and contribute to the tech community.
+              innovative solutions. My areas of interest include web development,
+              Programming and many more. I am always eager to collaborate on
+              exciting projects and learn from others in the field. When I am not
+              coding, I enjoy exploring the latest tech trends and participating
+              in hackathons and coding competitions. Let's connect and create
+              something amazing together! Whether it's building a new app, diving
+              into a complex algorithm, or simply exchanging knowledge, I am
+              excited to engage with like-minded individuals and contribute to the
+              tech community.
             </p>
-            
             <div className="flex mt-4 space-x-4 z-20 relative">
               <a
                 href="https://github.com/rohitmanohar2108"
@@ -137,53 +145,36 @@ const Portfolio = () => {
           </div>
         </motion.div>
         <motion.div
-         className="mt-16 p-8 bg-gray-800 rounded-lg shadow-lg flex items-center"
-         whileHover={{ scale: 1.05 }}
+          className="mt-16 p-8 bg-gray-800 rounded-lg shadow-lg flex items-center"
+          whileHover={{ scale: 1.05 }}
         >
           <p className="text-3xl text-white mt-4 mr-4">Skills:</p>
-        <div className="flex mt-4 space-x-4">
-                <i
-                  className="devicon-react-original colored text-4xl"
-                  title="React"
-                ></i>
-                <i
-                  className="devicon-redux-plain colored text-4xl"
-                  title="Redux"
-                ></i>
-                <i
-                  className="devicon-javascript-plain colored text-4xl"
-                  title="JavaScript"
-                ></i>
-                <i
-                  className="devicon-html5-plain colored text-4xl"
-                  title="HTML5"
-                ></i>
-                <i
-                  className="devicon-css3-plain colored text-4xl"
-                  title="CSS3"
-                ></i>
-                <i className="devicon-c-plain colored text-4xl" title="C"></i>
-                <i
-                  className="devicon-cplusplus-plain colored text-4xl"
-                  title="C++"
-                ></i>
-                <i
-                  className="devicon-reactrouter-plain colored text-4xl"
-                  title="ReactRouter"
-                ></i>
-                <i
-                  className="devicon-ubuntu-plain colored text-4xl"
-                  title="Ubuntu"
-                ></i>
-                <i
-                  className="devicon-linux-plain color-white text-4xl"
-                  title="Linux"
-                ></i>
-                <i
-                  className="devicon-canva-plain colored text-4xl"
-                  title="Canva"
-                ></i>
-              </div>
+          <div className="flex mt-4 space-x-4">
+            <i className="devicon-react-original colored text-4xl" title="React"></i>
+            <i className="devicon-redux-plain colored text-4xl" title="Redux"></i>
+            <i className="devicon-javascript-plain colored text-4xl" title="JavaScript"></i>
+            <i className="devicon-html5-plain colored text-4xl" title="HTML5"></i>
+            <i className="devicon-css3-plain colored text-4xl" title="CSS3"></i>
+            <i className="devicon-c-plain colored text-4xl" title="C"></i>
+            <i className="devicon-cplusplus-plain colored text-4xl" title="C++"></i>
+            <i className="devicon-reactrouter-plain colored text-4xl" title="ReactRouter"></i>
+            <i className="devicon-ubuntu-plain colored text-4xl" title="Ubuntu"></i>
+            <i className="devicon-linux-plain colored-white text-4xl" title="Linux"></i>
+            <i className="devicon-canva-plain colored text-4xl" title="Canva"></i>
+          </div>
+        </motion.div>
+        <motion.div className="border mt-16 p-8 bg-gray-800 rounded-lg shadow-lg">
+          <div className="flex items-center space-x-4 overflow-hidden">
+            <img
+              src={quotes[currentQuoteIndex].image}
+              alt={quotes[currentQuoteIndex].author}
+              className="h-56 w-56 object-cover rounded-full"
+            />
+            <div className="flex-1">
+              <p className="text-3xl text-white font-dancing-script">{quotes[currentQuoteIndex].text}</p>
+              <p className="text-xl mt-3 text-gray-400">{`by ${quotes[currentQuoteIndex].author}`}</p>
+            </div>
+          </div>
         </motion.div>
       </div>
     </div>
