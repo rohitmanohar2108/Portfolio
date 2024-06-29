@@ -3,9 +3,11 @@ import Lottie from "react-lottie";
 import Header from "./Header";
 import { gsap } from "gsap";
 import { motion } from "framer-motion";
-// Import your new Lottie animation JSON file (replace with your own animation)
 import animationData from "../Animation/animation.json";
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter } from "react-icons/fa";
+
+// Import Devicon CSS (already added link)
+import "devicon/devicon.min.css";
 
 const Portfolio = () => {
   const defaultOptions = {
@@ -23,7 +25,6 @@ const Portfolio = () => {
     if (textRef.current) {
       const letters = textRef.current.querySelectorAll(".letter");
 
-      // Animate the letters from the last to the first
       gsap.fromTo(
         letters,
         { opacity: 0, scale: 0.5, rotation: -45, x: -20 },
@@ -35,7 +36,6 @@ const Portfolio = () => {
           stagger: { each: 0.08, from: "start" },
           duration: 1,
           onComplete: () => {
-            // Ensure the text remains "Rohit Manohar" after animation
             const reorderedLetters = Array.from(letters).sort(
               (a, b) => a.dataset.index - b.dataset.index
             );
@@ -99,41 +99,91 @@ const Portfolio = () => {
               exchanging knowledge, I am excited to engage with like-minded
               individuals and contribute to the tech community.
             </p>
+            
             <div className="flex mt-4 space-x-4 z-20 relative">
-                <a
-                  href="https://github.com/rohitmanohar2108"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white"
-                >
-                  <FaGithub className="text-4xl hover:text-gray-400 transition-colors" />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/rohit-manohar-80b949207/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white"
-                >
-                  <FaLinkedin className="text-4xl hover:text-gray-400 transition-colors" />
-                </a>
-                <a
-                  href="https://www.instagram.com/rohitmanohar2108/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white"
-                >
-                  <FaInstagram className="text-4xl hover:text-gray-400 transition-colors" />
-                </a>
-                <a
-                  href="https://twitter.com/imrohit372"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-white"
-                >
-                  <FaTwitter className="text-4xl hover:text-gray-400 transition-colors" />
-                </a>
-              </div>
+              <a
+                href="https://github.com/rohitmanohar2108"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <FaGithub className="text-4xl hover:text-gray-400 transition-colors" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rohit-manohar-80b949207/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <FaLinkedin className="text-4xl hover:text-gray-400 transition-colors" />
+              </a>
+              <a
+                href="https://www.instagram.com/rohitmanohar2108/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <FaInstagram className="text-4xl hover:text-gray-400 transition-colors" />
+              </a>
+              <a
+                href="https://twitter.com/imrohit372"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <FaTwitter className="text-4xl hover:text-gray-400 transition-colors" />
+              </a>
+            </div>
           </div>
+        </motion.div>
+        <motion.div
+         className="mt-16 p-8 bg-gray-800 rounded-lg shadow-lg flex items-center"
+         whileHover={{ scale: 1.05 }}
+        >
+          <p className="text-3xl text-white mt-4 mr-4">Skills:</p>
+        <div className="flex mt-4 space-x-4">
+                <i
+                  className="devicon-react-original colored text-4xl"
+                  title="React"
+                ></i>
+                <i
+                  className="devicon-redux-plain colored text-4xl"
+                  title="Redux"
+                ></i>
+                <i
+                  className="devicon-javascript-plain colored text-4xl"
+                  title="JavaScript"
+                ></i>
+                <i
+                  className="devicon-html5-plain colored text-4xl"
+                  title="HTML5"
+                ></i>
+                <i
+                  className="devicon-css3-plain colored text-4xl"
+                  title="CSS3"
+                ></i>
+                <i className="devicon-c-plain colored text-4xl" title="C"></i>
+                <i
+                  className="devicon-cplusplus-plain colored text-4xl"
+                  title="C++"
+                ></i>
+                <i
+                  className="devicon-reactrouter-plain colored text-4xl"
+                  title="ReactRouter"
+                ></i>
+                <i
+                  className="devicon-ubuntu-plain colored text-4xl"
+                  title="Ubuntu"
+                ></i>
+                <i
+                  className="devicon-linux-plain color-white text-4xl"
+                  title="Linux"
+                ></i>
+                <i
+                  className="devicon-canva-plain colored text-4xl"
+                  title="Canva"
+                ></i>
+              </div>
         </motion.div>
       </div>
     </div>
