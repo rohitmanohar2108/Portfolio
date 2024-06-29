@@ -115,7 +115,7 @@ const Portfolio = () => {
         </div>
 
         <div>
-          <motion.div className="border mt-16 p-8 bg-orange-600 rounded-lg shadow-lg">
+          <motion.div className="border mt-16 p-8  bg-pink-600 bg-opacity-30 rounded-lg shadow-lg">
             <div className="flex items-center space-x-4 overflow-hidden">
               <img
                 src={quotes[currentQuoteIndex].image}
@@ -131,7 +131,7 @@ const Portfolio = () => {
         </div>
 
         <motion.div
-          className="border mt-16 p-8 bg-blue-600 rounded-lg shadow-lg flex items-center"
+          className="border mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
           <img
@@ -193,7 +193,7 @@ const Portfolio = () => {
         </motion.div>
 
         <motion.div
-          className="border mt-14 p-8 bg-gray-800 rounded-lg shadow-lg flex items-center"
+          className="border mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
           <p className="text-3xl text-white mr-4">Skills:</p>
@@ -214,7 +214,7 @@ const Portfolio = () => {
         </motion.div>
 
         <motion.div
-          className="border mt-14 p-8 bg-blue-900 rounded-lg shadow-lg"
+          className="border mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }}
         >
           <h2 className="text-3xl text-white mb-4 text-center font-bold">Projects</h2>
