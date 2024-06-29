@@ -24,11 +24,11 @@ const Header = () => {
     <div>
       <nav
         ref={navRef}
-        className="flex items-center justify-between p-4 mt-4 bg-emerald-500 relative"
+        className="flex items-center justify-between p-4 mt-4 bg-pink-600 relative"
         style={{ minHeight: "70px" }} // Adjusted minHeight for visibility
       >
-        <h1 className="text-3xl text-black font-bold font-zilla-slab">Rohit Manohar</h1>
-        <ul className="flex space-x-8 font-bold text-3xl  text-black font-zilla-slab">
+        <h1 className="text-3xl text-white font-bold font-zilla-slab">Rohit Manohar</h1>
+        <ul className="flex space-x-8 font-bold text-3xl  text-white font-zilla-slab">
           <li className="cursor-pointer font-zilla-slab">About</li>
           <li className="cursor-pointer font-zilla-slab">Projects</li>
           <li className="cursor-pointer font-zilla-slab">Contact</li>

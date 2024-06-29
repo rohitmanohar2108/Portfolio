@@ -59,11 +59,11 @@ const Portfolio = () => {
     <div className="min-h-screen bg-black relative overflow-y-auto">
       <Header />
       <div className="container mx-auto px-4 py-8 flex flex-col items-center">
-        <div className="flex flex-col items-center">
-          <div className="flex items-center justify-center mb-8">
+        <div className="flex flex-col items-center mb-9">
+          <motion.div className="mt-8" whileHover={{ scale: 1.1 }}>
             <Lottie options={defaultOptions} height={400} width={400} />
-          </div>
-          <h1 className="text-7xl text-emerald-500 font-bold mb-4 " ref={textRef}>
+          </motion.div>
+          <h1 className="text-7xl text-pink-600 font-bold mt-4 " ref={textRef}>
             {splitText("Rohit Manohar")}
           </h1>
           <motion.h2
