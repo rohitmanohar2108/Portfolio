@@ -14,6 +14,8 @@ module.exports = {
         'lato': ['Lato', 'sans-serif'],
         'dancing-script': ['Dancing Script', 'cursive'],
         'tangerine': ['Tangerine', 'cursive'],
+        'playfair-display': ['Playfair Display', 'serif'],
+
       },
     },
   },

@@ -38,6 +38,11 @@ const Portfolio = () => {
       image: "https://akshaysaini.in/img/quotes/bill-gates.jpg",
     },
     {
+      text: "' I think it is possible for ordinary people to choose to be extraordinary.'",
+      author: "Elon Musk",
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCPblxoSQ8E0dWaakrQDUt73M_hS63hE9cg&s",
+    },
+    {
       text: "'See, you not only have to be a good coder to create a system like Linux, you have to be a sneaky bastard too.'",
       author: "Linus Torvalds",
       image: "https://akshaysaini.in/img/quotes/linus-torvalds.jpg",
@@ -46,6 +51,11 @@ const Portfolio = () => {
       text: "'If you're changing the world, you're working on important things. You're excited to get up in the morning.'",
       author: "Larry Page",
       image: "https://akshaysaini.in/img/quotes/larry-page.jpg",
+    },
+    {
+      text: " 'You don’t need to be a genius or a visionary, or even a college graduate for that matter, to be successful. You just need framework and a dream.'",
+      author: "Michael Dell",
+      image: "https://imageio.forbes.com/specials-images/imageserve/615c93f9da61f2ff5b9ecf9b/0x0.jpg?format=jpg&crop=1678,1679,x0,y118,safe&height=416&width=416&fit=bounds",
     },
   ];
 
@@ -129,7 +139,7 @@ const Portfolio = () => {
           <motion.div className="mt-8" whileHover={{ scale: 1.1 }}>
             <Lottie options={defaultOptions} height={400} width={400} />
           </motion.div>
-          <h1 className="text-8xl text-blue-300 mt-6 font-tangerine" ref={textRef}>
+          <h1 className="text-8xl text-lime-400 mt-6 font-poppins" ref={textRef}>
             Rohit Manohar
           </h1>
           <motion.h2
