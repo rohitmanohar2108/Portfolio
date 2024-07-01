@@ -6,7 +6,7 @@ import animationData from "../Animation/animation.json";
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaArrowUp } from "react-icons/fa";
 import animationDataTwo from "../Animation/animationtwo.json"
 import { useSpring, animated } from "@react-spring/web";
-
+import animationDatathree from "../Animation/animationthree.json"
 // Import Devicon CSS (already added link)
 import "devicon/devicon.min.css";
 import Footer from "./Footer";
@@ -28,6 +28,15 @@ const Portfolio = () => {
     loop: true,
     autoplay: true,
     animationData: animationDataTwo, // Use the first animation data
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const defaultOptionsThree = {
+    loop: true,
+    autoplay: true,
+    animationData: animationDatathree, // Use the first animation data
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -156,7 +165,10 @@ const Portfolio = () => {
           <motion.div className="mt-8" whileHover={{ scale: 1.1 }}>
             <Lottie options={defaultOptions} height={400} width={500} />
           </motion.div>
-          <h1 className=" text-8xl text-pink-700 mt-6 font-chakra-petch" ref={textRef}>
+          <div>
+          <Lottie options={defaultOptionsThree} height={300} width={300} />
+          </div>
+          <h1 className=" text-8xl text-indigo-600 mt-6 font-chakra-petch" ref={textRef}>
             Rohit Manohar
           </h1>
           <motion.h2
@@ -168,7 +180,7 @@ const Portfolio = () => {
         </div>
 
         <div>
-          <motion.div className="border mt-16 p-8  bg-pink-700 bg-opacity-30 rounded-lg shadow-lg">
+          <motion.div className="border-double border-4 border-indigo-600 outline hover:outline-2 ring-2 mt-16 p-8  bg-pink-700 bg-opacity-30 rounded-lg shadow-lg">
             <div className="flex items-center space-x-4 overflow-hidden">
               <img
                 src={quotes[currentQuoteIndex].image}
@@ -184,7 +196,7 @@ const Portfolio = () => {
         </div>
 
         <motion.div ref={aboutRef}
-          className="border mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center "
+          className="border-double border-4 border-indigo-600 outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center "
           whileHover={{ scale: 1.05 }}
         >
           <img
@@ -250,7 +262,7 @@ const Portfolio = () => {
           </motion.div>
 
         <motion.div
-          className="border mt-14 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg flex items-center"
+          className="border-double border-4 border-indigo-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
           <p className="text-3xl text-pink-600 mr-4">Some of the Tech Stack I know:</p>
@@ -271,7 +283,7 @@ const Portfolio = () => {
         </motion.div>
 
         <motion.div ref={projectsRef}
-          className="border mt-14 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg"
+          className="border-double border-4 border-indigo-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }}
         >
           <h2 className="text-3xl text-pink-600 hover:text-white mb-7 text-center font-bold transition-transform transform hover:scale-105">Projects</h2>
@@ -316,7 +328,7 @@ const Portfolio = () => {
                 
         <div ref={contactRef} className="mt-16">
           <button
-            className="text-2xl bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors"
+            className="text-2xl bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors shadow-xl"
             onClick={toggleForm}
           >
             Contact Me
@@ -324,7 +336,7 @@ const Portfolio = () => {
         </div>
 
         {formVisible && (
-          <animated.form style={formAnimation} className="border mt-8 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg w-full sm:w-3/4 md:w-1/2 lg:w-1/3">
+          <animated.form style={formAnimation} className="border border-style:dashed mt-8 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg w-full sm:w-3/4 md:w-1/2 lg:w-1/3 transition-transform transform hover:scale-105">
             <div className="mb-4">
               <label className="block text-pink-600 text-lg font-bold mb-2" htmlFor="name">
                 Name

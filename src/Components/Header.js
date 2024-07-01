@@ -33,9 +33,9 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
       >
         <h1 className="text-3xl text-white font-bold font-chakra-petch">Rohit Manohar</h1>
         <ul className="flex space-x-8 font-bold text-3xl text-white font-chakra-petch">
-          <li onClick={() => scrollToRef(aboutRef)} className="cursor-pointer">About</li>
-          <li onClick={() => scrollToRef(projectsRef)} className="cursor-pointer">Projects</li>
-          <li onClick={() => scrollToRef(contactRef)} className="cursor-pointer">Contact</li>
+          <li onClick={() => scrollToRef(aboutRef)} className="cursor-pointer transition-transform transform hover:scale-110">About</li>
+          <li onClick={() => scrollToRef(projectsRef)} className="cursor-pointer transition-transform transform hover:scale-110">Projects</li>
+          <li onClick={() => scrollToRef(contactRef)} className="cursor-pointer transition-transform transform hover:scale-110">Contact</li>
         </ul>
       </nav>
     </div>
