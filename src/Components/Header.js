@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
-const Header = () => {
+const Header = ({ aboutRef, projectsRef, contactRef }) => {
   const navRef = useRef(null);
 
   useEffect(() => {
@@ -15,10 +15,14 @@ const Header = () => {
         onComplete: () => {
           // Set opacity to 1 after animation completes to keep it visible
           gsap.set(navRef.current, { opacity: 1 });
-        }
+        },
       });
     }
   }, []);
+
+  const scrollToRef = (ref) => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <div>
@@ -28,10 +32,10 @@ const Header = () => {
         style={{ minHeight: "70px" }} // Adjusted minHeight for visibility
       >
         <h1 className="text-3xl text-white font-bold font-chakra-petch">Rohit Manohar</h1>
-        <ul className="flex space-x-8 font-bold text-3xl  text-white font-chakra-petch">
-          <li className="cursor-pointer ">About</li>
-          <li className="cursor-pointer ">Projects</li>
-          <li className="cursor-pointer ">Contact</li>
+        <ul className="flex space-x-8 font-bold text-3xl text-white font-chakra-petch">
+          <li onClick={() => scrollToRef(aboutRef)} className="cursor-pointer">About</li>
+          <li onClick={() => scrollToRef(projectsRef)} className="cursor-pointer">Projects</li>
+          <li onClick={() => scrollToRef(contactRef)} className="cursor-pointer">Contact</li>
         </ul>
       </nav>
     </div>

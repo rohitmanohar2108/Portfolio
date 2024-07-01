@@ -34,6 +34,9 @@ const Portfolio = () => {
   };
 
   const textRef = useRef(null);
+  const aboutRef = useRef(null);
+  const projectsRef = useRef(null);
+  const contactRef = useRef(null);
   
   const quotes = [
     {
@@ -141,19 +144,23 @@ const Portfolio = () => {
 
 
   return (
-    <div className="min-h-screen bg-black  relative overflow-y-auto">
-      <Header />
+    <div className="min-h-screen bg-gray-950  relative overflow-y-auto">
+      <Header
+       aboutRef={aboutRef}
+       projectsRef={projectsRef}
+       contactRef={contactRef}
+       />
       
       <div className="container mx-auto px-4 py-8 flex flex-col items-center">
         <div className="flex flex-col items-center mb-9">
           <motion.div className="mt-8" whileHover={{ scale: 1.1 }}>
-            <Lottie options={defaultOptions} height={400} width={400} />
+            <Lottie options={defaultOptions} height={400} width={500} />
           </motion.div>
-          <h1 className="text-8xl text-pink-700 mt-6 font-chakra-petch" ref={textRef}>
+          <h1 className=" text-8xl text-pink-700 mt-6 font-chakra-petch" ref={textRef}>
             Rohit Manohar
           </h1>
           <motion.h2
-            className="text-4xl text-white font-sans mt-4"
+            className="mb-6 text-4xl text-white font-sans mt-4"
             whileHover={{ scale: 1.1 }}
           >
             Hi, I am Rohit, a Computer Science Student at NITK
@@ -176,8 +183,8 @@ const Portfolio = () => {
           </motion.div>
         </div>
 
-        <motion.div
-          className="border mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
+        <motion.div ref={aboutRef}
+          className="border mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center "
           whileHover={{ scale: 1.05 }}
         >
           <img
@@ -186,7 +193,7 @@ const Portfolio = () => {
             className="w-56 h-56 rounded-full mr-8"
           />
           <div>
-            <h3 className="text-2xl text-pink-600 font-bold mb-4">About Me</h3>
+            <h3 className="text-2xl text-pink-600 font-bold mb-4 transition-transform transform hover:scale-105">About Me</h3>
             <p className="text-pink-600 text-xl">
               I am a Computer Science Student at NITK. I have a deep passion for
               coding and constantly strive to enhance my skills by learning new
@@ -206,39 +213,39 @@ const Portfolio = () => {
                 href="https://github.com/rohitmanohar2108"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-pink-600"
+                className="text-white"
               >
-                <FaGithub className="text-4xl hover:text-white transition-colors" />
+                <FaGithub className="text-4xl hover:text-pink-600 transition-colors" />
               </a>
               <a
                 href="https://www.linkedin.com/in/rohit-manohar-80b949207/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-pink-600"
+                className="text-white"
               >
-                <FaLinkedin className="text-4xl hover:text-white transition-colors" />
+                <FaLinkedin className="text-4xl hover:text-pink-600 transition-colors" />
               </a>
               <a
                 href="https://www.instagram.com/rohitmanohar2108/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-pink-600"
+                className="text-white"
               >
-                <FaInstagram className="text-4xl hover:text-white transition-colors" />
+                <FaInstagram className="text-4xl hover:text-pink-600 transition-colors" />
               </a>
               <a
                 href="https://twitter.com/imrohit372"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-pink-600"
+                className="text-white"
               >
-                <FaTwitter className="text-4xl hover:text-white transition-colors" />
+                <FaTwitter className="text-4xl hover:text-pink-600 transition-colors" />
               </a>
             </div>
           </div>
         </motion.div>
        
-        <motion.div className="mt-8 mt-7" whileHover={{ scale: 1.1 }}>
+        <motion.div className="mt-16 " whileHover={{ scale: 1.1 }}>
             <Lottie options={defaultOptionsTwo} height={400} width={400} />
           </motion.div>
 
@@ -263,11 +270,11 @@ const Portfolio = () => {
           </div>
         </motion.div>
 
-        <motion.div
+        <motion.div ref={projectsRef}
           className="border mt-14 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }}
         >
-          <h2 className="text-3xl text-pink-600 mb-4 text-center font-bold">Projects</h2>
+          <h2 className="text-3xl text-pink-600 hover:text-white mb-7 text-center font-bold transition-transform transform hover:scale-105">Projects</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
@@ -281,7 +288,7 @@ const Portfolio = () => {
                   className="w-full h-56 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl text-pink-600 font-bold mb-2">
+                  <h3 className="text-2xl text-pink-600 hover:text-white font-bold mb-2">
                     {project.title}
                   </h3>
                   <p className="text-pink-600 text-base mb-4">
@@ -300,14 +307,14 @@ const Portfolio = () => {
             ))}
           </div>
         </motion.div>
-        <div className="text-bold text-4xl text-pink-600 mt-11">
+        <div className="text-bold text-4xl text-pink-600 hover:text-white mt-11 transition-transform transform hover:scale-105">
         Coffee with me.
         </div>
         <p className="text-bold text-2xl text-pink-600 mt-6">
         I am always excited to work on some awesome projects, message me and let's discuss over coffee.
         </p>
                 
-        <div className="mt-16">
+        <div ref={contactRef} className="mt-16">
           <button
             className="text-2xl bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors"
             onClick={toggleForm}
