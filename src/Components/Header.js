@@ -27,11 +27,11 @@ const Header = () => {
         className="flex items-center justify-between p-4 mt-4 bg-blue-600 relative"
         style={{ minHeight: "70px" }} // Adjusted minHeight for visibility
       >
-        <h1 className="text-3xl text-white font-bold font-zilla-slab">Rohit Manohar</h1>
-        <ul className="flex space-x-8 font-bold text-3xl  text-white font-zilla-slab">
-          <li className="cursor-pointer font-zilla-slab">About</li>
-          <li className="cursor-pointer font-zilla-slab">Projects</li>
-          <li className="cursor-pointer font-zilla-slab">Contact</li>
+        <h1 className="text-3xl text-white font-bold font-chakra-petch">Rohit Manohar</h1>
+        <ul className="flex space-x-8 font-bold text-3xl  text-white font-chakra-petch">
+          <li className="cursor-pointer ">About</li>
+          <li className="cursor-pointer ">Projects</li>
+          <li className="cursor-pointer ">Contact</li>
         </ul>
       </nav>
     </div>

@@ -134,12 +134,13 @@ const Portfolio = () => {
   return (
     <div className="min-h-screen bg-blue-900 relative overflow-y-auto">
       <Header />
+      
       <div className="container mx-auto px-4 py-8 flex flex-col items-center">
         <div className="flex flex-col items-center mb-9">
           <motion.div className="mt-8" whileHover={{ scale: 1.1 }}>
             <Lottie options={defaultOptions} height={400} width={400} />
           </motion.div>
-          <h1 className="text-8xl text-lime-400 mt-6 font-poppins" ref={textRef}>
+          <h1 className="text-8xl text-lime-400 mt-6 font-chakra-petch" ref={textRef}>
             Rohit Manohar
           </h1>
           <motion.h2
@@ -303,7 +304,7 @@ const Portfolio = () => {
         </div>
 
         {formVisible && (
-          <animated.form style={formAnimation} className="border mt-8 p-8 bg-gray-800 rounded-lg shadow-lg w-full sm:w-3/4 md:w-1/2 lg:w-1/3">
+          <animated.form style={formAnimation} className="border mt-8 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg w-full sm:w-3/4 md:w-1/2 lg:w-1/3">
             <div className="mb-4">
               <label className="block text-white text-lg font-bold mb-2" htmlFor="name">
                 Name
