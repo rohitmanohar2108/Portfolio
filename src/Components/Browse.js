@@ -4,7 +4,7 @@ import Header from "./Header";
 import { motion } from "framer-motion";
 import animationData from "../Animation/animation.json";
 import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaArrowUp } from "react-icons/fa";
-
+import animationDataTwo from "../Animation/animationtwo.json"
 import { useSpring, animated } from "@react-spring/web";
 
 // Import Devicon CSS (already added link)
@@ -19,6 +19,15 @@ const Portfolio = () => {
     loop: true,
     autoplay: true,
     animationData: animationData,
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const defaultOptionsTwo = {
+    loop: true,
+    autoplay: true,
+    animationData: animationDataTwo, // Use the first animation data
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -132,7 +141,7 @@ const Portfolio = () => {
 
 
   return (
-    <div className="min-h-screen bg-blue-900 relative overflow-y-auto">
+    <div className="min-h-screen bg-black  relative overflow-y-auto">
       <Header />
       
       <div className="container mx-auto px-4 py-8 flex flex-col items-center">
@@ -140,7 +149,7 @@ const Portfolio = () => {
           <motion.div className="mt-8" whileHover={{ scale: 1.1 }}>
             <Lottie options={defaultOptions} height={400} width={400} />
           </motion.div>
-          <h1 className="text-8xl text-lime-400 mt-6 font-chakra-petch" ref={textRef}>
+          <h1 className="text-8xl text-pink-700 mt-6 font-chakra-petch" ref={textRef}>
             Rohit Manohar
           </h1>
           <motion.h2
@@ -152,7 +161,7 @@ const Portfolio = () => {
         </div>
 
         <div>
-          <motion.div className="border mt-16 p-8  bg-pink-600 bg-opacity-30 rounded-lg shadow-lg">
+          <motion.div className="border mt-16 p-8  bg-pink-700 bg-opacity-30 rounded-lg shadow-lg">
             <div className="flex items-center space-x-4 overflow-hidden">
               <img
                 src={quotes[currentQuoteIndex].image}
@@ -177,8 +186,8 @@ const Portfolio = () => {
             className="w-56 h-56 rounded-full mr-8"
           />
           <div>
-            <h3 className="text-2xl text-white font-bold mb-4">About Me</h3>
-            <p className="text-white text-xl">
+            <h3 className="text-2xl text-pink-600 font-bold mb-4">About Me</h3>
+            <p className="text-pink-600 text-xl">
               I am a Computer Science Student at NITK. I have a deep passion for
               coding and constantly strive to enhance my skills by learning new
               technologies. I love tackling challenging problems and finding
@@ -192,48 +201,52 @@ const Portfolio = () => {
               excited to engage with like-minded individuals and contribute to the
               tech community.
             </p>
-            <div className="flex mt-4 space-x-4 z-20 relative">
+            <div className="flex mt-4  space-x-4 z-20 relative">
               <a
                 href="https://github.com/rohitmanohar2108"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white"
+                className="text-pink-600"
               >
-                <FaGithub className="text-4xl hover:text-blue-900 transition-colors" />
+                <FaGithub className="text-4xl hover:text-white transition-colors" />
               </a>
               <a
                 href="https://www.linkedin.com/in/rohit-manohar-80b949207/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white"
+                className="text-pink-600"
               >
-                <FaLinkedin className="text-4xl hover:text-blue-900 transition-colors" />
+                <FaLinkedin className="text-4xl hover:text-white transition-colors" />
               </a>
               <a
                 href="https://www.instagram.com/rohitmanohar2108/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white"
+                className="text-pink-600"
               >
-                <FaInstagram className="text-4xl hover:text-blue-900 transition-colors" />
+                <FaInstagram className="text-4xl hover:text-white transition-colors" />
               </a>
               <a
                 href="https://twitter.com/imrohit372"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-white"
+                className="text-pink-600"
               >
-                <FaTwitter className="text-4xl hover:text-blue-900 transition-colors" />
+                <FaTwitter className="text-4xl hover:text-white transition-colors" />
               </a>
             </div>
           </div>
         </motion.div>
+       
+        <motion.div className="mt-8 mt-7" whileHover={{ scale: 1.1 }}>
+            <Lottie options={defaultOptionsTwo} height={400} width={400} />
+          </motion.div>
 
         <motion.div
-          className="border mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
+          className="border mt-14 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
-          <p className="text-3xl text-white mr-4">Skills:</p>
+          <p className="text-3xl text-pink-600 mr-4">Some of the Tech Stack I know:</p>
           <div className="flex mb-5 mt-4 space-x-4">
             <i className="devicon-react-original colored text-4xl" title="React"></i>
             <i className="devicon-javascript-plain colored text-4xl" title="JavaScript"></i>
@@ -251,15 +264,15 @@ const Portfolio = () => {
         </motion.div>
 
         <motion.div
-          className="border mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
+          className="border mt-14 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }}
         >
-          <h2 className="text-3xl text-white mb-4 text-center font-bold">Projects</h2>
+          <h2 className="text-3xl text-pink-600 mb-4 text-center font-bold">Projects</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
-                className="border bg-blue-600 rounded-lg shadow-lg overflow-hidden"
+                className="border bg-black rounded-lg shadow-lg overflow-hidden"
                 whileHover={{ scale: 1.05 }}
               >
                 <img
@@ -268,35 +281,35 @@ const Portfolio = () => {
                   className="w-full h-56 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl text-white font-bold mb-2">
+                  <h3 className="text-2xl text-pink-600 font-bold mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-white text-base mb-4">
+                  <p className="text-pink-600 text-base mb-4">
                     {project.description}
                   </p>
                   <a
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:underline text-base"
+                    className="text-pink-600 hover:underline text-base"
                   >
-                    <FaGithub className="text-3xl hover:text-blue-900 transition-colors" />
+                    <FaGithub className="text-3xl hover:text-white transition-colors" />
                   </a>
                 </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
-        <div className="text-bold text-4xl text-white mt-11">
+        <div className="text-bold text-4xl text-pink-600 mt-11">
         Coffee with me.
         </div>
-        <p className="text-bold text-xl text-white mt-6">
+        <p className="text-bold text-2xl text-pink-600 mt-6">
         I am always excited to work on some awesome projects, message me and let's discuss over coffee.
         </p>
                 
         <div className="mt-16">
           <button
-            className="text-2xl bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors"
+            className="text-2xl bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors"
             onClick={toggleForm}
           >
             Contact Me
@@ -304,9 +317,9 @@ const Portfolio = () => {
         </div>
 
         {formVisible && (
-          <animated.form style={formAnimation} className="border mt-8 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg w-full sm:w-3/4 md:w-1/2 lg:w-1/3">
+          <animated.form style={formAnimation} className="border mt-8 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg w-full sm:w-3/4 md:w-1/2 lg:w-1/3">
             <div className="mb-4">
-              <label className="block text-white text-lg font-bold mb-2" htmlFor="name">
+              <label className="block text-pink-600 text-lg font-bold mb-2" htmlFor="name">
                 Name
               </label>
               <input
@@ -317,7 +330,7 @@ const Portfolio = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-white text-lg font-bold mb-2" htmlFor="email">
+              <label className="block text-pink-600 text-lg font-bold mb-2" htmlFor="email">
                 Email
               </label>
               <input
@@ -328,7 +341,7 @@ const Portfolio = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-white text-lg font-bold mb-2" htmlFor="message">
+              <label className="block text-pink-600 text-lg font-bold mb-2" htmlFor="message">
                 Message
               </label>
               <textarea
@@ -340,7 +353,7 @@ const Portfolio = () => {
             </div>
             <div className="text-center">
               <button
-                className="bg-blue-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors"
+                className="bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors"
                 type="submit"
               >
                 Send Message
