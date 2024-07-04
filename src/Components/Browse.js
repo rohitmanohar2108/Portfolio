@@ -14,7 +14,7 @@ import animationDataTwo from "../Animation/animationtwo.json";
 import { useSpring, animated } from "@react-spring/web";
 import animationDatathree from "../Animation/animationthree.json";
 import animationDatafour from "../Animation/animationfour.json";
-import animationDatafive from "../Animation/animationfive.json"
+import animationDatafive from "../Animation/animationfive.json";
 // Import Devicon CSS (already added link)
 import "devicon/devicon.min.css";
 import Footer from "./Footer";
@@ -128,20 +128,25 @@ const Portfolio = () => {
       description:
         "I created a Netflix clone using ReactJs and Tailwindcss. This is a clone of Netflix website. And played a lot with Api.",
       githubLink: "https://github.com/rohitmanohar2108/FilmNinja",
+      
     },
     {
       title: "Feast",
-      image: "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D0%26deploymentId%3Ddpl_67VjCajdwZiQjimtTHp4fJs8Cm6M%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_EMUYSbisdADPiTCeU3XxAy17N6hL",
+      image:
+        "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D0%26deploymentId%3Ddpl_67VjCajdwZiQjimtTHp4fJs8Cm6M%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_EMUYSbisdADPiTCeU3XxAy17N6hL",
       description:
         "A simple and beautiful Restaurent Website made with Pure React JS. With some beautiful Animation and data fetching using API.",
       githubLink: "https://github.com/rohitmanohar2108/feast",
+      
     },
     {
       title: "Portfolio",
-      image: "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D0%26deploymentId%3Ddpl_67VjCajdwZiQjimtTHp4fJs8Cm6M%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_EMUYSbisdADPiTCeU3XxAy17N6hL",
+      image:
+        "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D0%26deploymentId%3Ddpl_67VjCajdwZiQjimtTHp4fJs8Cm6M%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_EMUYSbisdADPiTCeU3XxAy17N6hL",
       description:
         "A simple and beautiful Portfolio Website made with Pure React JS. With some beautiful Animation.",
       githubLink: "https://github.com/rohitmanohar2108/Portfolio",
+      
     },
   ];
 
@@ -192,7 +197,6 @@ const Portfolio = () => {
             <motion.div className="mr-8" whileHover={{ scale: 1.1 }}>
               <Lottie options={defaultOptions} height={400} width={400} />
             </motion.div>
-            
           </div>
           <h1
             className="text-8xl text-indigo-600 mt-6 font-chakra-petch"
@@ -350,7 +354,7 @@ const Portfolio = () => {
           </div>
         </motion.div>
         <div className="mt-32 mb-24">
-        <Lottie options={defaultOptionsfive} height={200} width={880} />
+          <Lottie options={defaultOptionsfive} height={200} width={880} />
         </div>
         <motion.div
           ref={projectsRef}
@@ -387,6 +391,7 @@ const Portfolio = () => {
                   >
                     <FaGithub className="text-3xl hover:text-white transition-colors" />
                   </a>
+                 
                 </div>
               </motion.div>
             ))}
