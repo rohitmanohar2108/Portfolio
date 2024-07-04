@@ -3,16 +3,23 @@ import Lottie from "react-lottie";
 import Header from "./Header";
 import { motion } from "framer-motion";
 import animationData from "../Animation/animation.json";
-import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaArrowUp } from "react-icons/fa";
-import animationDataTwo from "../Animation/animationtwo.json"
+import {
+  FaGithub,
+  FaLinkedin,
+  FaInstagram,
+  FaTwitter,
+  FaArrowUp,
+} from "react-icons/fa";
+import animationDataTwo from "../Animation/animationtwo.json";
 import { useSpring, animated } from "@react-spring/web";
-import animationDatathree from "../Animation/animationthree.json"
+import animationDatathree from "../Animation/animationthree.json";
+import animationDatafour from "../Animation/animationfour.json";
+import animationDatafive from "../Animation/animationfive.json"
 // Import Devicon CSS (already added link)
 import "devicon/devicon.min.css";
 import Footer from "./Footer";
 
 const Portfolio = () => {
-
   const [showScrollButton, setShowScrollButton] = useState(false);
 
   const defaultOptions = {
@@ -42,11 +49,29 @@ const Portfolio = () => {
     },
   };
 
+  const defaultOptionsfour = {
+    loop: true,
+    autoplay: true,
+    animationData: animationDatafour, // Use the first animation data
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const defaultOptionsfive = {
+    loop: true,
+    autoplay: true,
+    animationData: animationDatafive, // Use the first animation data
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
   const textRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
-  
+
   const quotes = [
     {
       text: " 'Because the people who are crazy enough to think they can change the world are the ones who do.'",
@@ -61,7 +86,8 @@ const Portfolio = () => {
     {
       text: "' I think it is possible for ordinary people to choose to be extraordinary.'",
       author: "Elon Musk",
-      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCPblxoSQ8E0dWaakrQDUt73M_hS63hE9cg&s",
+      image:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCPblxoSQ8E0dWaakrQDUt73M_hS63hE9cg&s",
     },
     {
       text: "'See, you not only have to be a good coder to create a system like Linux, you have to be a sneaky bastard too.'",
@@ -76,7 +102,8 @@ const Portfolio = () => {
     {
       text: " 'You don’t need to be a genius or a visionary, or even a college graduate for that matter, to be successful. You just need framework and a dream.'",
       author: "Michael Dell",
-      image: "https://imageio.forbes.com/specials-images/imageserve/615c93f9da61f2ff5b9ecf9b/0x0.jpg?format=jpg&crop=1678,1679,x0,y118,safe&height=416&width=416&fit=bounds",
+      image:
+        "https://imageio.forbes.com/specials-images/imageserve/615c93f9da61f2ff5b9ecf9b/0x0.jpg?format=jpg&crop=1678,1679,x0,y118,safe&height=416&width=416&fit=bounds",
     },
   ];
 
@@ -151,24 +178,28 @@ const Portfolio = () => {
     };
   }, []);
 
-
   return (
     <div className="min-h-screen bg-gray-950  relative overflow-y-auto">
       <Header
-       aboutRef={aboutRef}
-       projectsRef={projectsRef}
-       contactRef={contactRef}
-       />
-      
+        aboutRef={aboutRef}
+        projectsRef={projectsRef}
+        contactRef={contactRef}
+      />
+
       <div className="container mx-auto px-4 py-8 flex flex-col items-center">
         <div className="flex flex-col items-center mb-9">
-          <motion.div className="mt-8" whileHover={{ scale: 1.1 }}>
-            <Lottie options={defaultOptions} height={400} width={500} />
-          </motion.div>
-          <div>
-          <Lottie options={defaultOptionsThree} height={300} width={300} />
+          <div className="flex flex-row items-center mt-8">
+            <motion.div className="mr-8" whileHover={{ scale: 1.1 }}>
+              <Lottie options={defaultOptions} height={400} width={400} />
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.1 }}>
+              <Lottie options={defaultOptionsThree} height={300} width={300} />
+            </motion.div>
           </div>
-          <h1 className=" text-8xl text-indigo-600 mt-6 font-chakra-petch" ref={textRef}>
+          <h1
+            className="text-8xl text-indigo-600 mt-6 font-chakra-petch"
+            ref={textRef}
+          >
             Rohit Manohar
           </h1>
           <motion.h2
@@ -188,14 +219,19 @@ const Portfolio = () => {
                 className="h-56 w-56 object-cover rounded-full"
               />
               <div className="flex-1">
-                <p className="text-3xl text-white font-dancing-script">{quotes[currentQuoteIndex].text}</p>
-                <p className="text-xl mt-3 text-white">- {quotes[currentQuoteIndex].author}</p>
+                <p className="text-3xl text-white font-dancing-script">
+                  {quotes[currentQuoteIndex].text}
+                </p>
+                <p className="text-xl mt-3 text-white">
+                  - {quotes[currentQuoteIndex].author}
+                </p>
               </div>
             </div>
           </motion.div>
         </div>
 
-        <motion.div ref={aboutRef}
+        <motion.div
+          ref={aboutRef}
           className="border-double border-4 border-indigo-600 outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center "
           whileHover={{ scale: 1.05 }}
         >
@@ -205,20 +241,22 @@ const Portfolio = () => {
             className="w-56 h-56 rounded-full mr-8"
           />
           <div>
-            <h3 className="text-2xl text-pink-600 font-bold mb-4 transition-transform transform hover:scale-105">About Me</h3>
+            <h3 className="text-2xl text-pink-600 font-bold mb-4 transition-transform transform hover:scale-105">
+              About Me
+            </h3>
             <p className="text-pink-600 text-xl">
               I am a Computer Science Student at NITK. I have a deep passion for
               coding and constantly strive to enhance my skills by learning new
               technologies. I love tackling challenging problems and finding
-              innovative solutions. My areas of interest include web development,
-              Programming and many more. I am always eager to collaborate on
-              exciting projects and learn from others in the field. When I am not
-              coding, I enjoy exploring the latest tech trends and participating
-              in hackathons and coding competitions. Let's connect and create
-              something amazing together! Whether it's building a new app, diving
-              into a complex algorithm, or simply exchanging knowledge, I am
-              excited to engage with like-minded individuals and contribute to the
-              tech community.
+              innovative solutions. My areas of interest include web
+              development, Programming and many more. I am always eager to
+              collaborate on exciting projects and learn from others in the
+              field. When I am not coding, I enjoy exploring the latest tech
+              trends and participating in hackathons and coding competitions.
+              Let's connect and create something amazing together! Whether it's
+              building a new app, diving into a complex algorithm, or simply
+              exchanging knowledge, I am excited to engage with like-minded
+              individuals and contribute to the tech community.
             </p>
             <div className="flex mt-4  space-x-4 z-20 relative">
               <a
@@ -256,37 +294,74 @@ const Portfolio = () => {
             </div>
           </div>
         </motion.div>
-       
+
         <motion.div className="mt-16 " whileHover={{ scale: 1.1 }}>
-            <Lottie options={defaultOptionsTwo} height={400} width={400} />
-          </motion.div>
+          <Lottie options={defaultOptionsTwo} height={400} width={400} />
+        </motion.div>
 
         <motion.div
           className="border-double border-4 border-indigo-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
-          <p className="text-3xl text-pink-600 mr-4">Some of the Tech Stack I know:</p>
+          <p className="text-3xl text-pink-600 mr-4">
+            Some of the Tech Stack I know:
+          </p>
           <div className="flex mb-5 mt-4 space-x-4">
-            <i className="devicon-react-original colored text-4xl" title="React"></i>
-            <i className="devicon-javascript-plain colored text-4xl" title="JavaScript"></i>
-            <i className="devicon-redux-plain colored text-4xl" title="Redux"></i>
-            <i className="devicon-html5-plain colored text-4xl" title="HTML5"></i>
+            <i
+              className="devicon-react-original colored text-4xl"
+              title="React"
+            ></i>
+            <i
+              className="devicon-javascript-plain colored text-4xl"
+              title="JavaScript"
+            ></i>
+            <i
+              className="devicon-redux-plain colored text-4xl"
+              title="Redux"
+            ></i>
+            <i
+              className="devicon-html5-plain colored text-4xl"
+              title="HTML5"
+            ></i>
             <i className="devicon-css3-plain colored text-4xl" title="CSS3"></i>
-            <i className="devicon-tailwindcss-plain colored text-4xl" title="Tailwind CSS"></i>
+            <i
+              className="devicon-tailwindcss-plain colored text-4xl"
+              title="Tailwind CSS"
+            ></i>
             <i className="devicon-c-plain colored text-4xl" title="C"></i>
-            <i className="devicon-cplusplus-plain colored text-4xl" title="C++"></i>
-            <i className="devicon-reactrouter-plain colored text-4xl" title="ReactRouter"></i>
-            <i className="devicon-ubuntu-plain colored text-4xl" title="Ubuntu"></i>
-            <i className="devicon-linux-plain colored-white text-4xl" title="Linux"></i>
-            <i className="devicon-canva-plain colored text-4xl" title="Canva"></i>
+            <i
+              className="devicon-cplusplus-plain colored text-4xl"
+              title="C++"
+            ></i>
+            <i
+              className="devicon-reactrouter-plain colored text-4xl"
+              title="ReactRouter"
+            ></i>
+            <i
+              className="devicon-ubuntu-plain colored text-4xl"
+              title="Ubuntu"
+            ></i>
+            <i
+              className="devicon-linux-plain colored-white text-4xl"
+              title="Linux"
+            ></i>
+            <i
+              className="devicon-canva-plain colored text-4xl"
+              title="Canva"
+            ></i>
           </div>
         </motion.div>
-
-        <motion.div ref={projectsRef}
+        <div className="mt-32 mb-24">
+        <Lottie options={defaultOptionsfive} height={200} width={880} />
+        </div>
+        <motion.div
+          ref={projectsRef}
           className="border-double border-4 border-indigo-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }}
         >
-          <h2 className="text-3xl text-pink-600 hover:text-white mb-7 text-center font-bold transition-transform transform hover:scale-105">Projects</h2>
+          <h2 className="text-3xl text-pink-600 hover:text-white mb-7 text-center font-bold transition-transform transform hover:scale-105">
+            Projects
+          </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
@@ -320,15 +395,20 @@ const Portfolio = () => {
           </div>
         </motion.div>
         <div className="text-bold text-4xl text-pink-600 hover:text-white mt-11 transition-transform transform hover:scale-105">
-        Coffee with me.
+          Coffee with me.
         </div>
         <p className="text-bold text-2xl text-pink-600 mt-6">
-        I am always excited to work on some awesome projects, message me and let's discuss over coffee.
+          I am always excited to work on some awesome projects, message me and
+          let's discuss over coffee.
         </p>
-                
-        <div ref={contactRef} className="mt-16">
+
+        <div
+          ref={contactRef}
+          className="mt-16 flex items-center justify-between mr-48"
+        >
+          <Lottie options={defaultOptionsfour} height={200} width={200} />
           <button
-            className="text-2xl bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors shadow-xl"
+            className="text-2xl bg-pink-600 text-white font-bold py-2 px-4 ml-3 rounded-lg hover:bg-blue-800 transition-colors shadow-xl"
             onClick={toggleForm}
           >
             Contact Me
@@ -336,9 +416,15 @@ const Portfolio = () => {
         </div>
 
         {formVisible && (
-          <animated.form style={formAnimation} className="border border-style:dashed mt-8 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg w-full sm:w-3/4 md:w-1/2 lg:w-1/3 transition-transform transform hover:scale-105">
+          <animated.form
+            style={formAnimation}
+            className="border border-style:dashed mt-8 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg w-full sm:w-3/4 md:w-1/2 lg:w-1/3 transition-transform transform hover:scale-105"
+          >
             <div className="mb-4">
-              <label className="block text-pink-600 text-lg font-bold mb-2" htmlFor="name">
+              <label
+                className="block text-pink-600 text-lg font-bold mb-2"
+                htmlFor="name"
+              >
                 Name
               </label>
               <input
@@ -349,7 +435,10 @@ const Portfolio = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-pink-600 text-lg font-bold mb-2" htmlFor="email">
+              <label
+                className="block text-pink-600 text-lg font-bold mb-2"
+                htmlFor="email"
+              >
                 Email
               </label>
               <input
@@ -360,7 +449,10 @@ const Portfolio = () => {
               />
             </div>
             <div className="mb-4">
-              <label className="block text-pink-600 text-lg font-bold mb-2" htmlFor="message">
+              <label
+                className="block text-pink-600 text-lg font-bold mb-2"
+                htmlFor="message"
+              >
                 Message
               </label>
               <textarea
@@ -381,8 +473,7 @@ const Portfolio = () => {
           </animated.form>
         )}
       </div>
-      <div>
-      </div>
+      <div></div>
       {showScrollButton && (
         <button
           onClick={scrollToTop}
