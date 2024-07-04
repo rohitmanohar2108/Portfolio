@@ -131,17 +131,17 @@ const Portfolio = () => {
     },
     {
       title: "Feast",
-      image: "https://do6gp1uxl3luu.cloudfront.net/projects/FoodAppProject.png",
+      image: "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D0%26deploymentId%3Ddpl_67VjCajdwZiQjimtTHp4fJs8Cm6M%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_EMUYSbisdADPiTCeU3XxAy17N6hL",
       description:
         "A simple and beautiful Restaurent Website made with Pure React JS. With some beautiful Animation and data fetching using API.",
       githubLink: "https://github.com/rohitmanohar2108/feast",
     },
     {
-      title: "YouTube",
-      image: "https://do6gp1uxl3luu.cloudfront.net/projects/YoutubeProject.png",
+      title: "Portfolio",
+      image: "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D0%26deploymentId%3Ddpl_67VjCajdwZiQjimtTHp4fJs8Cm6M%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_EMUYSbisdADPiTCeU3XxAy17N6hL",
       description:
-        "A simple and beautiful Restaurent Website made with Pure React JS. With some beautiful Animation and data fetching using API.",
-      githubLink: "https://github.com/rohitmanohar2108/feast",
+        "A simple and beautiful Portfolio Website made with Pure React JS. With some beautiful Animation.",
+      githubLink: "https://github.com/rohitmanohar2108/Portfolio",
     },
   ];
 
