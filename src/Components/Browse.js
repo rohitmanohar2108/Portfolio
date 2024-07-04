@@ -192,9 +192,7 @@ const Portfolio = () => {
             <motion.div className="mr-8" whileHover={{ scale: 1.1 }}>
               <Lottie options={defaultOptions} height={400} width={400} />
             </motion.div>
-            <motion.div whileHover={{ scale: 1.1 }}>
-              <Lottie options={defaultOptionsThree} height={300} width={300} />
-            </motion.div>
+            
           </div>
           <h1
             className="text-8xl text-indigo-600 mt-6 font-chakra-petch"
