@@ -131,23 +131,34 @@ const Portfolio = () => {
       
     },
     {
-      title: "Feast",
+      title: "NewScope",
       image:
-        "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D0%26deploymentId%3Ddpl_67VjCajdwZiQjimtTHp4fJs8Cm6M%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_EMUYSbisdADPiTCeU3XxAy17N6hL",
+        "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D1%26deploymentId%3Ddpl_AHVaSSa3whBd2HhaMMjdvaPkb9mW%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_2hmfJkPd9Zdg3JRu5ruKqVazZ59j",
       description:
-        "A simple and beautiful Restaurent Website made with Pure React JS. With some beautiful Animation and data fetching using API.",
-      githubLink: "https://github.com/rohitmanohar2108/feast",
+        "A simple and beautiful News Website made with Pure React JS by data fetching using NEWS API.",
+      githubLink: "https://github.com/rohitmanohar2108/Newscope",
       
     },
     {
       title: "Portfolio",
       image:
-        "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D0%26deploymentId%3Ddpl_67VjCajdwZiQjimtTHp4fJs8Cm6M%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_EMUYSbisdADPiTCeU3XxAy17N6hL",
+        "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D1%26deploymentId%3Ddpl_7Y9FpWv69queCmGADmVNmVJdG2mn%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_FiBQnYrddQgY6gXbDfYW3CAz2ag7",
       description:
         "A simple and beautiful Portfolio Website made with Pure React JS. With some beautiful Animation.",
       githubLink: "https://github.com/rohitmanohar2108/Portfolio",
       
     },
+    {
+      title: "Page Replacement Algo",
+      image:
+        "https://cdn.educba.com/academy/wp-content/uploads/2020/04/Page-Replacement-Algorithms.jpg",
+      description:
+        "Developed a dynamic web application using HTML, CSS, Bootstrap, and jQuery to simulate and analyze FIFO, LRU,and Optimal page replacement algorithms.",
+      githubLink: "https://github.com/rohitmanohar2108/OS-LAB-PROJECT/tree/main/Page-Replacement",
+      
+    },
+    
+   
   ];
 
   const [formVisible, setFormVisible] = useState(false);
