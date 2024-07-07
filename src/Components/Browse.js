@@ -213,7 +213,7 @@ const Portfolio = () => {
         </div>
 
         <div>
-          <motion.div className="border-double border-4 border-indigo-600 outline hover:outline-2 ring-2 mt-16 p-8  bg-pink-700 bg-opacity-30 rounded-lg shadow-lg">
+          <motion.div className="border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg">
             <div className="flex items-center space-x-4 overflow-hidden">
               <img
                 src={quotes[currentQuoteIndex].image}
@@ -234,11 +234,11 @@ const Portfolio = () => {
 
         <motion.div
           ref={aboutRef}
-          className="border-double border-4 border-indigo-600 outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center "
+          className="border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center "
           whileHover={{ scale: 1.05 }}
         >
           <img
-            src="https://media-sin6-2.cdn.whatsapp.net/v/t61.24694-24/426021548_762504602111403_3961460611984576911_n.jpg?ccb=11-4&oh=01_Q5AaIA4o3BITHKBtjO9y596jqVhz6qE02EjFppCgCIVcvZn1&oe=66869524&_nc_sid=e6ed6c&_nc_cat=105"
+            src="https://media-hyd1-1.cdn.whatsapp.net/v/t61.24694-24/426021548_762504602111403_3961460611984576911_n.jpg?ccb=11-4&oh=01_Q5AaIB4qk0fX_6ldzIetcx4k2BcCgb2wpXhhSwyLIhNxyf3I&oe=6697B8A4&_nc_sid=e6ed6c&_nc_cat=105"
             alt="Rohit"
             className="w-56 h-56 rounded-full mr-8"
           />
@@ -302,7 +302,7 @@ const Portfolio = () => {
         </motion.div>
 
         <motion.div
-          className="border-double border-4 border-indigo-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg flex items-center"
+          className="border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
           <p className="text-3xl text-pink-600 mr-4">
@@ -358,7 +358,7 @@ const Portfolio = () => {
         </div>
         <motion.div
           ref={projectsRef}
-          className="border-double border-4 border-indigo-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg"
+          className="border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }}
         >
           <h2 className="text-3xl text-pink-600 hover:text-white mb-7 text-center font-bold transition-transform transform hover:scale-105">
@@ -411,7 +411,7 @@ const Portfolio = () => {
         >
           <Lottie options={defaultOptionsfour} height={200} width={200} />
           <button
-            className="text-2xl bg-pink-600 text-white font-bold py-2 px-4 ml-3 rounded-lg hover:bg-blue-800 transition-colors shadow-xl"
+            className="text-2xl bg-pink-600 text-white font-bold py-2 px-4 ml-3 rounded-lg hover:bg-pink-700 transition-colors shadow-xl"
             onClick={toggleForm}
           >
             Contact Me
@@ -467,7 +467,7 @@ const Portfolio = () => {
             </div>
             <div className="text-center">
               <button
-                className="bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-800 transition-colors"
+                className="bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-700 transition-colors"
                 type="submit"
               >
                 Send Message
