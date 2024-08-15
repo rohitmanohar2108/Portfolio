@@ -505,7 +505,7 @@ const Portfolio = () => {
           ref={contactRef}
           className="mt-16 flex items-center justify-between mr-48"
         >
-          <Lottie options={defaultOptionsfour} height={200} width={200} />
+          <Lottie options={defaultOptionsfour} height={400} width={400} />
           <button
             className="text-4xl  text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 font-bold py-2 px-6 ml-3 rounded-lg  transition-colors shadow-xl"
             onClick={toggleForm}
