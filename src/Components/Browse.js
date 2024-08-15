@@ -408,7 +408,7 @@ const Portfolio = () => {
         </div>
         <motion.div
           ref={projectsRef}
-          className="border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
+          className="border-multicolor outline hover:outline-2 ring-2 mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }}
         >
           <motion.h2
@@ -429,7 +429,7 @@ const Portfolio = () => {
             {projects.map((project, index) => (
               <motion.div
                 key={index}
-                className="shadow-xl shadow-cyan-500/50 border bg-black rounded-lg shadow-lg overflow-hidden"
+                className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 bg-black rounded-lg shadow-lg overflow-hidden"
                 whileHover={{ scale: 1.05 }}
               >
                 <img
