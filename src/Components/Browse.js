@@ -255,7 +255,7 @@ const Portfolio = () => {
 
         <motion.div
           ref={aboutRef}
-          className=" shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg "
+          className=" shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
           <img
@@ -342,7 +342,7 @@ const Portfolio = () => {
         </motion.div>
 
         <motion.div
-          className="shadow-xl shadow-cyan-500/50 border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
+          className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
           <motion.p
