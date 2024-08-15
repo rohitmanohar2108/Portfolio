@@ -207,7 +207,7 @@ const Portfolio = () => {
             </motion.div>
           </div>
           <motion.h1
-            className="text-8xl text-cyan-400 mt-6 font-chakra-petch"
+            className="text-9xl text-cyan-400 mt-6 font-chakra-petch"
             ref={textRef}
             whileHover={{
               scale: 1.1,
@@ -216,11 +216,11 @@ const Portfolio = () => {
             }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
           >
-            Rohit Manohar
+            Hi👋!
           </motion.h1>
-          
+
           <motion.h2
-            className="mb-6 text-4xl text-white font-sans mt-4"
+            className="mb-6 text-6xl text-white font-sans mt-4"
             whileHover={{
               y: -10,
               opacity: 0.8,
@@ -229,9 +229,13 @@ const Portfolio = () => {
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-            Hi, I am Rohit, a Computer Science Student at NITK
+             I'm Rohit, a Computer Science Student at NITK
           </motion.h2>
-          
+          <div className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center">
+            <p className="mb-3 text-3xl text-white font-sans">
+              Seeking Intership Opportunities
+            </p>
+          </div>
         </div>
 
         <div>
