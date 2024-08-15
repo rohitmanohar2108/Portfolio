@@ -218,7 +218,7 @@ const Portfolio = () => {
           >
             Rohit Manohar
           </motion.h1>
-
+          
           <motion.h2
             className="mb-6 text-4xl text-white font-sans mt-4"
             whileHover={{
@@ -231,6 +231,7 @@ const Portfolio = () => {
           >
             Hi, I am Rohit, a Computer Science Student at NITK
           </motion.h2>
+          
         </div>
 
         <div>
@@ -408,7 +409,7 @@ const Portfolio = () => {
         </div>
         <motion.div
           ref={projectsRef}
-          className="border-multicolor outline hover:outline-2 ring-2 mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
+          className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }}
         >
           <motion.h2
@@ -425,12 +426,13 @@ const Portfolio = () => {
             Projects
           </motion.h2>
 
-          <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
-                className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 bg-black rounded-lg shadow-lg overflow-hidden"
+                className="shadow-xl shadow-cyan-500/50 border bg-black rounded-lg shadow-lg overflow-hidden"
                 whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3, ease: "easeInOut" }}
               >
                 <img
                   src={project.image}
@@ -448,15 +450,17 @@ const Portfolio = () => {
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-pink-600 hover:underline text-base"
+                    className="text-pink-600 hover:underline text-base flex items-center"
                   >
-                    <FaGithub className="text-3xl hover:text-white transition-colors" />
+                    <FaGithub className="text-3xl hover:text-white transition-colors mr-2" />
+                    View on GitHub
                   </a>
                 </div>
               </motion.div>
             ))}
           </div>
         </motion.div>
+
         <motion.div
           className="font-bold text-4xl text-pink-600 mt-11 transition-transform transform"
           whileHover={{
@@ -473,20 +477,25 @@ const Portfolio = () => {
         </motion.div>
 
         <motion.p
-  className="text-bold text-2xl text-pink-600 mt-6"
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  whileHover={{
-    scale: 1.05,
-    color: "#1E90FF",
-    transition: { repeat: Infinity, repeatType: "reverse", duration: 1, ease: "easeInOut" },
-    textShadow: "0px 4px 6px rgba(255, 69, 0, 0.7)"
-  }}
-  transition={{ duration: 0.6, ease: "easeOut" }}
->
-  I am always excited to work on some awesome projects, message me and let's discuss over coffee.
-</motion.p>
-
+          className="text-bold text-2xl text-pink-600 mt-6"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          whileHover={{
+            scale: 1.05,
+            color: "#1E90FF",
+            transition: {
+              repeat: Infinity,
+              repeatType: "reverse",
+              duration: 1,
+              ease: "easeInOut",
+            },
+            textShadow: "0px 4px 6px rgba(255, 69, 0, 0.7)",
+          }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
+          I am always excited to work on some awesome projects, message me and
+          let's discuss over coffee.
+        </motion.p>
 
         <div
           ref={contactRef}
