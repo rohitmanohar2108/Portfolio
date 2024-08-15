@@ -81,7 +81,8 @@ const Portfolio = () => {
     {
       text: " 'Success is a lousy teacher. It seduces smart people into thinking they can't lose.'",
       author: "Bill Gates",
-      image: "https://akshaysaini.in/img/quotes/bill-gates.jpg",
+      image:
+        "https://pbs.twimg.com/profile_images/1674815862879178752/nTGMV1Eo_400x400.jpg",
     },
     {
       text: "' I think it is possible for ordinary people to choose to be extraordinary.'",
@@ -97,7 +98,8 @@ const Portfolio = () => {
     {
       text: "'If you're changing the world, you're working on important things. You're excited to get up in the morning.'",
       author: "Larry Page",
-      image: "https://akshaysaini.in/img/quotes/larry-page.jpg",
+      image:
+        "https://imageio.forbes.com/specials-images/imageserve/5c76bcaaa7ea43100043c836/0x0.jpg?format=jpg&crop=1795,1795,x227,y22,safe&height=416&width=416&fit=bounds",
     },
     {
       text: " 'You don’t need to be a genius or a visionary, or even a college graduate for that matter, to be successful. You just need framework and a dream.'",
@@ -128,7 +130,6 @@ const Portfolio = () => {
       description:
         "I created a Netflix clone using ReactJs and Tailwindcss. This is a clone of Netflix website. And played a lot with Api.",
       githubLink: "https://github.com/rohitmanohar2108/FilmNinja",
-      
     },
     {
       title: "NewScope",
@@ -137,7 +138,6 @@ const Portfolio = () => {
       description:
         "A simple and beautiful News Website made with Pure React JS by data fetching using NEWS API.",
       githubLink: "https://github.com/rohitmanohar2108/Newscope",
-      
     },
     {
       title: "Portfolio",
@@ -146,7 +146,6 @@ const Portfolio = () => {
       description:
         "A simple and beautiful Portfolio Website made with Pure React JS. With some beautiful Animation.",
       githubLink: "https://github.com/rohitmanohar2108/Portfolio",
-      
     },
     {
       title: "Page Replacement Algo",
@@ -154,11 +153,9 @@ const Portfolio = () => {
         "https://cdn.educba.com/academy/wp-content/uploads/2020/04/Page-Replacement-Algorithms.jpg",
       description:
         "Developed a dynamic web application using HTML, CSS, Bootstrap, and jQuery to simulate and analyze FIFO, LRU,and Optimal page replacement algorithms.",
-      githubLink: "https://github.com/rohitmanohar2108/OS-LAB-PROJECT/tree/main/Page-Replacement",
-      
+      githubLink:
+        "https://github.com/rohitmanohar2108/OS-LAB-PROJECT/tree/main/Page-Replacement",
     },
-    
-   
   ];
 
   const [formVisible, setFormVisible] = useState(false);
@@ -210,7 +207,7 @@ const Portfolio = () => {
             </motion.div>
           </div>
           <h1
-            className="text-8xl text-indigo-600 mt-6 font-chakra-petch"
+            className="text-8xl text-cyan-400 mt-6 font-chakra-petch"
             ref={textRef}
           >
             Rohit Manohar
@@ -224,7 +221,7 @@ const Portfolio = () => {
         </div>
 
         <div>
-          <motion.div className="border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg">
+          <motion.div className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg">
             <div className="flex items-center space-x-4 overflow-hidden">
               <img
                 src={quotes[currentQuoteIndex].image}
@@ -245,16 +242,16 @@ const Portfolio = () => {
 
         <motion.div
           ref={aboutRef}
-          className="border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center "
+          className=" shadow-xl shadow-cyan-500/50 border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center "
           whileHover={{ scale: 1.05 }}
         >
           <img
-            src="https://media-hyd1-1.cdn.whatsapp.net/v/t61.24694-24/426021548_762504602111403_3961460611984576911_n.jpg?ccb=11-4&oh=01_Q5AaIB4qk0fX_6ldzIetcx4k2BcCgb2wpXhhSwyLIhNxyf3I&oe=6697B8A4&_nc_sid=e6ed6c&_nc_cat=105"
+            src="https://eu-central.storage.cloudconvert.com/tasks/c6c19d99-5c79-4247-b7be-2e723dad9401/WhatsApp%20Image%202024-08-16%20at%2000.47.15.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20240815%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20240815T191905Z&X-Amz-Expires=86400&X-Amz-Signature=a337760ebc1a4a94d1e3bdfa566aaac19b6e0d10b33560a9111c39e99be89e27&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22WhatsApp%20Image%202024-08-16%20at%2000.47.15.png%22&response-content-type=image%2Fpng&x-id=GetObject"
             alt="Rohit"
             className="w-56 h-56 rounded-full mr-8"
           />
           <div>
-            <h3 className="text-2xl text-pink-600 font-bold mb-4 transition-transform transform hover:scale-105">
+            <h3 className=" text-2xl text-pink-600 font-bold mb-4 transition-transform transform hover:scale-105">
               About Me
             </h3>
             <p className="text-pink-600 text-xl">
@@ -313,7 +310,7 @@ const Portfolio = () => {
         </motion.div>
 
         <motion.div
-          className="border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
+          className="shadow-xl shadow-cyan-500/50 border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
           <p className="text-3xl text-pink-600 mr-4">
@@ -375,11 +372,11 @@ const Portfolio = () => {
           <h2 className="text-3xl text-pink-600 hover:text-white mb-7 text-center font-bold transition-transform transform hover:scale-105">
             Projects
           </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
                 key={index}
-                className="border bg-black rounded-lg shadow-lg overflow-hidden"
+                className="shadow-xl shadow-cyan-500/50 border bg-black rounded-lg shadow-lg overflow-hidden"
                 whileHover={{ scale: 1.05 }}
               >
                 <img
@@ -402,7 +399,6 @@ const Portfolio = () => {
                   >
                     <FaGithub className="text-3xl hover:text-white transition-colors" />
                   </a>
-                 
                 </div>
               </motion.div>
             ))}
@@ -422,7 +418,7 @@ const Portfolio = () => {
         >
           <Lottie options={defaultOptionsfour} height={200} width={200} />
           <button
-            className="text-2xl bg-pink-600 text-white font-bold py-2 px-4 ml-3 rounded-lg hover:bg-pink-700 transition-colors shadow-xl"
+            className="text-4xl  text-white bg-gradient-to-r from-pink-400 via-pink-500 to-pink-600 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-pink-300 dark:focus:ring-pink-800 shadow-lg shadow-pink-500/50 dark:shadow-lg dark:shadow-pink-800/80 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 font-bold py-2 px-6 ml-3 rounded-lg  transition-colors shadow-xl"
             onClick={toggleForm}
           >
             Contact Me
@@ -432,7 +428,7 @@ const Portfolio = () => {
         {formVisible && (
           <animated.form
             style={formAnimation}
-            className="border border-style:dashed mt-8 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg w-full sm:w-3/4 md:w-1/2 lg:w-1/3 transition-transform transform hover:scale-105"
+            className="shadow-xl shadow-cyan-500/50 border border-style:dashed mt-8 p-8 bg-pink-600 bg-opacity-30 rounded-lg shadow-lg w-full sm:w-3/4 md:w-1/2 lg:w-1/3 transition-transform transform hover:scale-105"
           >
             <div className="mb-4">
               <label
@@ -478,7 +474,7 @@ const Portfolio = () => {
             </div>
             <div className="text-center">
               <button
-                className="bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-700 transition-colors"
+                className="shadow-md shadow-pink-300/50 bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-700 transition-colors"
                 type="submit"
               >
                 Send Message

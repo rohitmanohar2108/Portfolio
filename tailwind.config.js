@@ -17,6 +17,9 @@ module.exports = {
         'playfair-display': ['Playfair Display', 'serif'],
 
       },
+      borderColor: {
+        'multicolor': 'linear-gradient(45deg, red, blue, green, yellow)',
+      },
     },
   },
   variants: {},
