@@ -29,13 +29,13 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
         <div className="ml-16 flex text-xl space-x-4">
           <button
             onClick={() => scrollToRef(aboutRef)}
-            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 bg-white text-white px-6 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
+            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 text-white px-6 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
           >
             About
           </button>
           <button
             onClick={() => scrollToRef(projectsRef)}
-            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 bg-cyan-500 bg-white text-white px-4 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
+            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 bg-cyan-500 text-white px-4 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
           >
             Projects
           </button>
