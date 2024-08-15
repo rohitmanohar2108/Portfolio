@@ -206,15 +206,27 @@ const Portfolio = () => {
               <Lottie options={defaultOptions} height={400} width={400} />
             </motion.div>
           </div>
-          <h1
+          <motion.h1
             className="text-8xl text-cyan-400 mt-6 font-chakra-petch"
             ref={textRef}
+            whileHover={{
+              scale: 1.1,
+              color: "#FF69B4",
+              textShadow: "0px 8px 15px rgba(255, 105, 180, 0.8)",
+            }}
+            transition={{ duration: 0.4, ease: "easeInOut" }}
           >
             Rohit Manohar
-          </h1>
+          </motion.h1>
+
           <motion.h2
             className="mb-6 text-4xl text-white font-sans mt-4"
-            whileHover={{ scale: 1.1 }}
+            whileHover={{
+              y: -10,
+              opacity: 0.8,
+              textShadow: "0px 4px 8px rgba(0, 255, 255, 0.8)",
+            }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
           >
             Hi, I am Rohit, a Computer Science Student at NITK
           </motion.h2>
@@ -251,15 +263,33 @@ const Portfolio = () => {
             className="w-56 h-56 rounded-full mr-8"
           />
           <div>
-            <h3 className=" text-2xl text-pink-600 font-bold mb-4 transition-transform transform hover:scale-105">
+            <motion.h3
+              className="text-2xl text-pink-600 font-bold mb-4 transition-transform transform"
+              whileHover={{
+                x: 10,
+                color: "#1E90FF",
+                textShadow: "2px 2px 5px rgba(255, 99, 71, 0.8)",
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
               About Me
-            </h3>
-            <p className="text-pink-600 text-xl">
+            </motion.h3>
+
+            <motion.p
+              className="text-pink-600 text-xl"
+              whileHover={{
+                y: -5,
+                color: "#1E90FF",
+              }}
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               I am a Computer Science Student at NITK. I have a deep passion for
               coding and constantly strive to enhance my skills by learning new
               technologies. I love tackling challenging problems and finding
               innovative solutions. My areas of interest include web
-              development, Programming and many more. I am always eager to
+              development, programming, and many more. I am always eager to
               collaborate on exciting projects and learn from others in the
               field. When I am not coding, I enjoy exploring the latest tech
               trends and participating in hackathons and coding competitions.
@@ -267,7 +297,8 @@ const Portfolio = () => {
               building a new app, diving into a complex algorithm, or simply
               exchanging knowledge, I am excited to engage with like-minded
               individuals and contribute to the tech community.
-            </p>
+            </motion.p>
+
             <div className="flex mt-4  space-x-4 z-20 relative">
               <a
                 href="https://github.com/rohitmanohar2108"
@@ -313,9 +344,19 @@ const Portfolio = () => {
           className="shadow-xl shadow-cyan-500/50 border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
-          <p className="text-3xl text-pink-600 mr-4">
+          <motion.p
+            className="text-3xl text-pink-600 mr-4"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            whileHover={{
+              y: -5,
+              color: "#1E90FF",
+            }}
+            transition={{ duration: 0.6, ease: "easeOut" }}
+          >
             Some of the Tech Stack I know:
-          </p>
+          </motion.p>
+
           <div className="flex mb-5 mt-4 space-x-4">
             <i
               className="devicon-react-original colored text-4xl"
@@ -369,9 +410,20 @@ const Portfolio = () => {
           className="border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-14 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }}
         >
-          <h2 className="text-3xl text-pink-600 hover:text-white mb-7 text-center font-bold transition-transform transform hover:scale-105">
+          <motion.h2
+            className="text-3xl text-pink-600 mb-7 text-center font-bold"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            whileHover={{
+              scale: 1.1,
+              textShadow: "0px 4px 6px rgba(255, 105, 180, 0.8)",
+              color: "#1E90FF",
+            }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             Projects
-          </h2>
+          </motion.h2>
+
           <div className=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
@@ -404,13 +456,36 @@ const Portfolio = () => {
             ))}
           </div>
         </motion.div>
-        <div className="text-bold text-4xl text-pink-600 hover:text-white mt-11 transition-transform transform hover:scale-105">
+        <motion.div
+          className="font-bold text-4xl text-pink-600 mt-11 transition-transform transform"
+          whileHover={{
+            y: -10,
+            color: "#1E90FF",
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 200,
+            damping: 10,
+          }}
+        >
           Coffee with me.
-        </div>
-        <p className="text-bold text-2xl text-pink-600 mt-6">
-          I am always excited to work on some awesome projects, message me and
-          let's discuss over coffee.
-        </p>
+        </motion.div>
+
+        <motion.p
+  className="text-bold text-2xl text-pink-600 mt-6"
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  whileHover={{
+    scale: 1.05,
+    color: "#1E90FF",
+    transition: { repeat: Infinity, repeatType: "reverse", duration: 1, ease: "easeInOut" },
+    textShadow: "0px 4px 6px rgba(255, 69, 0, 0.7)"
+  }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+>
+  I am always excited to work on some awesome projects, message me and let's discuss over coffee.
+</motion.p>
+
 
         <div
           ref={contactRef}
