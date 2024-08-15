@@ -5,7 +5,6 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
   const navRef = useRef(null);
 
   useEffect(() => {
-    // Ensure navRef is not null before proceeding
     if (navRef.current) {
       gsap.from(navRef.current, {
         opacity: 0,
@@ -13,7 +12,6 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
         duration: 0.5,
         ease: "power2.out",
         onComplete: () => {
-          // Set opacity to 1 after animation completes to keep it visible
           gsap.set(navRef.current, { opacity: 1 });
         },
       });
@@ -25,20 +23,31 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
   };
 
   return (
-    <div>
-      <nav
-        ref={navRef}
-        className="flex items-center justify-between p-4 mt-4 bg-pink-600 relative"
-        style={{ minHeight: "70px" }} // Adjusted minHeight for visibility
-      >
-        <h1 className="text-3xl text-white font-bold font-chakra-petch">Rohit Manohar</h1>
-        <ul className="flex space-x-8 font-bold text-3xl text-white font-chakra-petch">
-          <li onClick={() => scrollToRef(aboutRef)} className="cursor-pointer transition-transform transform hover:scale-110">About</li>
-          <li onClick={() => scrollToRef(projectsRef)} className="cursor-pointer transition-transform transform hover:scale-110">Projects</li>
-          <li onClick={() => scrollToRef(contactRef)} className="cursor-pointer transition-transform transform hover:scale-110">Contact</li>
-        </ul>
-      </nav>
-    </div>
+    <header ref={navRef} className="bg-black p-4 shadow-lg">
+      <div className="container mx-auto flex justify-between items-center">
+        <h1 className="text-5xl mt-2 text-white font-bold font-great-vibes">Rohit Manohar :)</h1>
+        <div className="ml-16 flex text-xl space-x-4">
+          <button
+            onClick={() => scrollToRef(aboutRef)}
+            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 bg-white text-white px-6 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
+          >
+            About
+          </button>
+          <button
+            onClick={() => scrollToRef(projectsRef)}
+            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 bg-cyan-500 bg-white text-white px-4 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
+          >
+            Projects
+          </button>
+          <button
+            onClick={() => scrollToRef(contactRef)}
+            className="bg-cyan-500 shadow-lg bg-cyan-500 shadow-indigo-500/50 text-white px-4 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
+          >
+            Contact
+          </button>
+        </div>
+      </div>
+    </header>
   );
 };
 

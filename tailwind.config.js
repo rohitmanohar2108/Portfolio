@@ -15,6 +15,7 @@ module.exports = {
         'dancing-script': ['Dancing Script', 'cursive'],
         'tangerine': ['Tangerine', 'cursive'],
         'playfair-display': ['Playfair Display', 'serif'],
+        'great-vibes': ['Great Vibes', 'cursive'],
 
       },
       borderColor: {

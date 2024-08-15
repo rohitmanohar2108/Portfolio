@@ -211,7 +211,7 @@ const Portfolio = () => {
             ref={textRef}
             whileHover={{
               scale: 1.1,
-              color: "#FF69B4",
+              color: "#1E90FF",
               textShadow: "0px 8px 15px rgba(255, 105, 180, 0.8)",
             }}
             transition={{ duration: 0.4, ease: "easeInOut" }}
@@ -224,6 +224,7 @@ const Portfolio = () => {
             whileHover={{
               y: -10,
               opacity: 0.8,
+              color: "#1E90FF",
               textShadow: "0px 4px 8px rgba(0, 255, 255, 0.8)",
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
@@ -254,7 +255,7 @@ const Portfolio = () => {
 
         <motion.div
           ref={aboutRef}
-          className=" shadow-xl shadow-cyan-500/50 border-double border-4 border-pink-600 outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center "
+          className=" shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg "
           whileHover={{ scale: 1.05 }}
         >
           <img
