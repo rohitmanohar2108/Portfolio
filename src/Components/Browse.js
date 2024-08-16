@@ -433,18 +433,9 @@ const Portfolio = () => {
           className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
-          <motion.p
-            className="text-3xl text-pink-600 mr-4"
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            whileHover={{
-              y: -5,
-              color: "#1E90FF",
-            }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-          >
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-sans font-bold mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
             Some of the Tech Stack I know:
-          </motion.p>
+          </p>
 
           <div className="flex mb-5 mt-4 space-x-4">
             <i
