@@ -25,23 +25,23 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
   return (
     <header ref={navRef} className="bg-black p-4 shadow-lg">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-5xl mt-2 text-white font-bold font-great-vibes">Rohit Manohar :)</h1>
+        <h1 className="text-5xl mt-2 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-bold font-great-vibes h-14">Rohit Manohar :)</h1>
         <div className="ml-16 flex text-xl space-x-4">
           <button
             onClick={() => scrollToRef(aboutRef)}
-            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 text-white px-6 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
+            className=" bg-cyan-500 shadow-lg shadow-indigo-500/50 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
           >
             About
           </button>
           <button
             onClick={() => scrollToRef(projectsRef)}
-            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 bg-cyan-500 text-white px-4 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
+            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
           >
             Projects
           </button>
           <button
             onClick={() => scrollToRef(contactRef)}
-            className="bg-cyan-500 shadow-lg bg-cyan-500 shadow-indigo-500/50 text-white px-4 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
+            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
           >
             Contact
           </button>
