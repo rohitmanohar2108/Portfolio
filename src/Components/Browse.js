@@ -287,7 +287,7 @@ const Portfolio = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           />
           <div>
-            <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-sans font-bold mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
+            <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-normal font-bold mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
               About Me
             </h3>
 
@@ -513,7 +513,7 @@ const Portfolio = () => {
                   <h3 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-bold mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-white text-base mb-4">
+                  <p className="text-white font-normal text-base mb-4">
                     {project.description}
                   </p>
                   <a
@@ -531,23 +531,13 @@ const Portfolio = () => {
           </div>
         </motion.div>
 
-        <motion.div
-          className="font-bold text-4xl text-pink-600 mt-11 transition-transform transform"
-          whileHover={{
-            y: -10,
-            color: "#1E90FF",
-          }}
-          transition={{
-            type: "spring",
-            stiffness: 200,
-            damping: 10,
-          }}
-        >
-          Coffee with me.
-        </motion.div>
+        <div className="font-bold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mt-11 transition-transform transform hover:-translate-y-2 hover:text-blue-500">
+  Coffee with me.
+</div>
+
 
         <motion.p
-          className="text-bold text-2xl text-pink-600 mt-6"
+          className="text-bold font-normal text-2xl text-white mt-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           whileHover={{
@@ -587,7 +577,7 @@ const Portfolio = () => {
           >
             <div className="mb-4">
               <label
-                className="block text-pink-600 text-lg font-bold mb-2"
+                className="block text-white text-lg font-bold mb-2"
                 htmlFor="name"
               >
                 Name
@@ -601,7 +591,7 @@ const Portfolio = () => {
             </div>
             <div className="mb-4">
               <label
-                className="block text-pink-600 text-lg font-bold mb-2"
+                className="block text-white text-lg font-bold mb-2"
                 htmlFor="email"
               >
                 Email
@@ -615,7 +605,7 @@ const Portfolio = () => {
             </div>
             <div className="mb-4">
               <label
-                className="block text-pink-600 text-lg font-bold mb-2"
+                className="block text-white text-lg font-bold mb-2"
                 htmlFor="message"
               >
                 Message
