@@ -229,7 +229,7 @@ const Portfolio = () => {
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
           >
-             I'm Rohit, a Computer Science Student at NITK
+            I'm Rohit, a Computer Science Student at NITK
           </motion.h2>
           <div className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center">
             <p className="mb-3 text-3xl text-white font-sans">
@@ -238,35 +238,55 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div>
-          <motion.div className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg">
-            <div className="flex items-center space-x-4 overflow-hidden">
-              <img
-                src={quotes[currentQuoteIndex].image}
-                alt={quotes[currentQuoteIndex].author}
-                className="h-56 w-56 object-cover rounded-full"
-              />
-              <div className="flex-1">
-                <p className="text-3xl text-white font-dancing-script">
-                  {quotes[currentQuoteIndex].text}
-                </p>
-                <p className="text-xl mt-3 text-white">
-                  - {quotes[currentQuoteIndex].author}
-                </p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+        
+
+        <motion.div
+          className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
+          whileHover={{ scale: 1.05 }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.5, ease: "easeOut" }}
+        >
+          <div className="flex items-center space-x-4 overflow-hidden">
+          <motion.img
+              src={quotes[currentQuoteIndex].image}
+              alt={quotes[currentQuoteIndex].author}
+              className="h-56 w-56 object-cover rounded-full"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            />
+            <motion.div
+              className="flex-1"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <p className="text-3xl text-white font-dancing-script">
+                {quotes[currentQuoteIndex].text}
+              </p>
+              <p className="text-xl mt-3 text-white">
+                - {quotes[currentQuoteIndex].author}
+              </p>
+            </motion.div>
+          </div>
+        </motion.div>
 
         <motion.div
           ref={aboutRef}
-          className=" shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
+          className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          <img
+          <motion.img
             src="https://eu-central.storage.cloudconvert.com/tasks/c6c19d99-5c79-4247-b7be-2e723dad9401/WhatsApp%20Image%202024-08-16%20at%2000.47.15.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20240815%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20240815T191905Z&X-Amz-Expires=86400&X-Amz-Signature=a337760ebc1a4a94d1e3bdfa566aaac19b6e0d10b33560a9111c39e99be89e27&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22WhatsApp%20Image%202024-08-16%20at%2000.47.15.png%22&response-content-type=image%2Fpng&x-id=GetObject"
             alt="Rohit"
             className="w-56 h-56 rounded-full mr-8"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
           />
           <div>
             <motion.h3
@@ -277,6 +297,8 @@ const Portfolio = () => {
                 textShadow: "2px 2px 5px rgba(255, 99, 71, 0.8)",
               }}
               transition={{ duration: 0.3, ease: "easeInOut" }}
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
             >
               About Me
             </motion.h3>
@@ -305,7 +327,7 @@ const Portfolio = () => {
               individuals and contribute to the tech community.
             </motion.p>
 
-            <div className="flex mt-4  space-x-4 z-20 relative">
+            <div className="flex mt-4 space-x-4 z-20 relative">
               <a
                 href="https://github.com/rohitmanohar2108"
                 target="_blank"
@@ -342,9 +364,17 @@ const Portfolio = () => {
           </div>
         </motion.div>
 
-        <motion.div className="mt-16 " whileHover={{ scale: 1.1 }}>
+        <motion.div
+          className="mt-16"
+          whileHover={{ scale: 1.1 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        >
           <Lottie options={defaultOptionsTwo} height={400} width={400} />
         </motion.div>
+
+        
 
         <motion.div
           className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
