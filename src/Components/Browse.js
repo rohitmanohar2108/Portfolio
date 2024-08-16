@@ -392,7 +392,7 @@ const Portfolio = () => {
         <div className="max-w-2xl mx-auto mt-20">
           <div className="mb-4">
             <div className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
                 Experience
               </h2>
             </div>
