@@ -287,23 +287,12 @@ const Portfolio = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           />
           <div>
-            <motion.h3
-              className="text-2xl text-pink-600 font-bold mb-4 transition-transform transform"
-              whileHover={{
-                x: 10,
-                color: "#1E90FF",
-                textShadow: "2px 2px 5px rgba(255, 99, 71, 0.8)",
-              }}
-              transition={{ duration: 0.3, ease: "easeInOut" }}
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
+            <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-sans font-bold mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
               About Me
-            </motion.h3>
+            </h3>
 
             <motion.p
-              className=" text-pink-600 text-xl"
+              className=" text-white text-xl"
               whileHover={{
                 y: -5,
                 color: "#1E90FF",
