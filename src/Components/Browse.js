@@ -320,7 +320,7 @@ const Portfolio = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           />
           <div>
-            <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-normal font-bold mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
+            <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-bold font-bold mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
               About Me
             </h3>
 
