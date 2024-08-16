@@ -10,7 +10,7 @@ const Footer = () => {
             <p className="text-xl mt-0 md:mb-4">No &copy; copyright issues.</p>
             <p className="mb-4">Feel free to copy. If you need any help, ping me!</p>
           </div>
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 items-center md:items-start">
             <div className='text-4xl mr-28 '>Rohit Manohar</div>
           </div>
           <div className="flex flex-col items-center md:items-end">
