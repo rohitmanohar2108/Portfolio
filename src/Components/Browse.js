@@ -200,13 +200,15 @@ const Portfolio = () => {
     },
     {
       id: 2,
-      logoSrc: "https://media.licdn.com/dms/image/v2/D560BAQE8MivsmbT7Ig/company-logo_100_100/company-logo_100_100/0/1705561459405/hackerrank_logo?e=1732147200&v=beta&t=3VXpZyiP86LrKXtnxgm1KNkPqkxm6lndd7_x4fkXYvE",
+      logoSrc:
+        "https://media.licdn.com/dms/image/v2/D560BAQE8MivsmbT7Ig/company-logo_100_100/company-logo_100_100/0/1705561459405/hackerrank_logo?e=1732147200&v=beta&t=3VXpZyiP86LrKXtnxgm1KNkPqkxm6lndd7_x4fkXYvE",
       name: "Problem Solving Basic",
       link: "https://www.hackerrank.com/certificates/a409daa53e15",
     },
     {
       id: 3,
-      logoSrc: "https://media.licdn.com/dms/image/v2/C4D0BAQFd9H6cxFC3wQ/company-logo_100_100/company-logo_100_100/0/1630549313166?e=1732147200&v=beta&t=lbbuC7_bSl16Rew1PlMvMKwtWRkGij7zkzxZYUNPHAo",
+      logoSrc:
+        "https://media.licdn.com/dms/image/v2/C4D0BAQFd9H6cxFC3wQ/company-logo_100_100/company-logo_100_100/0/1630549313166?e=1732147200&v=beta&t=lbbuC7_bSl16Rew1PlMvMKwtWRkGij7zkzxZYUNPHAo",
       name: "Namaste React",
       link: "https://media.licdn.com/dms/image/v2/D562DAQGBRip9wMxEyQ/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1720373809961?e=1724410800&v=beta&t=cs_oObs7ai9t90xKXErxQRXLWk1g4Ifujy2mLpwGvEg",
     },
@@ -552,28 +554,36 @@ const Portfolio = () => {
           </div>
         </motion.div>
 
-        <div className="mx-auto mt-8 max-w-4xl">
-    {/* Certifications Section */}
-    <div className="flex justify-between space-x-4">
-      {certifications.map((cert) => (
-        <div
-          key={cert.id}
-          className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50 bg-white w-full text-center"
-        >
-          <a href={cert.link} target="_blank" rel="noopener noreferrer">
-            <div className="flex flex-col items-center">
-              <img
-                src={cert.logoSrc}
-                alt={`${cert.name} Logo`}
-                className="w-24 h-auto mb-4"
-              />
-              <h3 className="text-2xl font-bold text-gray-800">{cert.name}</h3>
-            </div>
-          </a>
+        <div className="mt-36 border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
+          <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+            Certifications
+          </h2>
         </div>
-      ))}
-    </div>
-  </div>
+
+        <div className="mx-auto mt-8 max-w-4xl">
+          {/* Certifications Section */}
+          <div className="flex justify-between space-x-4">
+            {certifications.map((cert) => (
+              <div
+                key={cert.id}
+                className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50 bg-white w-full text-center"
+              >
+                <a href={cert.link} target="_blank" rel="noopener noreferrer">
+                  <div className="flex flex-col items-center">
+                    <img
+                      src={cert.logoSrc}
+                      alt={`${cert.name} Logo`}
+                      className="w-24 h-auto mb-4"
+                    />
+                    <h3 className="text-2xl font-bold text-gray-800">
+                      {cert.name}
+                    </h3>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
 
         <div className="font-bold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mt-11 transition-transform transform hover:-translate-y-2 hover:text-blue-500">
           Coffee with me.
