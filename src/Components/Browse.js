@@ -490,19 +490,11 @@ const Portfolio = () => {
           className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }}
         >
-          <motion.h2
-            className="text-3xl text-pink-600 mb-7 text-center font-bold"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            whileHover={{
-              scale: 1.1,
-              textShadow: "0px 4px 6px rgba(255, 105, 180, 0.8)",
-              color: "#1E90FF",
-            }}
-            transition={{ duration: 0.5, ease: "easeOut" }}
-          >
-            Projects
-          </motion.h2>
+          <div className="flex justify-center items-center ">
+            <h2 className="mb-6 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-sans font-bold mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 ">
+              Projects
+            </h2>
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
