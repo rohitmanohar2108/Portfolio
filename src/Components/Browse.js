@@ -15,6 +15,7 @@ import { useSpring, animated } from "@react-spring/web";
 import animationDatathree from "../Animation/animationthree.json";
 import animationDatafour from "../Animation/animationfour.json";
 import animationDatafive from "../Animation/animationfive.json";
+import animationDataSix from "../Animation/animationsix.json";
 // Import Devicon CSS (already added link)
 import "devicon/devicon.min.css";
 import Footer from "./Footer";
@@ -62,6 +63,15 @@ const Portfolio = () => {
     loop: true,
     autoplay: true,
     animationData: animationDatafive, // Use the first animation data
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const defaultOptionsSix = {
+    loop: true,
+    autoplay: true,
+    animationData: animationDataSix, // Use the first animation data
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -554,7 +564,11 @@ const Portfolio = () => {
           </div>
         </motion.div>
 
-        <div className="mt-36 border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
+        <motion.div className="mt-8 mr-8" whileHover={{ scale: 1.1 }}>
+          <Lottie options={defaultOptionsSix} height={400} width={400} />
+        </motion.div>
+
+        <div className=" border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
           <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
             Certifications
           </h2>
@@ -564,9 +578,11 @@ const Portfolio = () => {
           {/* Certifications Section */}
           <div className="flex justify-between space-x-4">
             {certifications.map((cert) => (
-              <div
+              <motion.div
                 key={cert.id}
-                className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50 bg-white w-full text-center"
+                className="border rounded-lg border-cyan-400 p-4 shadow-xl shadow-indigo-500/50 bg-white w-full text-center"
+                whileHover={{ scale: 1.05, rotate: 1 }}
+                transition={{ type: "spring", stiffness: 300 }}
               >
                 <a href={cert.link} target="_blank" rel="noopener noreferrer">
                   <div className="flex flex-col items-center">
@@ -580,7 +596,7 @@ const Portfolio = () => {
                     </h3>
                   </div>
                 </a>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
