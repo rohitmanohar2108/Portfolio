@@ -265,7 +265,7 @@ const Portfolio = () => {
             I'm Rohit, a Computer Science Student at NITK
           </motion.h2>
           <div className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center shadow-lg shadow-indigo-500/50">
-            <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold transition-transform transform hover:scale-105 mb-3 text-3xl font-sans">
+            <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold transition-transform transform hover:scale-105 mb-3 text-3xl font-sans animate-color-change">
               Seeking Internship Opportunities
             </p>
           </div>
@@ -515,7 +515,6 @@ const Portfolio = () => {
             ></i>
           </div>
         </motion.div>
-        
 
         <div className="mt-32 mb-24">
           <Lottie options={defaultOptionsfive} height={200} width={880} />
@@ -525,14 +524,12 @@ const Portfolio = () => {
           <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
             Projects
           </h2>
-        </div> 
+        </div>
         <motion.div
           ref={projectsRef}
           className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
           whileHover={{ scale: 1.05 }}
         >
-        
-
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <motion.div
@@ -695,7 +692,7 @@ const Portfolio = () => {
                 className="shadow-md shadow-indigo-600/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 text-2xl font-bold py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
                 type="submit"
               >
-                Send Message 
+                Send Message
               </button>
             </div>
           </animated.form>
