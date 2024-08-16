@@ -144,7 +144,7 @@ const Portfolio = () => {
     {
       title: "NewScope",
       image:
-        "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D1%26deploymentId%3Ddpl_AHVaSSa3whBd2HhaMMjdvaPkb9mW%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_2hmfJkPd9Zdg3JRu5ruKqVazZ59j",
+        "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D1%26deploymentId%3Ddpl_5b2kSrGxTACKkULtVm7do4bESsEN%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_7KgoXXMEhgteKcMRKe239MXk5jiP",
       description:
         "A simple and beautiful News Website made with Pure React JS by data fetching using NEWS API.",
       githubLink: "https://github.com/rohitmanohar2108/Newscope",
@@ -152,7 +152,7 @@ const Portfolio = () => {
     {
       title: "Portfolio",
       image:
-        "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D1%26deploymentId%3Ddpl_7Y9FpWv69queCmGADmVNmVJdG2mn%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_FiBQnYrddQgY6gXbDfYW3CAz2ag7",
+        "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D0%26deploymentId%3Ddpl_4FQb3nbZdTcjLD9rP4r2mcgjdu6i%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_7KgoXXMEhgteKcMRKe239MXk5jiP",
       description:
         "A simple and beautiful Portfolio Website made with Pure React JS. With some beautiful Animation.",
       githubLink: "https://github.com/rohitmanohar2108/Portfolio",
@@ -257,7 +257,7 @@ const Portfolio = () => {
             whileHover={{
               y: -10,
               opacity: 0.8,
-              color: "#a933ff",
+              color: "#22d3ee",
               textShadow: "0px 4px 8px rgba(0, 255, 255, 0.8)",
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
