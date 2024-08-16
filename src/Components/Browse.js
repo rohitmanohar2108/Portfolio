@@ -695,7 +695,7 @@ const Portfolio = () => {
                 className="shadow-md shadow-pink-300/50 bg-pink-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-pink-700 transition-colors"
                 type="submit"
               >
-                Send Message
+                Send Message 
               </button>
             </div>
           </animated.form>
