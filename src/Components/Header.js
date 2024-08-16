@@ -29,19 +29,19 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
         <div className="ml-16 flex text-xl space-x-4">
           <button
             onClick={() => scrollToRef(aboutRef)}
-            className=" bg-cyan-500 shadow-lg shadow-indigo-500/50 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
+            className=" bg-cyan-500 shadow-lg shadow-indigo-500/50 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 rounded-lg font-courier-prime shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
           >
             About
           </button>
           <button
             onClick={() => scrollToRef(projectsRef)}
-            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
+            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 rounded-lg font-courier-prime shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
           >
             Projects
           </button>
           <button
             onClick={() => scrollToRef(contactRef)}
-            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 rounded-lg font-bold shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
+            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 rounded-lg font-courier-prime shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
           >
             Contact
           </button>

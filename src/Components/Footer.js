@@ -3,12 +3,12 @@ import { FaGithub, FaLinkedin, FaInstagram, FaTwitter, FaEnvelope } from "react-
 
 const Footer = () => {
   return (
-    <footer className="bg-black text-white py-6 mt-12 ">
+    <footer className="bg-black text-white py-6 mt-12 font-courier-prime">
       <div className="container mx-auto px-4 text-center md:text-left">
         <div className="md:flex md:justify-between md:items-center">
           <div>
             <p className="text-xl mt-0 md:mb-4">No &copy; copyright issues.</p>
-            <p className="mb-4">Feel free to copy. If you need any help, ping me!</p>
+            <p className="mb-4 text-sm">Feel free to copy. If you need any help, ping me!</p>
           </div>
           <div className="flex flex-col text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 items-center md:items-start">
             <div className='text-4xl mr-28 '>Rohit Manohar</div>

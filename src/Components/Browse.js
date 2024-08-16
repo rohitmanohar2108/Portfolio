@@ -240,7 +240,7 @@ const Portfolio = () => {
             </motion.div>
           </div>
           <motion.h1
-            className="text-9xl  text-cyan-400  font-chakra-petch"
+            className="text-9xl  text-cyan-400  font-courier-prime"
             ref={textRef}
             whileHover={{
               scale: 1.1,
@@ -253,7 +253,7 @@ const Portfolio = () => {
           </motion.h1>
 
           <motion.h2
-            className="mb-6 text-6xl text-white font-sans mt-4"
+            className="mb-6 text-4xl text-white font-courier-prime mt-4"
             whileHover={{
               y: -10,
               opacity: 0.8,
@@ -265,7 +265,7 @@ const Portfolio = () => {
             I'm Rohit, a Computer Science Student at NITK
           </motion.h2>
           <div className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center shadow-lg shadow-indigo-500/50">
-            <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold transition-transform transform hover:scale-105 mb-3 text-3xl font-sans animate-color-change">
+            <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold transition-transform transform hover:scale-105 mb-3 text-3xl font-courier-prime animate-color-change">
               Seeking Internship Opportunities
             </p>
           </div>
@@ -320,12 +320,12 @@ const Portfolio = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           />
           <div>
-            <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-bold font-bold mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
+            <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-courier-prime mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
               About Me
             </h3>
 
             <motion.p
-              className=" text-white text-xl"
+              className=" text-white text-xl font-courier-prime"
               whileHover={{
                 y: -5,
                 color: "#1E90FF",
@@ -392,7 +392,7 @@ const Portfolio = () => {
         <div className="max-w-2xl mx-auto mt-20">
           <div className="mb-4">
             <div className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
-              <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
+              <h2 className="text-3xl font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
                 Experience
               </h2>
             </div>
@@ -403,22 +403,22 @@ const Portfolio = () => {
                 <div className="relative border-l border-cyan-400 pl-6">
                   <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
                   <div className="mb-8">
-                    <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                    <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
                       Member, TEDx NITK Surathkal Media Team
                     </h3>
-                    <span className="block mb-2 text-sm font-normal leading-none text-gray-400">
+                    <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
                       Dec 2022 - May 2026
                     </span>
-                    <p className="mb-2 text-base font-normal text-white dark:text-gray-300">
+                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
                       • Designed posters and promotional materials for TEDx
                       events, enhancing visual communication and branding
                       efforts.
                     </p>
-                    <p className="mb-2 text-base font-normal text-white dark:text-gray-300">
+                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
                       • Collaborated on media campaigns to boost event
                       visibility and engagement.
                     </p>
-                    <p className="mb-2 text-base font-normal text-white dark:text-gray-300">
+                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
                       • Technologies Used: Canva, Illustrator
                     </p>
                   </div>
@@ -431,16 +431,16 @@ const Portfolio = () => {
                 <div className="relative border-l border-cyan-400 pl-6">
                   <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
                   <div className="mb-8">
-                    <h3 className="text-2xl font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                    <h3 className="text-2xl font-semibold font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
                       Student, National Institute of Technology Karnataka
                     </h3>
-                    <span className="block mb-2 text-sm font-normal leading-none text-gray-400">
+                    <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
                       Aug 2021 - Present
                     </span>
-                    <p className="mb-2 text-base font-normal text-white dark:text-gray-300">
+                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
                       • Pursuing a Bachelor’s degree in Computer Science.
                     </p>
-                    <p className="mb-2 text-base font-normal text-white dark:text-gray-300">
+                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
                       • Engaged in various projects and coursework related to
                       computer science and software development.
                     </p>
@@ -466,7 +466,7 @@ const Portfolio = () => {
           className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
           whileHover={{ scale: 1.05 }}
         >
-          <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-sans font-bold mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
+          <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-courier-prime font-normal mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
             Some of the Tech Stack I know:
           </p>
 
@@ -521,7 +521,7 @@ const Portfolio = () => {
         </div>
 
         <div className=" border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
-          <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+          <h2 className="text-3xl font-normal font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
             Projects
           </h2>
         </div>
@@ -541,22 +541,22 @@ const Portfolio = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-56 object-cover"
+                  className="w-full h-56 object-cover font-courier-prime"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-bold mb-2">
+                  <h3 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-courier-prime font-bold mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-white font-normal text-base mb-4">
+                  <p className="text-white font-normal text-base mb-4 font-courier-prime">
                     {project.description}
                   </p>
                   <a
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-white hover:underline text-base flex items-center"
+                    className="text-white hover:underline text-base flex items-center font-courier-prime"
                   >
-                    <FaGithub className="text-3xl hover:text-white transition-colors mr-2" />
+                    <FaGithub className="text-3xl hover:text-white transition-colors mr-2 " />
                     View on GitHub
                   </a>
                 </div>
@@ -570,7 +570,7 @@ const Portfolio = () => {
         </motion.div>
 
         <div className=" border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
-          <h2 className="text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+          <h2 className="text-3xl font-courier-prime font-normal text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
             Certifications
           </h2>
         </div>
@@ -592,7 +592,7 @@ const Portfolio = () => {
                       alt={`${cert.name} Logo`}
                       className="w-24 h-auto mb-4"
                     />
-                    <h3 className="text-2xl font-bold text-gray-800">
+                    <h3 className="text-2xl font-courier-prime font-bold text-gray-800">
                       {cert.name}
                     </h3>
                   </div>
@@ -602,12 +602,12 @@ const Portfolio = () => {
           </div>
         </div>
 
-        <div className="font-bold text-4xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mt-11 transition-transform transform hover:-translate-y-2 hover:text-blue-500">
+        <div className="font-normal font-courier-prime text-4xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mt-11 transition-transform transform hover:-translate-y-2 hover:text-blue-500">
           Coffee with me.
         </div>
 
         <motion.p
-          className="text-bold font-normal text-2xl text-white mt-6"
+          className="text-bold font-normal font-courier-prime text-2xl text-white mt-6"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           whileHover={{
@@ -633,7 +633,7 @@ const Portfolio = () => {
         >
           <Lottie options={defaultOptionsfour} height={400} width={400} />
           <button
-            className="shadow-md shadow-indigo-500/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-bold text-3xl py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
+            className="shadow-md shadow-indigo-500/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-normal  font-courier-prime text-3xl py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
             onClick={toggleForm}
           >
             Contact Me
@@ -647,13 +647,13 @@ const Portfolio = () => {
           >
             <div className="mb-4">
               <label
-                className="block text-white text-lg font-bold mb-2"
+                className="block text-white text-lg font-normal font-courier-prime mb-2"
                 htmlFor="name"
               >
                 Name
               </label>
               <input
-                className="w-full px-3 py-2 border rounded-lg text-gray-900"
+                className="w-full px-3 py-2 border rounded-lg text-gray-900 font-courier-prime"
                 type="text"
                 id="name"
                 placeholder="Your name"
@@ -661,13 +661,13 @@ const Portfolio = () => {
             </div>
             <div className="mb-4">
               <label
-                className="block text-white text-lg font-bold mb-2"
+                className="block text-white text-lg font-normal font-courier-prime mb-2"
                 htmlFor="email"
               >
                 Email
               </label>
               <input
-                className="w-full px-3 py-2 border rounded-lg text-gray-900"
+                className="w-full px-3 py-2 border rounded-lg text-gray-900 font-courier-prime"
                 type="email"
                 id="email"
                 placeholder="Your email"
@@ -675,13 +675,13 @@ const Portfolio = () => {
             </div>
             <div className="mb-4">
               <label
-                className="block text-white text-lg font-bold mb-2"
+                className="block text-white text-lg font-normal font-courier-prime mb-2"
                 htmlFor="message"
               >
                 Message
               </label>
               <textarea
-                className="w-full px-3 py-2 border rounded-lg text-gray-900"
+                className="w-full px-3 py-2 border rounded-lg text-gray-900 font-courier-prime"
                 id="message"
                 placeholder="Your message"
                 rows="5"
@@ -689,7 +689,7 @@ const Portfolio = () => {
             </div>
             <div className="text-center">
               <button
-                className="shadow-md shadow-indigo-600/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 text-2xl font-bold py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
+                className="shadow-md shadow-indigo-600/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 text-2xl font-normal font-courier-prime py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
                 type="submit"
               >
                 Send Message

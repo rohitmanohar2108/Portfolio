@@ -16,6 +16,8 @@ module.exports = {
         'tangerine': ['Tangerine', 'cursive'],
         'playfair-display': ['Playfair Display', 'serif'],
         'great-vibes': ['Great Vibes', 'cursive'],
+        'courier-prime': ['Courier Prime', 'monospace'],
+        
       },
       keyframes: {
         colorChange: {
