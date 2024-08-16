@@ -19,18 +19,18 @@ module.exports = {
       },
       keyframes: {
         colorChange: {
-          '0%': { color: '#8B5CF6' }, // violet-500
-          '25%': { color: '#EC4899' }, // fuchsia-500
-          '50%': { color: '#06B6D4' }, // cyan-500
-          '75%': { color: '#10B981' }, // emerald-500
-          '100%': { color: '#8B5CF6' }, // back to violet-500
+          '0%, 100%': { text: 'linear-gradient(90deg, #8B5CF6, #EC4899)' }, // violet-500 to fuchsia-500
+          '25%': { background: 'linear-gradient(90deg, #06B6D4, #10B981)' }, // cyan-500 to emerald-500
+          '50%': { text: 'linear-gradient(90deg, #F59E0B, #EF4444)' }, // amber-500 to red-500
+          '75%': { text: 'linear-gradient(90deg, #6366F1, #8B5CF6)' }, // indigo-500 to violet-500
         },
       },
       animation: {
-        'color-change': 'colorChange 5s infinite',
+        'color-gradient': 'colorChange 5s infinite',
       },
     },
   },
   variants: {},
   plugins: [],
 };
+

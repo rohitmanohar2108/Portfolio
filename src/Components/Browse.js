@@ -257,7 +257,7 @@ const Portfolio = () => {
             whileHover={{
               y: -10,
               opacity: 0.8,
-              color: "#1E90FF",
+              color: "#a933ff",
               textShadow: "0px 4px 8px rgba(0, 255, 255, 0.8)",
             }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
