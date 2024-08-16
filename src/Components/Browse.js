@@ -201,13 +201,13 @@ const Portfolio = () => {
 
       <div className="container mx-auto px-4 py-8 flex flex-col items-center">
         <div className="flex flex-col items-center mb-9">
-          <div className="flex flex-row items-center mt-8">
+          <div className=" flex flex-row items-center ">
             <motion.div className="mr-8" whileHover={{ scale: 1.1 }}>
               <Lottie options={defaultOptions} height={400} width={400} />
             </motion.div>
           </div>
           <motion.h1
-            className="text-9xl text-cyan-400 mt-6 font-chakra-petch"
+            className="text-9xl  text-cyan-400  font-chakra-petch"
             ref={textRef}
             whileHover={{
               scale: 1.1,
@@ -305,7 +305,7 @@ const Portfolio = () => {
   </motion.h3>
 
   <motion.p
-    className="text-pink-600 text-xl"
+    className=" text-pink-600 text-xl"
     whileHover={{
       y: -5,
       color: "#1E90FF",
@@ -315,13 +315,13 @@ const Portfolio = () => {
     transition={{ duration: 0.8, ease: "easeOut" }}
   >
     I am a Computer Science Student at NITK. I have a deep passion for coding
-    and constantly strive to enhance my skills by learning new technologies. I
+    and constantly strive to enhance my skills by <a className="underline underline-offset-2 underline decoration-indigo-500">learning new technologies.</a> I
     love tackling challenging problems and finding innovative solutions. My
-    areas of interest include web development, programming, and many more. I am
+    areas of interest include <a className="underline underline-offset-2 underline decoration-indigo-500" >web development, programming, and many more.</a> I am
     always eager to collaborate on exciting projects and learn from others in
     the field. When I am not coding, I enjoy exploring the latest tech trends
-    and participating in hackathons and coding competitions. Let's connect and
-    create something amazing together! Whether it's building a new app, diving
+    and participating in hackathons and coding competitions.<a className="underline underline-offset-2 underline decoration-indigo-500"> Let's connect and
+    create something amazing together!</a> Whether it's building a new app, diving
     into a complex algorithm, or simply exchanging knowledge, I am excited to
     engage with like-minded individuals and contribute to the tech community.
   </motion.p>
