@@ -636,7 +636,7 @@ const Portfolio = () => {
         >
           <Lottie options={defaultOptionsfour} height={400} width={400} />
           <button
-            className="shadow-md shadow-indigo-500/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-bold text-3xl py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors"
+            className="shadow-md shadow-indigo-500/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-bold text-3xl py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
             onClick={toggleForm}
           >
             Contact Me
@@ -692,7 +692,7 @@ const Portfolio = () => {
             </div>
             <div className="text-center">
               <button
-                className="shadow-md shadow-indigo-600/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 text-2xl font-bold py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors"
+                className="shadow-md shadow-indigo-600/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 text-2xl font-bold py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
                 type="submit"
               >
                 Send Message 
