@@ -510,17 +510,17 @@ const Portfolio = () => {
                   className="w-full h-56 object-cover"
                 />
                 <div className="p-6">
-                  <h3 className="text-2xl text-pink-600 hover:text-white font-bold mb-2">
+                  <h3 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-bold mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-pink-600 text-base mb-4">
+                  <p className="text-white text-base mb-4">
                     {project.description}
                   </p>
                   <a
                     href={project.githubLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-pink-600 hover:underline text-base flex items-center"
+                    className="text-white hover:underline text-base flex items-center"
                   >
                     <FaGithub className="text-3xl hover:text-white transition-colors mr-2" />
                     View on GitHub
