@@ -313,26 +313,17 @@ const Portfolio = () => {
               transition={{ duration: 0.8, ease: "easeOut" }}
             >
               I am a Computer Science Student at NITK. I have a deep passion for
-              coding and constantly strive to enhance my skills by{" "}
-              <a className="underline underline-offset-2 underline decoration-indigo-500">
-                learning new technologies.
-              </a>{" "}
-              I love tackling challenging problems and finding innovative
-              solutions. My areas of interest include{" "}
-              <a className="underline underline-offset-2 underline decoration-indigo-500">
-                web development, programming, and many more.
-              </a>{" "}
-              I am always eager to collaborate on exciting projects and learn
-              from others in the field. When I am not coding, I enjoy exploring
-              the latest tech trends and participating in hackathons and coding
-              competitions.
-              <a className="underline underline-offset-2 underline decoration-indigo-500">
-                {" "}
-                Let's connect and create something amazing together!
-              </a>{" "}
-              Whether it's building a new app, diving into a complex algorithm,
-              or simply exchanging knowledge, I am excited to engage with
-              like-minded individuals and contribute to the tech community.
+              coding and constantly strive to enhance my skills by learning new
+              technologies. I love tackling challenging problems and finding
+              innovative solutions. My areas of interest include web
+              development, programming, and many more. I am always eager to
+              collaborate on exciting projects and learn from others in the
+              field. When I am not coding, I enjoy exploring the latest tech
+              trends and participating in hackathons and coding competitions.
+              Let's connect and create something amazing together! Whether it's
+              building a new app, diving into a complex algorithm, or simply
+              exchanging knowledge, I am excited to engage with like-minded
+              individuals and contribute to the tech community.
             </motion.p>
 
             <motion.div
