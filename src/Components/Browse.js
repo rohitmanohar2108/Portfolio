@@ -231,14 +231,12 @@ const Portfolio = () => {
           >
             I'm Rohit, a Computer Science Student at NITK
           </motion.h2>
-          <div className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center">
-            <p className="mb-3 text-3xl text-white font-sans">
-              Seeking Intership Opportunities
+          <div className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center shadow-lg shadow-indigo-500/50">
+            <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold transition-transform transform hover:scale-105 mb-3 text-3xl font-sans">
+              Seeking Internship Opportunities
             </p>
           </div>
         </div>
-
-        
 
         <motion.div
           className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
@@ -248,7 +246,7 @@ const Portfolio = () => {
           transition={{ duration: 0.5, ease: "easeOut" }}
         >
           <div className="flex items-center space-x-4 overflow-hidden">
-          <motion.img
+            <motion.img
               src={quotes[currentQuoteIndex].image}
               alt={quotes[currentQuoteIndex].author}
               className="h-56 w-56 object-cover rounded-full"
@@ -289,84 +287,94 @@ const Portfolio = () => {
             transition={{ duration: 0.7, ease: "easeOut" }}
           />
           <div>
-  <motion.h3
-    className="text-2xl text-pink-600 font-bold mb-4 transition-transform transform"
-    whileHover={{
-      x: 10,
-      color: "#1E90FF",
-      textShadow: "2px 2px 5px rgba(255, 99, 71, 0.8)",
-    }}
-    transition={{ duration: 0.3, ease: "easeInOut" }}
-    initial={{ x: 100, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ duration: 0.7, ease: "easeOut" }}
-  >
-    About Me
-  </motion.h3>
+            <motion.h3
+              className="text-2xl text-pink-600 font-bold mb-4 transition-transform transform"
+              whileHover={{
+                x: 10,
+                color: "#1E90FF",
+                textShadow: "2px 2px 5px rgba(255, 99, 71, 0.8)",
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              About Me
+            </motion.h3>
 
-  <motion.p
-    className=" text-pink-600 text-xl"
-    whileHover={{
-      y: -5,
-      color: "#1E90FF",
-    }}
-    initial={{ x: 100, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ duration: 0.8, ease: "easeOut" }}
-  >
-    I am a Computer Science Student at NITK. I have a deep passion for coding
-    and constantly strive to enhance my skills by <a className="underline underline-offset-2 underline decoration-indigo-500">learning new technologies.</a> I
-    love tackling challenging problems and finding innovative solutions. My
-    areas of interest include <a className="underline underline-offset-2 underline decoration-indigo-500" >web development, programming, and many more.</a> I am
-    always eager to collaborate on exciting projects and learn from others in
-    the field. When I am not coding, I enjoy exploring the latest tech trends
-    and participating in hackathons and coding competitions.<a className="underline underline-offset-2 underline decoration-indigo-500"> Let's connect and
-    create something amazing together!</a> Whether it's building a new app, diving
-    into a complex algorithm, or simply exchanging knowledge, I am excited to
-    engage with like-minded individuals and contribute to the tech community.
-  </motion.p>
+            <motion.p
+              className=" text-pink-600 text-xl"
+              whileHover={{
+                y: -5,
+                color: "#1E90FF",
+              }}
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
+            >
+              I am a Computer Science Student at NITK. I have a deep passion for
+              coding and constantly strive to enhance my skills by{" "}
+              <a className="underline underline-offset-2 underline decoration-indigo-500">
+                learning new technologies.
+              </a>{" "}
+              I love tackling challenging problems and finding innovative
+              solutions. My areas of interest include{" "}
+              <a className="underline underline-offset-2 underline decoration-indigo-500">
+                web development, programming, and many more.
+              </a>{" "}
+              I am always eager to collaborate on exciting projects and learn
+              from others in the field. When I am not coding, I enjoy exploring
+              the latest tech trends and participating in hackathons and coding
+              competitions.
+              <a className="underline underline-offset-2 underline decoration-indigo-500">
+                {" "}
+                Let's connect and create something amazing together!
+              </a>{" "}
+              Whether it's building a new app, diving into a complex algorithm,
+              or simply exchanging knowledge, I am excited to engage with
+              like-minded individuals and contribute to the tech community.
+            </motion.p>
 
-  <motion.div
-    className="flex mt-4 space-x-4 z-20 relative"
-    initial={{ x: 100, opacity: 0 }}
-    animate={{ x: 0, opacity: 1 }}
-    transition={{ duration: 0.9, ease: "easeOut" }}
-  >
-    <a
-      href="https://github.com/rohitmanohar2108"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white"
-    >
-      <FaGithub className="text-4xl hover:text-pink-600 transition-colors" />
-    </a>
-    <a
-      href="https://www.linkedin.com/in/rohit-manohar-80b949207/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white"
-    >
-      <FaLinkedin className="text-4xl hover:text-pink-600 transition-colors" />
-    </a>
-    <a
-      href="https://www.instagram.com/rohitmanohar2108/"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white"
-    >
-      <FaInstagram className="text-4xl hover:text-pink-600 transition-colors" />
-    </a>
-    <a
-      href="https://twitter.com/imrohit372"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-white"
-    >
-      <FaTwitter className="text-4xl hover:text-pink-600 transition-colors" />
-    </a>
-  </motion.div>
-</div>
-
+            <motion.div
+              className="flex mt-4 space-x-4 z-20 relative"
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.9, ease: "easeOut" }}
+            >
+              <a
+                href="https://github.com/rohitmanohar2108"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <FaGithub className="text-4xl hover:text-pink-600 transition-colors" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rohit-manohar-80b949207/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <FaLinkedin className="text-4xl hover:text-pink-600 transition-colors" />
+              </a>
+              <a
+                href="https://www.instagram.com/rohitmanohar2108/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <FaInstagram className="text-4xl hover:text-pink-600 transition-colors" />
+              </a>
+              <a
+                href="https://twitter.com/imrohit372"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <FaTwitter className="text-4xl hover:text-pink-600 transition-colors" />
+              </a>
+            </motion.div>
+          </div>
         </motion.div>
 
         <motion.div
@@ -378,8 +386,6 @@ const Portfolio = () => {
         >
           <Lottie options={defaultOptionsTwo} height={400} width={400} />
         </motion.div>
-
-        
 
         <motion.div
           className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
