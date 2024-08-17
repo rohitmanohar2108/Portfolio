@@ -3,8 +3,8 @@ import Lottie from "react-lottie";
 import Header from "./Header";
 import { motion } from "framer-motion";
 import animationData from "../Animation/animation.json";
-import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   FaGithub,
   FaLinkedin,
@@ -24,12 +24,12 @@ import "devicon/devicon.min.css";
 import Footer from "./Footer";
 gsap.registerPlugin(ScrollTrigger);
 
-
 const Portfolio = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const text = "I'm Rohit, Computer Science Undergrad";
   const words = text.split(" ");
   const sectionRef = useRef(null);
+  const quoteRef = useRef(null);
 
   const defaultOptions = {
     loop: true,
@@ -251,33 +251,33 @@ const Portfolio = () => {
     const section = sectionRef.current;
 
     gsap.fromTo(
-      section.querySelector('.experience-heading'),
+      section.querySelector(".experience-heading"),
       { opacity: 0, y: -20 },
       {
         opacity: 1,
         y: 0,
         duration: 1,
-        ease: 'power3.out',
+        ease: "power3.out",
         delay: 0.2,
         scrollTrigger: {
-          trigger: section.querySelector('.experience-heading'),
-          start: 'top 80%', // Animation starts when the top of the element is 80% from the top of the viewport
+          trigger: section.querySelector(".experience-heading"),
+          start: "top 80%", // Animation starts when the top of the element is 80% from the top of the viewport
         },
       }
     );
 
     gsap.fromTo(
-      section.querySelectorAll('.timeline-item'),
+      section.querySelectorAll(".timeline-item"),
       { opacity: 0, x: -50 },
       {
         opacity: 1,
         x: 0,
         duration: 0.8,
-        ease: 'power3.out',
+        ease: "power3.out",
         stagger: 0.3,
         scrollTrigger: {
-          trigger: section.querySelector('.timeline-item'),
-          start: 'top 85%', // Animation starts when the top of the element is 85% from the top of the viewport
+          trigger: section.querySelector(".timeline-item"),
+          start: "top 85%", // Animation starts when the top of the element is 85% from the top of the viewport
         },
       }
     );
@@ -293,6 +293,25 @@ const Portfolio = () => {
         ease: "easeOut",
         scrollTrigger: {
           trigger: aboutRef.current,
+          start: "top 80%", // Trigger when the top of the element is 80% from the top of the viewport
+          toggleActions: "play none none none", // Play animation on entering the viewport
+        },
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    gsap.fromTo(
+      quoteRef.current,
+      { opacity: 0, x: -100, scale: 0.9 }, // Start from left and slightly scaled down
+      {
+        opacity: 1,
+        x: 0,
+        scale: 1,
+        duration: 0.6,
+        ease: "easeOut",
+        scrollTrigger: {
+          trigger: quoteRef.current,
           start: "top 80%", // Trigger when the top of the element is 80% from the top of the viewport
           toggleActions: "play none none none", // Play animation on entering the viewport
         },
@@ -367,182 +386,181 @@ const Portfolio = () => {
         </div>
 
         <motion.div
-          className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
-          whileHover={{ scale: 1.05 }}
-          initial={{ opacity: 0, scale: 0.9 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, ease: "easeOut" }}
-        >
-          <div className="flex items-center space-x-4 overflow-hidden">
-            <motion.img
-              src={quotes[currentQuoteIndex].image}
-              alt={quotes[currentQuoteIndex].author}
-              className="h-56 w-56 object-cover rounded-full"
-              initial={{ x: -100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            />
-            <motion.div
-              className="flex-1"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ease: "easeOut" }}
-            >
-              <p className="text-3xl text-white font-dancing-script">
-                {quotes[currentQuoteIndex].text}
-              </p>
-              <p className="text-xl mt-3 text-white">
-                - {quotes[currentQuoteIndex].author}
-              </p>
-            </motion.div>
-          </div>
-        </motion.div>
-
-        <motion.div
-      ref={aboutRef}
-      className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
+      ref={quoteRef}
+      className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
       whileHover={{ scale: 1.05 }}
     >
-      <motion.img
-        src="https://media-mxp1-1.cdn.whatsapp.net/v/t61.24694-24/453603651_520834290411384_6429731950094255849_n.jpg?ccb=11-4&oh=01_Q5AaIC-9v5GugtOFEMMBYvFX3frZuTI9ad7p9dp1jxMl6CEx&oe=66CDCAFF&_nc_sid=5e03e0&_nc_cat=102"
-        alt="Rohit"
-        className="w-56 h-56 rounded-full mr-8"
-        initial={{ scale: 0.9, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 0.7, ease: "easeOut" }}
-      />
-      <div>
-        <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-courier-prime mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
-          About Me
-        </h3>
-
-        <motion.p
-          className="text-white text-xl font-courier-prime"
-          whileHover={{
-            y: -5,
-            color: "#1E90FF",
-          }}
-        >
-          I am a Computer Science Student at NITK. I have a deep passion for
-          coding and constantly strive to enhance my skills by learning new
-          technologies. I love tackling challenging problems and finding
-          innovative solutions. My areas of interest include web
-          development, programming, and many more. I am always eager to
-          collaborate on exciting projects and learn from others in the
-          field. When I am not coding, I enjoy exploring the latest tech
-          trends and participating in hackathons and coding competitions.
-          Let's connect and create something amazing together! Whether it's
-          building a new app, diving into a complex algorithm, or simply
-          exchanging knowledge, I am excited to engage with like-minded
-          individuals and contribute to the tech community.
-        </motion.p>
-
+      <div className="flex items-center space-x-4 overflow-hidden">
+        <motion.img
+          src={quotes[currentQuoteIndex].image}
+          alt={quotes[currentQuoteIndex].author}
+          className="h-56 w-56 object-cover rounded-full"
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+        />
         <motion.div
-          className="flex mt-4 space-x-4 z-20 relative"
+          className="flex-1"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
         >
-          <a
-            href="https://github.com/rohitmanohar2108"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white"
-          >
-            <FaGithub className="text-3xl hover:text-violet-500 transition-colors" />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/rohit-manohar-80b949207/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white"
-          >
-            <FaLinkedin className="text-3xl hover:text-violet-500 transition-colors" />
-          </a>
-          <a
-            href="https://www.instagram.com/rohitmanohar2108/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white"
-          >
-            <FaInstagram className="text-3xl hover:text-violet-500 transition-colors" />
-          </a>
-          <a
-            href="https://twitter.com/imrohit372"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white"
-          >
-            <FaTwitter className="text-3xl hover:text-violet-500 transition-colors" />
-          </a>
-          <a
-            href="https://drive.google.com/file/d/1Rdddm_h-MFgcIkppo7uDtpQ-V-4rFZN2/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shadow-md shadow-indigo-500/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-normal font-courier-prime text-xl py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
-          >
-            View Resume
-          </a>
+          <p className="text-3xl text-white font-dancing-script">
+            {quotes[currentQuoteIndex].text}
+          </p>
+          <p className="text-xl mt-3 text-white">
+            - {quotes[currentQuoteIndex].author}
+          </p>
         </motion.div>
       </div>
     </motion.div>
 
+        <motion.div
+          ref={aboutRef}
+          className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
+          whileHover={{ scale: 1.05 }}
+        >
+          <motion.img
+            src="https://media-mxp1-1.cdn.whatsapp.net/v/t61.24694-24/453603651_520834290411384_6429731950094255849_n.jpg?ccb=11-4&oh=01_Q5AaIC-9v5GugtOFEMMBYvFX3frZuTI9ad7p9dp1jxMl6CEx&oe=66CDCAFF&_nc_sid=5e03e0&_nc_cat=102"
+            alt="Rohit"
+            className="w-56 h-56 rounded-full mr-8"
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          />
+          <div>
+            <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-courier-prime mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
+              About Me
+            </h3>
+
+            <motion.p
+              className="text-white text-xl font-courier-prime"
+              whileHover={{
+                y: -5,
+                color: "#1E90FF",
+              }}
+            >
+              I am a Computer Science Student at NITK. I have a deep passion for
+              coding and constantly strive to enhance my skills by learning new
+              technologies. I love tackling challenging problems and finding
+              innovative solutions. My areas of interest include web
+              development, programming, and many more. I am always eager to
+              collaborate on exciting projects and learn from others in the
+              field. When I am not coding, I enjoy exploring the latest tech
+              trends and participating in hackathons and coding competitions.
+              Let's connect and create something amazing together! Whether it's
+              building a new app, diving into a complex algorithm, or simply
+              exchanging knowledge, I am excited to engage with like-minded
+              individuals and contribute to the tech community.
+            </motion.p>
+
+            <motion.div className="flex mt-4 space-x-4 z-20 relative">
+              <a
+                href="https://github.com/rohitmanohar2108"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <FaGithub className="text-3xl hover:text-violet-500 transition-colors" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/rohit-manohar-80b949207/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <FaLinkedin className="text-3xl hover:text-violet-500 transition-colors" />
+              </a>
+              <a
+                href="https://www.instagram.com/rohitmanohar2108/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <FaInstagram className="text-3xl hover:text-violet-500 transition-colors" />
+              </a>
+              <a
+                href="https://twitter.com/imrohit372"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white"
+              >
+                <FaTwitter className="text-3xl hover:text-violet-500 transition-colors" />
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1Rdddm_h-MFgcIkppo7uDtpQ-V-4rFZN2/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="shadow-md shadow-indigo-500/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-normal font-courier-prime text-xl py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
+              >
+                View Resume
+              </a>
+            </motion.div>
+          </div>
+        </motion.div>
 
         <div className="max-w-2xl mx-auto mt-20" ref={sectionRef}>
-      <div className="mb-4">
-        <div className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
-          <h2 className="text-3xl font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 experience-heading">
-            Experience
-          </h2>
-        </div>
-      </div>
-      <div className="relative">
-        <div className="flex items-start mb-12 timeline-item">
-          <div className="w-full pr-8">
-            <div className="relative border-l border-cyan-400 pl-6">
-              <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
-              <div className="mb-8">
-                <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
-                  Member, TEDx NITK Surathkal Media Team
-                </h3>
-                <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
-                  Dec 2022 - May 2026
-                </span>
-                <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                  • Designed posters and promotional materials for TEDx events, enhancing visual communication and branding efforts.
-                </p>
-                <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                  • Collaborated on media campaigns to boost event visibility and engagement.
-                </p>
-                <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                  • Technologies Used: Canva, Illustrator
-                </p>
-              </div>
+          <div className="mb-4">
+            <div className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
+              <h2 className="text-3xl font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 experience-heading">
+                Experience
+              </h2>
             </div>
           </div>
-          <div className="flex-shrink-0 w-1 border-l border-gray-300 h-full"></div>
-        </div>
-        <div className="flex items-start timeline-item">
-          <div className="w-full pr-8">
-            <div className="relative border-l border-cyan-400 pl-6">
-              <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
-              <div className="mb-8">
-                <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
-                  Student, National Institute of Technology Karnataka
-                </h3>
-                <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
-                  Aug 2021 - Present
-                </span>
-                <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                  • Pursuing a Bachelor’s degree in Computer Science.
-                </p>
-                <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                  • Engaged in various projects and coursework related to computer science and software development.
-                </p>
+          <div className="relative">
+            <div className="flex items-start mb-12 timeline-item">
+              <div className="w-full pr-8">
+                <div className="relative border-l border-cyan-400 pl-6">
+                  <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                      Member, TEDx NITK Surathkal Media Team
+                    </h3>
+                    <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
+                      Dec 2022 - May 2026
+                    </span>
+                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                      • Designed posters and promotional materials for TEDx
+                      events, enhancing visual communication and branding
+                      efforts.
+                    </p>
+                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                      • Collaborated on media campaigns to boost event
+                      visibility and engagement.
+                    </p>
+                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                      • Technologies Used: Canva, Illustrator
+                    </p>
+                  </div>
+                </div>
               </div>
+              <div className="flex-shrink-0 w-1 border-l border-gray-300 h-full"></div>
+            </div>
+            <div className="flex items-start timeline-item">
+              <div className="w-full pr-8">
+                <div className="relative border-l border-cyan-400 pl-6">
+                  <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
+                  <div className="mb-8">
+                    <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                      Student, National Institute of Technology Karnataka
+                    </h3>
+                    <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
+                      Aug 2021 - Present
+                    </span>
+                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                      • Pursuing a Bachelor’s degree in Computer Science.
+                    </p>
+                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                      • Engaged in various projects and coursework related to
+                      computer science and software development.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-shrink-0 w-1 border-l border-gray-300 h-full"></div>
             </div>
           </div>
-          <div className="flex-shrink-0 w-1 border-l border-gray-300 h-full"></div>
         </div>
-      </div>
-    </div>
 
         <motion.div
           className="mt-16"
