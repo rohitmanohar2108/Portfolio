@@ -318,6 +318,25 @@ const Portfolio = () => {
       }
     );
   }, []);
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    gsap.fromTo(
+      projectsRef.current,
+      { x: "-100vw", opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 2,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: projectsRef.current,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-950  relative overflow-y-auto">
@@ -386,34 +405,34 @@ const Portfolio = () => {
         </div>
 
         <motion.div
-      ref={quoteRef}
-      className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
-      whileHover={{ scale: 1.05 }}
-    >
-      <div className="flex items-center space-x-4 overflow-hidden">
-        <motion.img
-          src={quotes[currentQuoteIndex].image}
-          alt={quotes[currentQuoteIndex].author}
-          className="h-56 w-56 object-cover rounded-full"
-          initial={{ x: -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
-        />
-        <motion.div
-          className="flex-1"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: "easeOut" }}
+          ref={quoteRef}
+          className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
+          whileHover={{ scale: 1.05 }}
         >
-          <p className="text-3xl text-white font-dancing-script">
-            {quotes[currentQuoteIndex].text}
-          </p>
-          <p className="text-xl mt-3 text-white">
-            - {quotes[currentQuoteIndex].author}
-          </p>
+          <div className="flex items-center space-x-4 overflow-hidden">
+            <motion.img
+              src={quotes[currentQuoteIndex].image}
+              alt={quotes[currentQuoteIndex].author}
+              className="h-56 w-56 object-cover rounded-full"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            />
+            <motion.div
+              className="flex-1"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, ease: "easeOut" }}
+            >
+              <p className="text-3xl text-white font-dancing-script">
+                {quotes[currentQuoteIndex].text}
+              </p>
+              <p className="text-xl mt-3 text-white">
+                - {quotes[currentQuoteIndex].author}
+              </p>
+            </motion.div>
+          </div>
         </motion.div>
-      </div>
-    </motion.div>
 
         <motion.div
           ref={aboutRef}
@@ -573,57 +592,70 @@ const Portfolio = () => {
         </motion.div>
 
         <div>
-          <TechStackBanner/>
+          <TechStackBanner />
         </div>
 
         <div className="mt-32 mb-24">
           <Lottie options={defaultOptionsfive} height={200} width={880} />
         </div>
 
-        <div className=" border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
-          <h2 className="text-3xl font-normal font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
-            Projects
-          </h2>
-        </div>
-        <motion.div
-          ref={projectsRef}
-          className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
-          whileHover={{ scale: 1.05 }}
-        >
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            {projects.map((project, index) => (
-              <motion.div
-                key={index}
-                className="shadow-xl shadow-cyan-500/50 border bg-black rounded-lg shadow-lg overflow-hidden"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-              >
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-56 object-cover font-courier-prime"
-                />
-                <div className="p-6">
-                  <h3 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-courier-prime font-bold mb-2">
-                    {project.title}
-                  </h3>
-                  <p className="text-white font-normal text-base mb-4 font-courier-prime">
-                    {project.description}
-                  </p>
-                  <a
-                    href={project.githubLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-white hover:underline text-base flex items-center font-courier-prime"
-                  >
-                    <FaGithub className="text-3xl hover:text-white transition-colors mr-2 " />
-                    View on GitHub
-                  </a>
-                </div>
-              </motion.div>
-            ))}
+        <div ref={projectsRef}>
+          <div className="flex items-center justify-center">
+            <motion.div
+              className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50 max-w-4xl mx-auto"
+              initial={{ y: -100, opacity: 0 }} // Start from above and invisible
+              animate={{ y: 0, opacity: 1 }} // Move to original position and become visible
+              transition={{
+                y: { type: "spring", stiffness: 50, damping: 20 }, // Smooth fall effect
+                opacity: { duration: 0.8 }, // Fade-in effect
+                duration: 1.2, // Total duration of the animation
+              }}
+            >
+              <h2 className="text-3xl font-normal font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                Projects
+              </h2>
+              {/* Add your project content here */}
+            </motion.div>
           </div>
-        </motion.div>
+          <motion.div
+            className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
+            whileHover={{ scale: 1.05 }}
+          >
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+              {projects.map((project, index) => (
+                <motion.div
+                  key={index}
+                  className="shadow-xl shadow-cyan-500/50 border bg-black rounded-lg shadow-lg overflow-hidden"
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-56 object-cover font-courier-prime"
+                  />
+                  <div className="p-6">
+                    <h3 className="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-courier-prime font-bold mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-white font-normal text-base mb-4 font-courier-prime">
+                      {project.description}
+                    </p>
+                    <a
+                      href={project.githubLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-white hover:underline text-base flex items-center font-courier-prime"
+                    >
+                      <FaGithub className="text-3xl hover:text-white transition-colors mr-2" />
+                      View on GitHub
+                    </a>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
 
         <motion.div className="mt-8 mr-8">
           <Lottie options={defaultOptionsSix} height={400} width={400} />
