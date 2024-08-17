@@ -215,6 +215,7 @@ const Portfolio = () => {
       logoSrc: "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg",
       name: "C++ Programming",
       link: "https://udemy-certificate.s3.amazonaws.com/image/UC-18d6bb61-0afd-4f93-a950-22da50d68372.jpg?v=1685001837000",
+      Course : "Udemy",
     },
     {
       id: 2,
@@ -222,6 +223,7 @@ const Portfolio = () => {
         "https://media.licdn.com/dms/image/v2/D560BAQE8MivsmbT7Ig/company-logo_100_100/company-logo_100_100/0/1705561459405/hackerrank_logo?e=1732147200&v=beta&t=3VXpZyiP86LrKXtnxgm1KNkPqkxm6lndd7_x4fkXYvE",
       name: "Problem Solving Basic",
       link: "https://www.hackerrank.com/certificates/a409daa53e15",
+      Course : "Hackerank",
     },
     {
       id: 3,
@@ -229,6 +231,7 @@ const Portfolio = () => {
         "https://media.licdn.com/dms/image/v2/C4D0BAQFd9H6cxFC3wQ/company-logo_100_100/company-logo_100_100/0/1630549313166?e=1732147200&v=beta&t=lbbuC7_bSl16Rew1PlMvMKwtWRkGij7zkzxZYUNPHAo",
       name: "Namaste React",
       link: "https://media.licdn.com/dms/image/v2/D562DAQGBRip9wMxEyQ/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1720373809961?e=1724410800&v=beta&t=cs_oObs7ai9t90xKXErxQRXLWk1g4Ifujy2mLpwGvEg",
+      Course : "NamasteDev.com",
     },
   ];
 
@@ -570,9 +573,12 @@ const Portfolio = () => {
                       alt={`${cert.name} Logo`}
                       className="w-24 h-auto mb-4"
                     />
-                    <h3 className="text-2xl font-courier-prime font-bold text-gray-800">
+                    <h3 className="text-2xl font-courier-prime font-bold text-blue-700">
                       {cert.name}
                     </h3>
+                    <h4 className="text-2xl font-courier-prime font-normal text-black">
+                      {cert.Course}
+                    </h4>
                   </div>
                 </a>
               </motion.div>
