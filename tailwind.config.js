@@ -17,7 +17,6 @@ module.exports = {
         'playfair-display': ['Playfair Display', 'serif'],
         'great-vibes': ['Great Vibes', 'cursive'],
         'courier-prime': ['Courier Prime', 'monospace'],
-        
       },
       keyframes: {
         colorChange: {
@@ -26,13 +25,17 @@ module.exports = {
           '50%': { text: 'linear-gradient(90deg, #F59E0B, #EF4444)' }, // amber-500 to red-500
           '75%': { text: 'linear-gradient(90deg, #6366F1, #8B5CF6)' }, // indigo-500 to violet-500
         },
+        lineMove: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
       },
       animation: {
         'color-gradient': 'colorChange 5s infinite',
+        'line-move': 'lineMove 5s linear infinite',
       },
     },
   },
   variants: {},
   plugins: [],
 };
-
