@@ -81,6 +81,7 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className="hidden sm:block text-white text-2xl relative "
+          style={{ left: '60px' }}
         >
           {isMenuOpen ? '✖️' : '☰'}
           {/* Dropdown Menu for Desktop */}
