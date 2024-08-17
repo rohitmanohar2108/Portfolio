@@ -48,7 +48,7 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
         {/* Hamburger Menu Button */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="block sm:hidden text-white text-2xl relative"
+          className="text-white text-2xl sm:hidden relative"
         >
           {isMenuOpen ? '✖️' : '☰'}
           {/* Dropdown Menu */}
@@ -77,27 +77,39 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
           </div>
         </button>
 
-        {/* Menu Items for Desktop */}
-        <div className="hidden sm:flex text-lg sm:text-xl space-x-4">
-          <button
-            onClick={() => scrollToRef(aboutRef)}
-            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 rounded-lg font-courier-prime shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
+        {/* Hamburger Menu Button for Desktop */}
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className="hidden sm:block text-white text-2xl relative "
+        >
+          {isMenuOpen ? '✖️' : '☰'}
+          {/* Dropdown Menu for Desktop */}
+          <div
+            ref={menuRef}
+            className={`absolute top-full right-0 mt-2 bg-black p-4 shadow-lg w-48 ${isMenuOpen ? 'block' : 'hidden'}`}
           >
-            About
-          </button>
-          <button
-            onClick={() => scrollToRef(projectsRef)}
-            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 rounded-lg font-courier-prime shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
-          >
-            Projects
-          </button>
-          <button
-            onClick={() => scrollToRef(contactRef)}
-            className="bg-cyan-500 shadow-lg shadow-indigo-500/50 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 rounded-lg font-courier-prime shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400"
-          >
-            Contact
-          </button>
-        </div>
+            <button
+              onClick={() => scrollToRef(aboutRef)}
+              className="block text-lg text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 py-2 px-4 rounded-lg font-courier-prime shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400 w-full text-left border-b border-indigo-500 "
+            >
+              About
+            </button>
+            <button
+              onClick={() => scrollToRef(projectsRef)}
+              className="block text-lg text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 py-2 px-4 rounded-lg font-courier-prime shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400 w-full text-left border-b border-indigo-500 last:border-b-0"
+            >
+              Projects
+            </button>
+            <button
+              onClick={() => scrollToRef(contactRef)}
+              className="block text-lg text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 py-2 px-4 rounded-lg font-courier-prime shadow-md transition-transform transform hover:scale-105 hover:bg-cyan-400 w-full text-left border-b border-indigo-500"
+            >
+              Contact
+            </button>
+          </div>
+        </button>
+
+        {/* Menu Items for Desktop (Removed) */}
       </div>
     </header>
   );
