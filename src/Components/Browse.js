@@ -106,7 +106,8 @@ const Portfolio = () => {
     {
       text: "'Move fast and break things. Unless you are breaking stuff, you are not moving fast enough.'",
       author: "Mark Zuckerberg",
-      image: "https://media.vanityfair.com/photos/5cf71b7e5d0130aa612df063/master/pass/zuckerberg1.jpg",
+      image:
+        "https://media.vanityfair.com/photos/5cf71b7e5d0130aa612df063/master/pass/zuckerberg1.jpg",
     },
     {
       text: "'See, you not only have to be a good coder to create a system like Linux, you have to be a sneaky bastard too.'",
@@ -160,7 +161,7 @@ const Portfolio = () => {
     {
       title: "Portfolio",
       image:
-        "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D0%26deploymentId%3Ddpl_4FQb3nbZdTcjLD9rP4r2mcgjdu6i%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_7KgoXXMEhgteKcMRKe239MXk5jiP",
+        "https://vercel.com/_next/image?url=%2Fapi%2Fscreenshot%3Fdark%3D0%26deploymentId%3Ddpl_vANqWYc2hBq5DbhgBDAxpeYepfDo%26teamId%3Drohits-projects-1ff89b20%26withStatus%3D1&w=1920&q=75&dpl=dpl_65jN9Gnuq15XcvrDMn6Z17eEWW88",
       description:
         "A simple and beautiful Portfolio Website made with Pure React JS. With some beautiful Animation.",
       githubLink: "https://github.com/rohitmanohar2108/Portfolio",
@@ -215,7 +216,7 @@ const Portfolio = () => {
       logoSrc: "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg",
       name: "C++ Programming",
       link: "https://udemy-certificate.s3.amazonaws.com/image/UC-18d6bb61-0afd-4f93-a950-22da50d68372.jpg?v=1685001837000",
-      Course : "Udemy",
+      Course: "Udemy",
     },
     {
       id: 2,
@@ -223,7 +224,7 @@ const Portfolio = () => {
         "https://media.licdn.com/dms/image/v2/D560BAQE8MivsmbT7Ig/company-logo_100_100/company-logo_100_100/0/1705561459405/hackerrank_logo?e=1732147200&v=beta&t=3VXpZyiP86LrKXtnxgm1KNkPqkxm6lndd7_x4fkXYvE",
       name: "Problem Solving Basic",
       link: "https://www.hackerrank.com/certificates/a409daa53e15",
-      Course : "Hackerank",
+      Course: "Hackerank",
     },
     {
       id: 3,
@@ -231,7 +232,14 @@ const Portfolio = () => {
         "https://media.licdn.com/dms/image/v2/C4D0BAQFd9H6cxFC3wQ/company-logo_100_100/company-logo_100_100/0/1630549313166?e=1732147200&v=beta&t=lbbuC7_bSl16Rew1PlMvMKwtWRkGij7zkzxZYUNPHAo",
       name: "Namaste React",
       link: "https://media.licdn.com/dms/image/v2/D562DAQGBRip9wMxEyQ/profile-treasury-image-shrink_800_800/profile-treasury-image-shrink_800_800/0/1720373809961?e=1724410800&v=beta&t=cs_oObs7ai9t90xKXErxQRXLWk1g4Ifujy2mLpwGvEg",
-      Course : "NamasteDev.com",
+      Course: "NamasteDev.com",
+    },
+    {
+      id: 4,
+      logoSrc: "https://www.udemy.com/staticx/udemy/images/v7/logo-udemy.svg",
+      name: "Web Development Bootcamp",
+      link: "https://www.udemy.com/certificate/UC-e1b5392e-1cea-4d45-9b5f-ab9f453208bd/",
+      Course: "Udemy",
     },
   ];
 
@@ -482,7 +490,7 @@ const Portfolio = () => {
             </div>
           </div>
         </div>
-        
+
         <motion.div
           className="mt-16"
           whileHover={{ scale: 1.1 }}
@@ -558,16 +566,16 @@ const Portfolio = () => {
 
         <div className="mx-auto mt-8 max-w-4xl">
           {/* Certifications Section */}
-          <div className="flex justify-between space-x-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {certifications.map((cert) => (
               <motion.div
                 key={cert.id}
-                className="border rounded-lg border-cyan-400 p-4 shadow-xl shadow-indigo-500/50 bg-white w-full text-center"
+                className="border rounded-lg border-cyan-400 p-4 shadow-xl shadow-indigo-500/50 bg-white text-center flex flex-col justify-between"
                 whileHover={{ scale: 1.05, rotate: 1 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
                 <a href={cert.link} target="_blank" rel="noopener noreferrer">
-                  <div className="flex flex-col items-center">
+                  <div className="flex flex-col items-center flex-grow">
                     <img
                       src={cert.logoSrc}
                       alt={`${cert.name} Logo`}
