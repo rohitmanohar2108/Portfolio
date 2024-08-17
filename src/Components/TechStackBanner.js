@@ -8,9 +8,9 @@ const TechStackBanner = () => {
       initial={{ x: '-100vw', opacity: 0 }} // Start from outside the viewport
       animate={{ x: 0, opacity: 1 }} // Move to original position
       transition={{ 
-        x: { type: "spring", stiffness: 70, damping: 20 }, // Smooth, spring-like movement
-        opacity: { duration: 0.6 }, // Fade-in effect
-        duration: 1 // Total duration of the animation
+        x: { type: "spring", stiffness: 60, damping: 70 }, // Smooth, spring-like movement
+        opacity: { duration: 1.2 }, // Fade-in effect
+        duration: 2 // Total duration of the animation
       }}
       whileHover={{ scale: 1.05 }}
     >
