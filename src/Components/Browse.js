@@ -565,7 +565,7 @@ const Portfolio = () => {
           </div>
         </motion.div>
 
-        <motion.div className="mt-8 mr-8" whileHover={{ scale: 1.1 }}>
+        <motion.div className="mt-8 mr-8" >
           <Lottie options={defaultOptionsSix} height={400} width={400} />
         </motion.div>
 
