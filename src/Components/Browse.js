@@ -31,6 +31,7 @@ const Portfolio = () => {
   const sectionRef = useRef(null);
   const quoteRef = useRef(null);
   const elementRef = useRef(null);
+  const certiRef = useRef(null);
 
   const defaultOptions = {
     loop: true,
@@ -352,6 +353,24 @@ const Portfolio = () => {
           trigger: projectsRef.current,
           start: "top 80%",
           toggleActions: "play none none none",
+        },
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    gsap.fromTo(
+      certiRef.current,
+      { opacity: 0, x: '100vw' },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: certiRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
         },
       }
     );
@@ -691,35 +710,42 @@ const Portfolio = () => {
           </h2>
         </div>
 
-        <div className="mx-auto mt-8 max-w-4xl">
-          {/* Certifications Section */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {certifications.map((cert) => (
-              <motion.div
-                key={cert.id}
-                className="border rounded-lg border-cyan-400 p-4 shadow-xl shadow-indigo-500/50 bg-white text-center flex flex-col justify-between"
-                whileHover={{ scale: 1.05, rotate: 1 }}
-                transition={{ type: "spring", stiffness: 300 }}
-              >
-                <a href={cert.link} target="_blank" rel="noopener noreferrer">
-                  <div className="flex flex-col items-center flex-grow">
-                    <img
-                      src={cert.logoSrc}
-                      alt={`${cert.name} Logo`}
-                      className="w-24 h-auto mb-4"
-                    />
-                    <h3 className="text-2xl font-courier-prime font-bold text-blue-700">
-                      {cert.name}
-                    </h3>
-                    <h4 className="text-2xl font-courier-prime font-normal text-black">
-                      {cert.Course}
-                    </h4>
-                  </div>
-                </a>
-              </motion.div>
-            ))}
-          </div>
-        </div>
+        <div ref={certiRef} className="mx-auto mt-8 max-w-4xl">
+      {/* Certifications Section */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+        {certifications.map((cert, index) => (
+          <motion.div
+            key={cert.id}
+            className="border rounded-lg border-cyan-400 p-4 shadow-xl shadow-indigo-500/50 bg-white text-center flex flex-col justify-between"
+            initial={{ x: '100vw', opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{ 
+              type: "spring", 
+              stiffness: 250, 
+              damping: 25, 
+              delay: index * 0.2 // Stagger animation
+            }}
+            whileHover={{ scale: 1.05, rotate: 1 }}
+          >
+            <a href={cert.link} target="_blank" rel="noopener noreferrer">
+              <div className="flex flex-col items-center flex-grow">
+                <img
+                  src={cert.logoSrc}
+                  alt={`${cert.name} Logo`}
+                  className="w-24 h-auto mb-4"
+                />
+                <h3 className="text-2xl font-courier-prime font-bold text-blue-700">
+                  {cert.name}
+                </h3>
+                <h4 className="text-2xl font-courier-prime font-normal text-black">
+                  {cert.Course}
+                </h4>
+              </div>
+            </a>
+          </motion.div>
+        ))}
+      </div>
+    </div>
 
         <div className="font-normal font-courier-prime text-4xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mt-11 transition-transform transform hover:-translate-y-2 hover:text-blue-500">
           Coffee with me.
