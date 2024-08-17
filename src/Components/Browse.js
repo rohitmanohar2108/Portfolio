@@ -271,7 +271,8 @@ const Portfolio = () => {
           key={index}
           initial={{ opacity: 0, y: 20 }} // Start with some vertical offset
           animate={{ opacity: 1, y: 0 }}  // Animate to original position
-          transition={{ duration: 2.5, delay: index * 0.1 }} // Slow reveal with longer delay
+          transition={{ duration: 2.5, delay: index * 0.1, repeat: Infinity, repeatDelay: 1 }} // Slow reveal with longer delay
+          
           style={{ display: "inline-block", marginRight: "0.5rem" }} // Add space between words
         >
           {word}
