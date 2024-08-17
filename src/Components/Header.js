@@ -104,4 +104,3 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
 };
 
 export default Header;
-
