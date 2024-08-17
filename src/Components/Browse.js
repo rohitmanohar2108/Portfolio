@@ -235,7 +235,7 @@ const Portfolio = () => {
         contactRef={contactRef}
       />
 
-      <div className="container mx-auto px-4 py-8 flex flex-col items-center">
+      <div className="container mx-auto px-4 py-8 flex flex-col  items-center ">
         <div className="flex flex-row items-center justify-between mb-9 w-full">
           {/* Left side - Lottie animation */}
           <motion.div className="ml-8" whileHover={{ scale: 1.1 }}>
