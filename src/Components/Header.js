@@ -80,7 +80,7 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
         {/* Hamburger Menu Button for Desktop */}
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          className="hidden sm:block text-white text-2xl relative "
+          className="hidden sm:block text-white text-3xl relative "
           style={{ left: '60px' }}
         >
           {isMenuOpen ? '✖️' : '☰'}

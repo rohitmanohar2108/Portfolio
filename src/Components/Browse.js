@@ -387,7 +387,7 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 className="text-white"
               >
-                <FaGithub className="text-4xl hover:text-violet-500 transition-colors" />
+                <FaGithub className="text-3xl hover:text-violet-500 transition-colors" />
               </a>
               <a
                 href="https://www.linkedin.com/in/rohit-manohar-80b949207/"
@@ -395,7 +395,7 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 className="text-white"
               >
-                <FaLinkedin className="text-4xl hover:text-violet-500 transition-colors" />
+                <FaLinkedin className="text-3xl hover:text-violet-500 transition-colors" />
               </a>
               <a
                 href="https://www.instagram.com/rohitmanohar2108/"
@@ -403,7 +403,7 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 className="text-white"
               >
-                <FaInstagram className="text-4xl hover:text-violet-500 transition-colors" />
+                <FaInstagram className="text-3xl hover:text-violet-500 transition-colors" />
               </a>
               <a
                 href="https://twitter.com/imrohit372"
@@ -411,7 +411,7 @@ const Portfolio = () => {
                 rel="noopener noreferrer"
                 className="text-white"
               >
-                <FaTwitter className="text-4xl hover:text-violet-500 transition-colors" />
+                <FaTwitter className="text-3xl hover:text-violet-500 transition-colors" />
               </a>
             </motion.div>
           </div>
