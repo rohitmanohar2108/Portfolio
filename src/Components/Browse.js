@@ -104,6 +104,11 @@ const Portfolio = () => {
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThCPblxoSQ8E0dWaakrQDUt73M_hS63hE9cg&s",
     },
     {
+      text: "'Move fast and break things. Unless you are breaking stuff, you are not moving fast enough.'",
+      author: "Mark Zuckerberg",
+      image: "https://media.vanityfair.com/photos/5cf71b7e5d0130aa612df063/master/pass/zuckerberg1.jpg",
+    },
+    {
       text: "'See, you not only have to be a good coder to create a system like Linux, you have to be a sneaky bastard too.'",
       author: "Linus Torvalds",
       image: "https://akshaysaini.in/img/quotes/linus-torvalds.jpg",
@@ -334,7 +339,7 @@ const Portfolio = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           <motion.img
-            src="https://eu-central.storage.cloudconvert.com/tasks/c6c19d99-5c79-4247-b7be-2e723dad9401/WhatsApp%20Image%202024-08-16%20at%2000.47.15.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=cloudconvert-production%2F20240815%2Ffra%2Fs3%2Faws4_request&X-Amz-Date=20240815T191905Z&X-Amz-Expires=86400&X-Amz-Signature=a337760ebc1a4a94d1e3bdfa566aaac19b6e0d10b33560a9111c39e99be89e27&X-Amz-SignedHeaders=host&response-content-disposition=inline%3B%20filename%3D%22WhatsApp%20Image%202024-08-16%20at%2000.47.15.png%22&response-content-type=image%2Fpng&x-id=GetObject"
+            src="https://media-mxp1-1.cdn.whatsapp.net/v/t61.24694-24/453603651_520834290411384_6429731950094255849_n.jpg?ccb=11-4&oh=01_Q5AaIC-9v5GugtOFEMMBYvFX3frZuTI9ad7p9dp1jxMl6CEx&oe=66CDCAFF&_nc_sid=5e03e0&_nc_cat=102"
             alt="Rohit"
             className="w-56 h-56 rounded-full mr-8"
             initial={{ scale: 0.9, opacity: 0 }}
@@ -423,7 +428,7 @@ const Portfolio = () => {
           <div className="relative">
             <div className="flex items-start mb-12">
               <div className="w-full pr-8">
-                <div className="relative border-l border-cyan-400 pl-6">
+                <div className="relative  border-l border-cyan-400 pl-6">
                   <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
                   <div className="mb-8">
                     <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
