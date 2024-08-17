@@ -11,6 +11,7 @@ import {
   FaArrowUp,
 } from "react-icons/fa";
 import animationDataTwo from "../Animation/animationtwo.json";
+import TechStackBanner from "./TechStackBanner";
 import { useSpring, animated } from "@react-spring/web";
 import animationDatathree from "../Animation/animationthree.json";
 import animationDatafour from "../Animation/animationfour.json";
@@ -235,59 +236,62 @@ const Portfolio = () => {
       />
 
       <div className="container mx-auto px-4 py-8 flex flex-col items-center">
-      <div className="flex flex-row items-center justify-between mb-9 w-full">
-  {/* Left side - Lottie animation */}
-  <motion.div className="ml-8" whileHover={{ scale: 1.1 }}>
-    <Lottie options={defaultOptions} height={500} width={500} />
-  </motion.div>
+        <div className="flex flex-row items-center justify-between mb-9 w-full">
+          {/* Left side - Lottie animation */}
+          <motion.div className="ml-8" whileHover={{ scale: 1.1 }}>
+            <Lottie options={defaultOptions} height={500} width={500} />
+          </motion.div>
 
-  {/* Right side - Text content */}
-  <div className="flex flex-col items-start ml-44">
-    <motion.h1
-      className="text-9xl text-cyan-400 font-courier-prime"
-      ref={textRef}
-      whileHover={{
-        scale: 1.1,
-        color: "#1E90FF",
-        textShadow: "0px 8px 15px rgba(255, 105, 180, 0.8)",
-      }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-    >
-      Hi👋!
-    </motion.h1>
+          {/* Right side - Text content */}
+          <div className="flex flex-col items-start ml-44">
+            <motion.h1
+              className="text-9xl text-cyan-400 font-courier-prime"
+              ref={textRef}
+              whileHover={{
+                scale: 1.1,
+                color: "#1E90FF",
+                textShadow: "0px 8px 15px rgba(255, 105, 180, 0.8)",
+              }}
+              transition={{ duration: 0.4, ease: "easeInOut" }}
+            >
+              Hi👋!
+            </motion.h1>
 
-    <motion.h2
-      className="mb-6 text-5xl text-blue-400 font-normal font-courier-prime mt-4"
-      whileHover={{
-        y: -10,
-        opacity: 0.8,
-        color: "#22d3ee",
-        textShadow: "0px 4px 8px rgba(0, 255, 255, 0.8)",
-      }}
-      transition={{ duration: 0.3, ease: "easeInOut" }}
-    >
-      {words.map((word, index) => (
-        <motion.span
-          key={index}
-          initial={{ opacity: 0, y: 20 }} // Start with some vertical offset
-          animate={{ opacity: 1, y: 0 }}  // Animate to original position
-          transition={{ duration: 2.5, delay: index * 0.1, repeat: Infinity, repeatDelay: 1 }} // Slow reveal with longer delay
-          
-          style={{ display: "inline-block", marginRight: "0.5rem" }} // Add space between words
-        >
-          {word}
-        </motion.span>
-      ))}
-    </motion.h2>
+            <motion.h2
+              className="mb-6 text-5xl text-blue-400 font-normal font-courier-prime mt-4"
+              whileHover={{
+                y: -10,
+                opacity: 0.8,
+                color: "#22d3ee",
+                textShadow: "0px 4px 8px rgba(0, 255, 255, 0.8)",
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              {words.map((word, index) => (
+                <motion.span
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }} // Start with some vertical offset
+                  animate={{ opacity: 1, y: 0 }} // Animate to original position
+                  transition={{
+                    duration: 2.5,
+                    delay: index * 0.1,
+                    repeat: Infinity,
+                    repeatDelay: 1,
+                  }} // Slow reveal with longer delay
+                  style={{ display: "inline-block", marginRight: "0.5rem" }} // Add space between words
+                >
+                  {word}
+                </motion.span>
+              ))}
+            </motion.h2>
 
-    <div className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center shadow-lg shadow-indigo-500/50">
-      <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold transition-transform transform hover:scale-105 mb-3 text-3xl font-courier-prime animate-color-change">
-        Seeking Internship Opportunities
-      </p>
-    </div>
-  </div>
-</div>
-
+            <div className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center shadow-lg shadow-indigo-500/50">
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold transition-transform transform hover:scale-105 mb-3 text-3xl font-courier-prime animate-color-change">
+                Seeking Internship Opportunities
+              </p>
+            </div>
+          </div>
+        </div>
 
         <motion.div
           className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
@@ -407,6 +411,7 @@ const Portfolio = () => {
             </motion.div>
           </div>
         </motion.div>
+
         <div className="max-w-2xl mx-auto mt-20">
           <div className="mb-4">
             <div className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
@@ -469,7 +474,7 @@ const Portfolio = () => {
             </div>
           </div>
         </div>
-
+        
         <motion.div
           className="mt-16"
           whileHover={{ scale: 1.1 }}
@@ -480,59 +485,9 @@ const Portfolio = () => {
           <Lottie options={defaultOptionsTwo} height={400} width={400} />
         </motion.div>
 
-        <motion.div
-          className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8  bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
-          whileHover={{ scale: 1.05 }}
-        >
-          <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-courier-prime font-normal mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
-            Some of the Tech Stack I know:
-          </p>
-
-          <div className="flex mb-5 mt-4 space-x-4">
-            <i
-              className="devicon-react-original colored text-4xl"
-              title="React"
-            ></i>
-            <i
-              className="devicon-javascript-plain colored text-4xl"
-              title="JavaScript"
-            ></i>
-            <i
-              className="devicon-redux-plain colored text-4xl"
-              title="Redux"
-            ></i>
-            <i
-              className="devicon-html5-plain colored text-4xl"
-              title="HTML5"
-            ></i>
-            <i className="devicon-css3-plain colored text-4xl" title="CSS3"></i>
-            <i
-              className="devicon-tailwindcss-plain colored text-4xl"
-              title="Tailwind CSS"
-            ></i>
-            <i className="devicon-c-plain colored text-4xl" title="C"></i>
-            <i
-              className="devicon-cplusplus-plain colored text-4xl"
-              title="C++"
-            ></i>
-            <i
-              className="devicon-reactrouter-plain colored text-4xl"
-              title="ReactRouter"
-            ></i>
-            <i
-              className="devicon-ubuntu-plain colored text-4xl"
-              title="Ubuntu"
-            ></i>
-            <i
-              className="devicon-linux-plain colored-white text-4xl"
-              title="Linux"
-            ></i>
-            <i
-              className="devicon-canva-plain colored text-4xl"
-              title="Canva"
-            ></i>
-          </div>
-        </motion.div>
+        <div>
+          <TechStackBanner />
+        </div>
 
         <div className="mt-32 mb-24">
           <Lottie options={defaultOptionsfive} height={200} width={880} />
@@ -582,8 +537,6 @@ const Portfolio = () => {
             ))}
           </div>
         </motion.div>
-
-       
 
         <motion.div className="mt-8 mr-8">
           <Lottie options={defaultOptionsSix} height={400} width={400} />
