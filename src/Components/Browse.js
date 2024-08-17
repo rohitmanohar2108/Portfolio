@@ -30,6 +30,8 @@ const Portfolio = () => {
   const words = text.split(" ");
   const sectionRef = useRef(null);
   const quoteRef = useRef(null);
+  const elementRef = useRef(null);
+
 
   const defaultOptions = {
     loop: true,
@@ -248,6 +250,24 @@ const Portfolio = () => {
     },
   ];
   useEffect(() => {
+    gsap.fromTo(
+      elementRef.current,
+      { x: '100vw', opacity: 0 }, // Start from the right side
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1.2, // Adjust duration for speed
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: elementRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }, []);
+
+  useEffect(() => {
     const section = sectionRef.current;
 
     gsap.fromTo(
@@ -396,11 +416,14 @@ const Portfolio = () => {
               ))}
             </motion.h2>
 
-            <div className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center shadow-lg shadow-indigo-500/50">
-              <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold transition-transform transform hover:scale-105 mb-3 text-3xl font-courier-prime animate-color-change">
-                Seeking Internship Opportunities
-              </p>
-            </div>
+            <div
+      ref={elementRef}
+      className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center shadow-lg shadow-indigo-500/50"
+    >
+      <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold transition-transform transform hover:scale-105 mb-3 text-3xl font-courier-prime animate-color-change">
+        Seeking Internship Opportunities
+      </p>
+    </div>
           </div>
         </div>
 
@@ -608,7 +631,7 @@ const Portfolio = () => {
               transition={{
                 y: { type: "spring", stiffness: 50, damping: 20 }, // Smooth fall effect
                 opacity: { duration: 0.8 }, // Fade-in effect
-                duration: 1.2, // Total duration of the animation
+                duration: 1, // Total duration of the animation
               }}
             >
               <h2 className="text-3xl font-normal font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
