@@ -3,6 +3,8 @@ import Lottie from "react-lottie";
 import Header from "./Header";
 import { motion } from "framer-motion";
 import animationData from "../Animation/animation.json";
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import {
   FaGithub,
   FaLinkedin,
@@ -20,11 +22,14 @@ import animationDataSix from "../Animation/animationsix.json";
 // Import Devicon CSS (already added link)
 import "devicon/devicon.min.css";
 import Footer from "./Footer";
+gsap.registerPlugin(ScrollTrigger);
+
 
 const Portfolio = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
   const text = "I'm Rohit, Computer Science Undergrad";
   const words = text.split(" ");
+  const sectionRef = useRef(null);
 
   const defaultOptions = {
     loop: true,
@@ -242,6 +247,41 @@ const Portfolio = () => {
       Course: "Udemy",
     },
   ];
+  useEffect(() => {
+    const section = sectionRef.current;
+
+    gsap.fromTo(
+      section.querySelector('.experience-heading'),
+      { opacity: 0, y: -20 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: 'power3.out',
+        delay: 0.2,
+        scrollTrigger: {
+          trigger: section.querySelector('.experience-heading'),
+          start: 'top 80%', // Animation starts when the top of the element is 80% from the top of the viewport
+        },
+      }
+    );
+
+    gsap.fromTo(
+      section.querySelectorAll('.timeline-item'),
+      { opacity: 0, x: -50 },
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        stagger: 0.3,
+        scrollTrigger: {
+          trigger: section.querySelector('.timeline-item'),
+          start: 'top 85%', // Animation starts when the top of the element is 85% from the top of the viewport
+        },
+      }
+    );
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-950  relative overflow-y-auto">
@@ -436,68 +476,64 @@ const Portfolio = () => {
           </div>
         </motion.div>
 
-        <div className="max-w-2xl mx-auto mt-20">
-          <div className="mb-4">
-            <div className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
-              <h2 className="text-3xl font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 ">
-                Experience
-              </h2>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="flex items-start mb-12">
-              <div className="w-full pr-8">
-                <div className="relative  border-l border-cyan-400 pl-6">
-                  <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
-                      Member, TEDx NITK Surathkal Media Team
-                    </h3>
-                    <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
-                      Dec 2022 - May 2026
-                    </span>
-                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                      • Designed posters and promotional materials for TEDx
-                      events, enhancing visual communication and branding
-                      efforts.
-                    </p>
-                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                      • Collaborated on media campaigns to boost event
-                      visibility and engagement.
-                    </p>
-                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                      • Technologies Used: Canva, Illustrator
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex-shrink-0 w-1 border-l border-gray-300 h-full"></div>
-            </div>
-            <div className="flex items-start">
-              <div className="w-full pr-8">
-                <div className="relative border-l border-cyan-400 pl-6">
-                  <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-semibold font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
-                      Student, National Institute of Technology Karnataka
-                    </h3>
-                    <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
-                      Aug 2021 - Present
-                    </span>
-                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                      • Pursuing a Bachelor’s degree in Computer Science.
-                    </p>
-                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                      • Engaged in various projects and coursework related to
-                      computer science and software development.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex-shrink-0 w-1 border-l border-gray-300 h-full"></div>
-            </div>
-          </div>
+        <div className="max-w-2xl mx-auto mt-20" ref={sectionRef}>
+      <div className="mb-4">
+        <div className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
+          <h2 className="text-3xl font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 experience-heading">
+            Experience
+          </h2>
         </div>
+      </div>
+      <div className="relative">
+        <div className="flex items-start mb-12 timeline-item">
+          <div className="w-full pr-8">
+            <div className="relative border-l border-cyan-400 pl-6">
+              <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
+              <div className="mb-8">
+                <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                  Member, TEDx NITK Surathkal Media Team
+                </h3>
+                <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
+                  Dec 2022 - May 2026
+                </span>
+                <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                  • Designed posters and promotional materials for TEDx events, enhancing visual communication and branding efforts.
+                </p>
+                <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                  • Collaborated on media campaigns to boost event visibility and engagement.
+                </p>
+                <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                  • Technologies Used: Canva, Illustrator
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex-shrink-0 w-1 border-l border-gray-300 h-full"></div>
+        </div>
+        <div className="flex items-start timeline-item">
+          <div className="w-full pr-8">
+            <div className="relative border-l border-cyan-400 pl-6">
+              <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
+              <div className="mb-8">
+                <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                  Student, National Institute of Technology Karnataka
+                </h3>
+                <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
+                  Aug 2021 - Present
+                </span>
+                <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                  • Pursuing a Bachelor’s degree in Computer Science.
+                </p>
+                <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                  • Engaged in various projects and coursework related to computer science and software development.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="flex-shrink-0 w-1 border-l border-gray-300 h-full"></div>
+        </div>
+      </div>
+    </div>
 
         <motion.div
           className="mt-16"
