@@ -41,7 +41,7 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
   return (
     <header ref={navRef} className="bg-black p-4 shadow-lg relative">
       <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-4xl sm:text-5xl mt-2 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-bold font-great-vibes h-14">
+        <h1 className="text-4xl sm:text-4xl mt-2 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-bold font-great-vibes h-14">
           Rohit Manohar :)
         </h1>
 
