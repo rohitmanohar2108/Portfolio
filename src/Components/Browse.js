@@ -282,6 +282,23 @@ const Portfolio = () => {
       }
     );
   }, []);
+  useEffect(() => {
+    gsap.fromTo(
+      aboutRef.current,
+      { opacity: 0, x: 100 }, // Start from the right
+      {
+        opacity: 1,
+        x: 0,
+        duration: 0.6,
+        ease: "easeOut",
+        scrollTrigger: {
+          trigger: aboutRef.current,
+          start: "top 80%", // Trigger when the top of the element is 80% from the top of the viewport
+          toggleActions: "play none none none", // Play animation on entering the viewport
+        },
+      }
+    );
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-950  relative overflow-y-auto">
@@ -382,99 +399,91 @@ const Portfolio = () => {
         </motion.div>
 
         <motion.div
-          ref={aboutRef}
-          className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
-          whileHover={{ scale: 1.05 }}
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+      ref={aboutRef}
+      className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
+      whileHover={{ scale: 1.05 }}
+    >
+      <motion.img
+        src="https://media-mxp1-1.cdn.whatsapp.net/v/t61.24694-24/453603651_520834290411384_6429731950094255849_n.jpg?ccb=11-4&oh=01_Q5AaIC-9v5GugtOFEMMBYvFX3frZuTI9ad7p9dp1jxMl6CEx&oe=66CDCAFF&_nc_sid=5e03e0&_nc_cat=102"
+        alt="Rohit"
+        className="w-56 h-56 rounded-full mr-8"
+        initial={{ scale: 0.9, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 0.7, ease: "easeOut" }}
+      />
+      <div>
+        <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-courier-prime mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
+          About Me
+        </h3>
+
+        <motion.p
+          className="text-white text-xl font-courier-prime"
+          whileHover={{
+            y: -5,
+            color: "#1E90FF",
+          }}
         >
-          <motion.img
-            src="https://media-mxp1-1.cdn.whatsapp.net/v/t61.24694-24/453603651_520834290411384_6429731950094255849_n.jpg?ccb=11-4&oh=01_Q5AaIC-9v5GugtOFEMMBYvFX3frZuTI9ad7p9dp1jxMl6CEx&oe=66CDCAFF&_nc_sid=5e03e0&_nc_cat=102"
-            alt="Rohit"
-            className="w-56 h-56 rounded-full mr-8"
-            initial={{ scale: 0.9, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.7, ease: "easeOut" }}
-          />
-          <div>
-            <h3 className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-courier-prime mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
-              About Me
-            </h3>
+          I am a Computer Science Student at NITK. I have a deep passion for
+          coding and constantly strive to enhance my skills by learning new
+          technologies. I love tackling challenging problems and finding
+          innovative solutions. My areas of interest include web
+          development, programming, and many more. I am always eager to
+          collaborate on exciting projects and learn from others in the
+          field. When I am not coding, I enjoy exploring the latest tech
+          trends and participating in hackathons and coding competitions.
+          Let's connect and create something amazing together! Whether it's
+          building a new app, diving into a complex algorithm, or simply
+          exchanging knowledge, I am excited to engage with like-minded
+          individuals and contribute to the tech community.
+        </motion.p>
 
-            <motion.p
-              className=" text-white text-xl font-courier-prime"
-              whileHover={{
-                y: -5,
-                color: "#1E90FF",
-              }}
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
-              I am a Computer Science Student at NITK. I have a deep passion for
-              coding and constantly strive to enhance my skills by learning new
-              technologies. I love tackling challenging problems and finding
-              innovative solutions. My areas of interest include web
-              development, programming, and many more. I am always eager to
-              collaborate on exciting projects and learn from others in the
-              field. When I am not coding, I enjoy exploring the latest tech
-              trends and participating in hackathons and coding competitions.
-              Let's connect and create something amazing together! Whether it's
-              building a new app, diving into a complex algorithm, or simply
-              exchanging knowledge, I am excited to engage with like-minded
-              individuals and contribute to the tech community.
-            </motion.p>
-
-            <motion.div
-              className="flex mt-4 space-x-4 z-20 relative"
-              initial={{ x: 100, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              transition={{ duration: 0.9, ease: "easeOut" }}
-            >
-              <a
-                href="https://github.com/rohitmanohar2108"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white"
-              >
-                <FaGithub className="text-3xl hover:text-violet-500 transition-colors" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/rohit-manohar-80b949207/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white"
-              >
-                <FaLinkedin className="text-3xl hover:text-violet-500 transition-colors" />
-              </a>
-              <a
-                href="https://www.instagram.com/rohitmanohar2108/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white"
-              >
-                <FaInstagram className="text-3xl hover:text-violet-500 transition-colors" />
-              </a>
-              <a
-                href="https://twitter.com/imrohit372"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-white"
-              >
-                <FaTwitter className="text-3xl hover:text-violet-500 transition-colors" />
-              </a>
-              <a
-                href="https://drive.google.com/file/d/1Rdddm_h-MFgcIkppo7uDtpQ-V-4rFZN2/view?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="shadow-md shadow-indigo-500/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-normal font-courier-prime text-xl py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
-              >
-                View Resume
-              </a>
-            </motion.div>
-          </div>
+        <motion.div
+          className="flex mt-4 space-x-4 z-20 relative"
+        >
+          <a
+            href="https://github.com/rohitmanohar2108"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+          >
+            <FaGithub className="text-3xl hover:text-violet-500 transition-colors" />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/rohit-manohar-80b949207/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+          >
+            <FaLinkedin className="text-3xl hover:text-violet-500 transition-colors" />
+          </a>
+          <a
+            href="https://www.instagram.com/rohitmanohar2108/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+          >
+            <FaInstagram className="text-3xl hover:text-violet-500 transition-colors" />
+          </a>
+          <a
+            href="https://twitter.com/imrohit372"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white"
+          >
+            <FaTwitter className="text-3xl hover:text-violet-500 transition-colors" />
+          </a>
+          <a
+            href="https://drive.google.com/file/d/1Rdddm_h-MFgcIkppo7uDtpQ-V-4rFZN2/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shadow-md shadow-indigo-500/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-normal font-courier-prime text-xl py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
+          >
+            View Resume
+          </a>
         </motion.div>
+      </div>
+    </motion.div>
+
 
         <div className="max-w-2xl mx-auto mt-20" ref={sectionRef}>
       <div className="mb-4">
