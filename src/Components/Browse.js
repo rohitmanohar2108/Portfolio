@@ -573,7 +573,7 @@ const Portfolio = () => {
         </motion.div>
 
         <div>
-          <TechStackBanner />
+          <TechStackBanner/>
         </div>
 
         <div className="mt-32 mb-24">

@@ -1,17 +1,35 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const TechStackBanner = () => {
+  const bannerRef = useRef(null);
+
+  useEffect(() => {
+    gsap.fromTo(
+      bannerRef.current,
+      { x: '-100vw', opacity: 0 },
+      {
+        x: 0,
+        opacity: 1,
+        duration: 2,
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: bannerRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }, []);
+
   return (
     <motion.div
+      ref={bannerRef}
       className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
-      initial={{ x: '-100vw', opacity: 0 }} // Start from outside the viewport
-      animate={{ x: 0, opacity: 1 }} // Move to original position
-      transition={{ 
-        x: { type: "spring", stiffness: 60, damping: 70 }, // Smooth, spring-like movement
-        opacity: { duration: 1.2 }, // Fade-in effect
-        duration: 2 // Total duration of the animation
-      }}
       whileHover={{ scale: 1.05 }}
     >
       <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-courier-prime font-normal mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
