@@ -32,7 +32,6 @@ const Portfolio = () => {
   const quoteRef = useRef(null);
   const elementRef = useRef(null);
 
-
   const defaultOptions = {
     loop: true,
     autoplay: true,
@@ -252,16 +251,16 @@ const Portfolio = () => {
   useEffect(() => {
     gsap.fromTo(
       elementRef.current,
-      { x: '100vw', opacity: 0 }, // Start from the right side
+      { x: "100vw", opacity: 0 }, // Start from the right side
       {
         x: 0,
         opacity: 1,
         duration: 1.2, // Adjust duration for speed
-        ease: 'power3.out',
+        ease: "power3.out",
         scrollTrigger: {
           trigger: elementRef.current,
-          start: 'top 80%',
-          toggleActions: 'play none none none',
+          start: "top 80%",
+          toggleActions: "play none none none",
         },
       }
     );
@@ -378,12 +377,14 @@ const Portfolio = () => {
             <motion.h1
               className="text-9xl text-cyan-400 font-courier-prime"
               ref={textRef}
+              initial={{ y: "-100vh", opacity: 0 }} // Start from above the viewport
+              animate={{ y: 0, opacity: 1 }} // Move to its original position
+              transition={{ duration: 0.5, ease: "easeOut" }} // Adjust duration for speed
               whileHover={{
                 scale: 1.1,
                 color: "#1E90FF",
                 textShadow: "0px 8px 15px rgba(255, 105, 180, 0.8)",
               }}
-              transition={{ duration: 0.4, ease: "easeInOut" }}
             >
               Hi👋!
             </motion.h1>
@@ -417,13 +418,13 @@ const Portfolio = () => {
             </motion.h2>
 
             <div
-      ref={elementRef}
-      className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center shadow-lg shadow-indigo-500/50"
-    >
-      <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold transition-transform transform hover:scale-105 mb-3 text-3xl font-courier-prime animate-color-change">
-        Seeking Internship Opportunities
-      </p>
-    </div>
+              ref={elementRef}
+              className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center shadow-lg shadow-indigo-500/50"
+            >
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold transition-transform transform hover:scale-105 mb-3 text-3xl font-courier-prime animate-color-change">
+                Seeking Internship Opportunities
+              </p>
+            </div>
           </div>
         </div>
 
