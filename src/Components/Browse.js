@@ -22,6 +22,8 @@ import Footer from "./Footer";
 
 const Portfolio = () => {
   const [showScrollButton, setShowScrollButton] = useState(false);
+  const text = "I'm Rohit, Computer Science Undergrad";
+  const words = text.split(" ");
 
   const defaultOptions = {
     loop: true,
@@ -255,7 +257,7 @@ const Portfolio = () => {
     </motion.h1>
 
     <motion.h2
-      className="mb-6 text-4xl text-white font-courier-prime mt-4"
+      className="mb-6 text-5xl text-blue-400 font-normal font-courier-prime mt-4"
       whileHover={{
         y: -10,
         opacity: 0.8,
@@ -264,7 +266,17 @@ const Portfolio = () => {
       }}
       transition={{ duration: 0.3, ease: "easeInOut" }}
     >
-      I'm Rohit, a Computer Science Student at NITK
+      {words.map((word, index) => (
+        <motion.span
+          key={index}
+          initial={{ opacity: 0, y: 20 }} // Start with some vertical offset
+          animate={{ opacity: 1, y: 0 }}  // Animate to original position
+          transition={{ duration: 2.5, delay: index * 0.1 }} // Slow reveal with longer delay
+          style={{ display: "inline-block", marginRight: "0.5rem" }} // Add space between words
+        >
+          {word}
+        </motion.span>
+      ))}
     </motion.h2>
 
     <div className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center shadow-lg shadow-indigo-500/50">
