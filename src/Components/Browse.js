@@ -458,7 +458,7 @@ const Portfolio = () => {
               ref={elementRef}
               className="border rounded-lg border-cyan-400 w-full max-w-md mt-4 pt-4 text-center shadow-lg shadow-indigo-500/50"
             >
-              <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold transition-transform transform hover:scale-105 mb-3 text-3xl font-courier-prime animate-color-change">
+              <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 font-bold mb-3 text-3xl font-courier-prime animate-color-change">
                 Seeking Internship Opportunities
               </p>
             </div>
@@ -488,7 +488,7 @@ const Portfolio = () => {
               <p className="text-3xl text-white font-dancing-script">
                 {quotes[currentQuoteIndex].text}
               </p>
-              <p className="text-xl mt-3 text-white">
+              <p className="text-xl font-courier-prime mt-3 text-white">
                 - {quotes[currentQuoteIndex].author}
               </p>
             </motion.div>
