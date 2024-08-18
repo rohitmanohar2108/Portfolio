@@ -19,6 +19,7 @@ import animationDatathree from "../Animation/animationthree.json";
 import animationDatafour from "../Animation/animationfour.json";
 import animationDatafive from "../Animation/animationfive.json";
 import animationDataSix from "../Animation/animationsix.json";
+import animationDataSeven from "../Animation/animationseven.json";
 // Import Devicon CSS (already added link)
 import "devicon/devicon.min.css";
 import Footer from "./Footer";
@@ -82,6 +83,15 @@ const Portfolio = () => {
     loop: true,
     autoplay: true,
     animationData: animationDataSix, // Use the first animation data
+    rendererSettings: {
+      preserveAspectRatio: "xMidYMid slice",
+    },
+  };
+
+  const defaultOptionsSeven = {
+    loop: true,
+    autoplay: true,
+    animationData: animationDataSeven, // Use the first animation data
     rendererSettings: {
       preserveAspectRatio: "xMidYMid slice",
     },
@@ -468,7 +478,6 @@ const Portfolio = () => {
         <motion.div
           ref={quoteRef}
           className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
-        
         >
           <div className="flex items-center space-x-4 overflow-hidden">
             <motion.img
@@ -498,7 +507,6 @@ const Portfolio = () => {
         <motion.div
           ref={aboutRef}
           className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
-          
         >
           <motion.img
             src="https://media-mxp1-1.cdn.whatsapp.net/v/t61.24694-24/453603651_520834290411384_6429731950094255849_n.jpg?ccb=11-4&oh=01_Q5AaIC-9v5GugtOFEMMBYvFX3frZuTI9ad7p9dp1jxMl6CEx&oe=66CDCAFF&_nc_sid=5e03e0&_nc_cat=102"
@@ -578,68 +586,75 @@ const Portfolio = () => {
             </motion.div>
           </div>
         </motion.div>
+        <div className="flex justify-center items-start space-x-8">
+          {/* Left Side: Experience Section */}
+          <div className="max-w-2xl mt-20" ref={sectionRef}>
+            <div className="mb-4">
+              <div className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
+                <h2 className="text-3xl font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 experience-heading">
+                  Experience
+                </h2>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="flex items-start mb-12 timeline-item">
+                <div className="w-full pr-8">
+                  <div className="relative border-l border-cyan-400 pl-6">
+                    <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
+                    <div className="mb-8">
+                      <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                        Member, TEDx NITK Surathkal Media Team
+                      </h3>
+                      <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
+                        Dec 2022 - May 2026
+                      </span>
+                      <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                        • Designed posters and promotional materials for TEDx
+                        events, enhancing visual communication and branding
+                        efforts.
+                      </p>
+                      <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                        • Collaborated on media campaigns to boost event
+                        visibility and engagement.
+                      </p>
+                      <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                        • Technologies Used: Canva, Illustrator
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-shrink-0 w-1 border-l border-gray-300 h-full"></div>
+              </div>
+              <div className="flex items-start timeline-item">
+                <div className="w-full pr-8">
+                  <div className="relative border-l border-cyan-400 pl-6">
+                    <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
+                    <div className="mb-8">
+                      <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
+                        Student, National Institute of Technology Karnataka
+                      </h3>
+                      <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
+                        Aug 2021 - Present
+                      </span>
+                      <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                        • Pursuing a Bachelor’s degree in Computer Science.
+                      </p>
+                      <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
+                        • Engaged in various projects and coursework related to
+                        computer science and software development.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex-shrink-0 w-1 border-l border-gray-300 h-full"></div>
+              </div>
+            </div>
+          </div>
 
-        <div className="max-w-2xl mx-auto mt-20" ref={sectionRef}>
-          <div className="mb-4">
-            <div className="border rounded-lg border-cyan-400 p-4 shadow-lg shadow-indigo-500/50">
-              <h2 className="text-3xl font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 experience-heading">
-                Experience
-              </h2>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="flex items-start mb-12 timeline-item">
-              <div className="w-full pr-8">
-                <div className="relative border-l border-cyan-400 pl-6">
-                  <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
-                      Member, TEDx NITK Surathkal Media Team
-                    </h3>
-                    <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
-                      Dec 2022 - May 2026
-                    </span>
-                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                      • Designed posters and promotional materials for TEDx
-                      events, enhancing visual communication and branding
-                      efforts.
-                    </p>
-                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                      • Collaborated on media campaigns to boost event
-                      visibility and engagement.
-                    </p>
-                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                      • Technologies Used: Canva, Illustrator
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex-shrink-0 w-1 border-l border-gray-300 h-full"></div>
-            </div>
-            <div className="flex items-start timeline-item">
-              <div className="w-full pr-8">
-                <div className="relative border-l border-cyan-400 pl-6">
-                  <div className="absolute w-4 h-4 bg-cyan-400 rounded-full -left-2 top-1/2 transform -translate-y-1/2"></div>
-                  <div className="mb-8">
-                    <h3 className="text-2xl font-courier-prime font-semibold text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">
-                      Student, National Institute of Technology Karnataka
-                    </h3>
-                    <span className="block mb-2 text-sm font-courier-prime leading-none text-gray-400">
-                      Aug 2021 - Present
-                    </span>
-                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                      • Pursuing a Bachelor’s degree in Computer Science.
-                    </p>
-                    <p className="mb-2 text-base font-courier-prime text-white dark:text-gray-300">
-                      • Engaged in various projects and coursework related to
-                      computer science and software development.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex-shrink-0 w-1 border-l border-gray-300 h-full"></div>
-            </div>
-          </div>
+          {/* Right Side: Lottie Animation */}
+          <motion.div className="ml-8">
+            <Lottie options={defaultOptionsSeven} height={500} width={500} />
+          </motion.div>
         </div>
 
         <motion.div
@@ -678,10 +693,7 @@ const Portfolio = () => {
               {/* Add your project content here */}
             </motion.div>
           </div>
-          <motion.div
-            className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
-            
-          >
+          <motion.div className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {projects.map((project, index) => (
                 <motion.div
