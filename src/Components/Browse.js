@@ -32,6 +32,7 @@ const Portfolio = () => {
   const quoteRef = useRef(null);
   const elementRef = useRef(null);
   const certiRef = useRef(null);
+  
 
   const defaultOptions = {
     loop: true,
@@ -369,6 +370,24 @@ const Portfolio = () => {
         ease: 'power3.out',
         scrollTrigger: {
           trigger: certiRef.current,
+          start: 'top 80%',
+          toggleActions: 'play none none none',
+        },
+      }
+    );
+  }, []);
+
+  useEffect(() => {
+    gsap.fromTo(
+      contactRef.current,
+      { x: '100vw', opacity: 0 }, // Start from right outside the viewport
+      {
+        x: 0,
+        opacity: 1,
+        duration: 1.2, // Adjust the speed of the animation
+        ease: 'power3.out',
+        scrollTrigger: {
+          trigger: contactRef.current,
           start: 'top 80%',
           toggleActions: 'play none none none',
         },
@@ -772,18 +791,15 @@ const Portfolio = () => {
           let's discuss over coffee.
         </motion.p>
 
-        <div
-          ref={contactRef}
-          className="mt-16 flex items-center justify-between mr-48"
-        >
-          <Lottie options={defaultOptionsfour} height={400} width={400} />
-          <button
-            className="shadow-md shadow-indigo-500/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-normal  font-courier-prime text-3xl py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
-            onClick={toggleForm}
-          >
-            Contact Me
-          </button>
-        </div>
+        <div ref={contactRef} className="mt-16 flex items-center justify-between mr-48">
+      <Lottie options={defaultOptionsfour} height={400} width={400} />
+      <button
+        className="shadow-md shadow-indigo-500/50 bg-violet-600 text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 font-normal  font-courier-prime text-3xl py-2 px-4 rounded-lg hover:bg-violet-700 transition-colors transition-transform transform hover:scale-105"
+        onClick={toggleForm}
+      >
+        Contact Me
+      </button>
+    </div>
 
         {formVisible && (
           <animated.form
