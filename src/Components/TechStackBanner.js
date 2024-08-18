@@ -11,7 +11,7 @@ const TechStackBanner = () => {
   useEffect(() => {
     gsap.fromTo(
       bannerRef.current,
-      { x: '-100vw', opacity: 0 },
+      { x: '100vw', opacity: 0 },
       {
         x: 0,
         opacity: 1,
@@ -30,7 +30,7 @@ const TechStackBanner = () => {
     <motion.div
       ref={bannerRef}
       className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
-      whileHover={{ scale: 1.05 }}
+      
     >
       <p className="text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 px-4 py-2 text-3xl font-courier-prime font-normal mb-3 transition-transform transform hover:scale-105 hover:text-blue-500 hover:shadow-lg">
         Some of the Tech Stack I know:

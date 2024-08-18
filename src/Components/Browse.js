@@ -379,7 +379,7 @@ const Portfolio = () => {
   useEffect(() => {
     gsap.fromTo(
       contactRef.current,
-      { x: "100vw", opacity: 0 }, // Start from right outside the viewport
+      { x: "-100vw", opacity: 0 }, // Start from right outside the viewport
       {
         x: 0,
         opacity: 1,
@@ -468,7 +468,7 @@ const Portfolio = () => {
         <motion.div
           ref={quoteRef}
           className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
-          whileHover={{ scale: 1.05 }}
+        
         >
           <div className="flex items-center space-x-4 overflow-hidden">
             <motion.img
@@ -498,7 +498,7 @@ const Portfolio = () => {
         <motion.div
           ref={aboutRef}
           className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg flex items-center"
-          whileHover={{ scale: 1.05 }}
+          
         >
           <motion.img
             src="https://media-mxp1-1.cdn.whatsapp.net/v/t61.24694-24/453603651_520834290411384_6429731950094255849_n.jpg?ccb=11-4&oh=01_Q5AaIC-9v5GugtOFEMMBYvFX3frZuTI9ad7p9dp1jxMl6CEx&oe=66CDCAFF&_nc_sid=5e03e0&_nc_cat=102"
@@ -680,7 +680,7 @@ const Portfolio = () => {
           </div>
           <motion.div
             className="shadow-xl shadow-cyan-500/50 border-multicolor outline hover:outline-2 ring-2 mt-16 p-8 bg-black bg-opacity-30 rounded-lg shadow-lg"
-            whileHover={{ scale: 1.05 }}
+            
           >
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
               {projects.map((project, index) => (
