@@ -651,7 +651,7 @@ const Portfolio = () => {
               transition={{
                 y: { type: "spring", stiffness: 50, damping: 20 }, // Smooth fall effect
                 opacity: { duration: 0.8 }, // Fade-in effect
-                duration: 1, // Total duration of the animation
+                duration: 0.5, // Total duration of the animation
               }}
             >
               <h2 className="text-3xl font-normal font-courier-prime text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500">

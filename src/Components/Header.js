@@ -6,19 +6,7 @@ const Header = ({ aboutRef, projectsRef, contactRef }) => {
   const navRef = useRef(null);
   const menuRef = useRef(null);
 
-  useEffect(() => {
-    if (navRef.current) {
-      gsap.from(navRef.current, {
-        opacity: 0,
-        y: -20,
-        duration: 0.5,
-        ease: "power2.out",
-        onComplete: () => {
-          gsap.set(navRef.current, { opacity: 1 });
-        },
-      });
-    }
-  }, []);
+ 
 
   useEffect(() => {
     if (menuRef.current) {
