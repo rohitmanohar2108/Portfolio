@@ -742,7 +742,7 @@ const Portfolio = () => {
 
         <div ref={certiRef} className="mx-auto mt-8 max-w-4xl">
           {/* Certifications Section */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {certifications.map((cert, index) => (
               <motion.div
                 key={cert.id}
@@ -775,7 +775,7 @@ const Portfolio = () => {
               </motion.div>
             ))}
           </div>
-        </div>
+        </div> 
 
         <div className="font-normal font-courier-prime text-4xl text-transparent bg-clip-text bg-gradient-to-r from-violet-500 to-fuchsia-500 mt-11 transition-transform transform hover:-translate-y-2 hover:text-blue-500">
           Coffee with me.
